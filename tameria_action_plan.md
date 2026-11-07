@@ -3,7 +3,7 @@
 
 **Source analyzed:** `tameria_project_specifications.md` (v1 — Technical Specification & System Architecture)
 **Analysis date:** 2026-11-06
-**Revision:** **v1.16** — **Damage taxonomy expanded to six types (B-18 resolved).** The author ratified a **sixth damage type, `Umbral`** — the corruption/void axis and the true antonym of `Radiant` (the cleansing/Beacon axis). The closed set is now **Physical, Fire, Lightning, Ice, Radiant, Umbral**; Elemental ≡ {Fire, Lightning, Ice}; **Radiant and Umbral ∉ Elemental**. Adds a **conversion channel** (a skill-tree node **and** a glyph) and a **class-coverage rule** (every class guarantees **≥3** usable damage types in its skills — which is what supplies the previously-orphan types). The formal Damage & Resistance definition is rewritten as **Appendix B v2.0**. (v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
+**Revision:** **v1.17** — **§5 relic-favor copy corrected (B-15 closed).** The source's printed World Sieve total `+3% All Resistances (+8% Fire/Radiant)` is replaced with `+3% Fire/Lightning/Ice Resistance (+8% Fire, +5% Radiant)` — Radiant is **5%**, not 8% (it is not Elemental, so the Aegis's "+3% All Elemental" never applied to it), and the undefined "All Resistances" scope is retired. **Copy-only** fix; the relic model itself is unchanged and protected (App. A). (v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
 **Scope:** Full review of speculative content, conflict/gap mapping, targeted design feedback, feasibility assessment, prioritized roadmap, balancing, narrative tie-ins, and ARPG-standard QC.
 
 > **How to read this document:** Existing spec content is referenced by section (e.g. §3.1). Findings are tagged `C-xx` (register item), `G-xx` (gap), `B-xx` (new finding, v1.1), `Q-xx` (open question), `F-xx` (proposed feature). Each register item is now **typed** as Conflict / Ambiguity / Gap / Design risk / Underdevelopment. All numbers outside of direct spec quotes are **proposals** and require design sign-off.
@@ -190,7 +190,7 @@ Disclosed in full so the register can be trusted:
 | B-12 | **Uncommon vs Rare 2-affix overlap** — a 2-affix item fits both Uncommon (1–2) and Rare (2-affix skewed). | §3.1 | **CLOSED (v1.15):** `1P+1S` = Uncommon; `2P+0S`/`0P+2S` = Rare. See **Appendix M.3**. |
 | B-13 | **No Act × Level × Points map** — the 99 level points + 30 quest points are not distributed across the 7 Acts / 70 campaign levels. | §1.1, §2.1 | High — **CLOSED (v1.10):** full **Act × Level × Points** distribution authored in **Appendix H**. |
 | B-14 | **"points" vs "Rank" terminology drift** — §2.1 says "Past **Rank** 200"; §7.3 uses `points` and `softCapRank`. | §2.1, §7.3 | Low |
-| B-15 | **CONFIRMED (v1.3):** the §5 total mis-states Radiant — it prints `+8% Fire/Radiant`, but under the author's ruling Fire = 8% and **Radiant = 5%**. | §5 | **High** |
+| B-15 | **CONFIRMED (v1.3):** the §5 total mis-states Radiant — it prints `+8% Fire/Radiant`, but under the author's ruling Fire = 8% and **Radiant = 5%**. | §5 | **CLOSED (v1.17):** corrected copy adopted — `+3% Fire/Lightning/Ice Resistance (+8% Fire, +5% Radiant)`; the undefined "All Resistances" scope is retired (B-19). Applied in GDD §10.1 and **App. B.5**. |
 | B-16 | **`maxPoints` semantics inconsistent** — the hard-capped node carries `maxPoints: 30`; uncapped nodes carry none. | §7.3 | Low |
 | B-17 | **Sieve-favor ↔ Outer Ward relationship unstated** — the World Sieve sits on the now-inaccessible island, yet the endgame operates from the Ward. | §1.1, §5 | Medium |
 | **B-18** | **Orphan damage types (v1.3):** Lightning, Ice and Radiant have **zero damage sources** anywhere in the spec — no affix, skill, enemy or item produces them. Only Fire and Physical are sourced. | §3, §6, §7 | **CLOSED (v1.16):** taxonomy expanded to **six** types (adds **Umbral**); sources are guaranteed by the **class-coverage rule** (≥3 damage types per class) plus the **conversion channel** (tree node + glyph). See **Appendix B v2.0**. |
@@ -442,7 +442,7 @@ No content authoring begins until: **the open register (C-02→C-08, B-01→B-17
 These elements are strong and should be **protected from scope creep**:
 
 - Vigil Power soft-cap **math** (§2.1) — per-point conversion verified correct (§1.3); fix only the B-01 accounting.
-- Precursor Relic global-favor model (§5) — clean and thematic, **but its printed total is now numerically wrong under the author's Radiant ruling (B-15 / B-19): fix the copy only.**
+- Precursor Relic global-favor model (§5) — clean and thematic. Its printed total was numerically wrong under the author's Radiant ruling; the **copy is now corrected** (B-15, v1.17; B-19, v1.14). Fix the **copy only** — the model itself is protected.
 - Rarity → affix-count → prefix/suffix-split ladder (§3.1, §3.2) — now **verified sound** (see §2.2).
 - Gear sockets vs skill-tree sockets separation (§3.4) — good clarity.
 - The Rejection / Outer Ward endgame pivot (§1.1) — the game's best idea; expand, don't rewrite.
@@ -518,6 +518,7 @@ Unchanged by the six-type expansion — **no relic grants `Umbral` favor** (the 
 
 **Defect (B-15):** §5's printed `+3% All Resistances (+8% Fire/Radiant)` mis-states Radiant (prints 8%, correct 5%) and uses the undefined "All Resistances" scope (B-19).
 **Corrected text:** `+3% Fire/Lightning/Ice Resistance (+8% Fire, +5% Radiant)`.
+**Status — CLOSED (v1.17 / B-15).** The corrected text above is the **adopted copy** (mirrored in GDD §10.1). No relic numbers change; only the wording of the aggregate total.
 
 ### B.6 Damage-Type Conversion (source of variety — the ratified "source" channel)
 
@@ -593,7 +594,7 @@ It is upstream of every other open item:
    8. Ailment-application roll
    9. Final damage application / death
 3. ~~**Resolve B-18**~~ — **DONE (v1.16):** the taxonomy is expanded to **six** types and the "no sources" gap is closed structurally by the **class-coverage rule** (≥3 types per class) and the **conversion channel** (tree node + glyph). See **App. B.6 / B.7**.
-4. **Fix §5 copy** (B-15 / B-19) — corrected text supplied in B.5.
+4. ~~**Fix §5 copy** (B-15 / B-19)~~ — **DONE (v1.17):** corrected text adopted (`+3% Fire/Lightning/Ice Resistance (+8% Fire, +5% Radiant)`); supplied in B.5 / GDD §10.1.
 5. **Resolve B-20** — state whether the Vigil resist-cap bonus covers Radiant.
 6. **Re-run this audit** against the pipeline spec once written; it will introduce its own edge cases (penetration-vs-cap ordering, conversion + ailment interaction, immunity, over-cap handling).
 
@@ -1436,7 +1437,7 @@ Resulting table (all values [Proposed]):
 | **B-20** | Vigil "+2% Max Resist Cap" — Radiant? | **Closed** — applies to **all five** percentage resistances incl. Radiant & Umbral → 77% cap (L.4). |
 | **Q-09** | Base resistance cap unspecified | **Answered** — base **75%** [Proposed] (L.4). |
 
-**Still open after this appendix:** **B-18** (orphan damage types — *content*, not math) — **now CLOSED (v1.16)** in **App. B v2.0**; the active next items are **B-04/B-17** (relic timing / Sieve↔Ward), **B-09** (skill slots), **B-14/B-16** (terminology), **B-15** (§5 Radiant misprint), **B-21** (Breach clamp), **B-23/B-24** (+ Q-10/Q-11).
+**Still open after this appendix:** **B-18** (orphan damage types — *content*, not math) — **now CLOSED (v1.16)** in **App. B v2.0**; the active next items are **B-04/B-17** (relic timing / Sieve↔Ward), **B-09** (skill slots), **B-14/B-16** (terminology), **B-21** (Breach clamp), **B-23/B-24** (+ Q-10/Q-11). *(**B-15** §5 Radiant misprint — **CLOSED v1.17**.)*
 
 ### L.9 Schema (resolver config + damage event)
 
@@ -1652,7 +1653,7 @@ Corruption's `ItemRarity` bonus (§7.6) shifts this distribution upward (deep Co
 | **B-02** | Implicits missing from schema | **Closed** — `implicits[]` added; grade-scaled per §4.1 (M.5/M.7). |
 | **B-03** | No tier values / ilvl / reqLevel | **Closed** — tier ladder + `maxTier(ilvl)` + `requiredLevel` (M.4/M.5). |
 
-**Still open after this appendix:** **B-04/B-17** (relic timing / Ward relationship), **B-09** (skill slots), **B-14/B-16** (terminology), **B-15** (§5 Radiant misprint), **B-21** (Breach clamp), **B-23/B-24** (+ Q-10/Q-11). *(**B-18** orphan damage-type *sources* — **CLOSED v1.16**, App. B v2.0.)*
+**Still open after this appendix:** **B-04/B-17** (relic timing / Ward relationship), **B-09** (skill slots), **B-14/B-16** (terminology), **B-21** (Breach clamp), **B-23/B-24** (+ Q-10/Q-11). *(**B-18** orphan damage-type *sources* — **CLOSED v1.16**, App. B v2.0; **B-15** §5 Radiant misprint — **CLOSED v1.17**.)*
 
 ### M.9 Definition of Done & Sign-off Gate
 

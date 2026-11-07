@@ -512,6 +512,8 @@ Because **Radiant is not Elemental**, the Aegis's "+3% All Elemental" does **not
 **Corrected copy (replaces the source's printed `+8% Fire/Radiant`):**
 > `+5% Max Life` \| `+3% Armor/DR` \| `+3% Fire/Lightning/Ice Resistance (+8% Fire, +5% Radiant)` \| `+3% Move Speed` \| `+5% CDR` \| `+3% Damage vs Calamity` \| `-10% Debuffs & Hazard Damage`
 
+**[B-15 — CLOSED, v1.17]** This is the **adopted wording**; the source's printed `+3% All Resistances (+8% Fire/Radiant)` is superseded. **Copy-only** change — relic numbers are unchanged.
+
 > **[Open] (B-04 / Q-05):** are relic favor effects **live on pickup**, or only once **socketed into the World Sieve**? The source labels the total "(Act 7+)" but never states activation timing.
 > **[Open] (B-17):** the Sieve sits on the now-inaccessible island, yet the endgame operates from the Ward — the relationship is unstated.
 
@@ -855,3 +857,4 @@ The load-bearing walls — no content authoring until these are resolved:
 | 14 | **Damage Resolution Pipeline** authored — ordered 10-stage resolver, defense layer, crit rules, worked DoD example, Corruption as the **master difficulty scalar**; base resist cap **75%**, floor **−100%**, Radiant in the Vigil cap bonus, "All Resistances" retired (§7.2–§7.6) (G-02 specified; B-06, B-08, B-19, B-20 closed; Q-06, Q-09 answered) | Author ruling |
 | 15 | **Item generation specified** — *rarity-first* ordering, canonical rarity→count→split table, T0–T10 tier ladder with `maxTier(ilvl)`, `implicits[]` + `itemLevel`/`requiredLevel` in the schema (§8.2b, §8.3, §8.5, §7.1) (R2 resolved; B-02, B-03, B-10, B-11, B-12 closed; Q-01…Q-04 answered) | Author ruling |
 | 16 | **Damage taxonomy expanded to six types** — adds **`Umbral`** (corruption/void), the antonym of `Radiant` (cleansing/Beacon); Elemental ≡ {Fire, Lightning, Ice}, Radiant & Umbral ∉ Elemental. Adds the **conversion channel** (skill-tree node + glyph) and the **class-coverage rule** (≥3 damage types per class). Resistances now **five** (incl. Umbral); Vigil resist-cap covers all five; pipeline type order + ailment table updated (§7.1, §7.2, §7.4, §7.5) (B-18 closed) | Author ruling |
+| 17 | **§5 relic-favor copy corrected** — the printed `+3% All Resistances (+8% Fire/Radiant)` superseded by `+3% Fire/Lightning/Ice Resistance (+8% Fire, +5% Radiant)`; Radiant = **5%**, "All Resistances" scope retired; copy-only, model unchanged (§10.1) (B-15 closed) | Author ruling |
