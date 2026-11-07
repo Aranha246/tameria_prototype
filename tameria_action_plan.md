@@ -3,7 +3,7 @@
 
 **Source analyzed:** `tameria_project_specifications.md` (v1 — Technical Specification & System Architecture)
 **Analysis date:** 2026-11-06
-**Revision:** **v1.20** — **Vigil vocabulary normalized (B-14 and B-16 closed).** Terminology-only. The single unit is the **point** — "Rank" is retired, `softCapRank` → **`softCapPoints`**, and §2.1's "past Rank 200" reads "past **200 points**". `maxPoints` semantics are made explicit: **present ⇔ HardCapped**, **absent ⇒ unbounded**; `softCapPoints` appears on **Uncapped** nodes only; the `type` label is **derived**, not independent data. **No numeric change** — the corrected `Lv 375 / 275` example stands. See **Appendix K.10**. (v1.19 closed B-21; v1.18 ratified relic activation + Sieve continuity, App. N, closed B-04/B-17, answered Q-05; v1.17 corrected the §5 relic-favor copy, B-15; v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
+**Revision:** **v1.21** — **Skill-layer budget ratified (B-09, B-23, B-24 closed; Q-10, Q-11 answered).** The three findings are one interlocking budget and are fixed together: **actives per class `S = 8`** (B-24), **specialization/equipped slots = 6** (B-09), and the **Talent-Point budget `P = 60`** per tree → both paths award **120 TP** with depth gates **0/20/50/100** (B-23/Q-10). A **TP faucet (`+2`/level, hard cap `120`, reached Lv 61)** is stated so the budget is funded — avoiding a repeat of the **B-01** class of defect. **Q-11** ratified: curated fusion **floor 21** (15 pairs + 6 apexes), optional alternates to `~27`. See **Appendix O**. **(Register status: all findings closed.)** (v1.20 normalized Vigil vocabulary, closed B-14/B-16, App. K.10; v1.19 closed B-21; v1.18 ratified relic activation + Sieve continuity, App. N, closed B-04/B-17, answered Q-05; v1.17 corrected the §5 relic-favor copy, B-15; v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
 **Scope:** Full review of speculative content, conflict/gap mapping, targeted design feedback, feasibility assessment, prioritized roadmap, balancing, narrative tie-ins, and ARPG-standard QC.
 
 > **How to read this document:** Existing spec content is referenced by section (e.g. §3.1). Findings are tagged `C-xx` (register item), `G-xx` (gap), `B-xx` (new finding, v1.1), `Q-xx` (open question), `F-xx` (proposed feature). Each register item is now **typed** as Conflict / Ambiguity / Gap / Design risk / Underdevelopment. All numbers outside of direct spec quotes are **proposals** and require design sign-off.
@@ -184,7 +184,7 @@ Disclosed in full so the register can be trusted:
 | B-06 | **Corruption % has no stated mechanical effect** — 10/25/45/60/75/95 are labels only. | §1.1 | **CLOSED (v1.14):** Corruption formalised as the campaign's **master difficulty scalar** — drives enemy HP/damage/ailment-chance/rare-pack density, and yields **item rarity** (two-sided). See **Appendix L.7**; **Q-06** answered. |
 | B-07 | **Grade-cap behaviour undefined** — §4.2 defines Success/Neutral/Failure but not what happens on Success at max grade (S / SSS). | §4.2 | Low — **CLOSED (v1.5):** at the cap a Success roll is a **no-op** (materials not consumed); at the floor a Failure is likewise a no-op. See **Appendix E.5**. |
 | B-08 | **Crit scope unclear** — a T10 affix grants 8% crit (§7.1) while Vigil hard-caps crit at +3% (§2.1). Different scopes, but no stated global crit cap. | §2.1, §7.1 | **CLOSED (v1.14):** different scopes — Vigil **+3%** is a *node-track* cap; proposed **global character crit cap 60%**. See **Appendix L.5**. |
-| B-09 | **Number of skill specialization slots undefined** (§2.4 "slot active skills"). | §2.4 | Medium |
+| B-09 | **Number of skill specialization slots undefined** (§2.4 "slot active skills"). | §2.4 | **CLOSED (v1.21):** **6** specialization/equipped slots (indexed `1–6`), unified with the action bar for cross-input/gamepad parity. See **Appendix O.2**. |
 | B-10 | **Rarity↔affix-count determination order undefined.** Rarity ranges overlap (Uncommon 1–2, Rare 2–4, Epic 3–6), so a 2- or 3-affix item is ambiguous between tiers. | §3.1 | **CLOSED (v1.15):** **rarity-first** — rarity is authoritative and the count is derived, never inferred. See **Appendix M.2**. |
 | B-11 | **Legendary 5–6 split rules absent** — Rare/Epic have explicit split constraints; Legendary only says "standard high-tier mix". | §3.1 | **CLOSED (v1.15):** 5 ⇒ `3P+2S`/`2P+3S`; 6 ⇒ `3P+3S`. See **Appendix M.3**. |
 | B-12 | **Uncommon vs Rare 2-affix overlap** — a 2-affix item fits both Uncommon (1–2) and Rare (2-affix skewed). | §3.1 | **CLOSED (v1.15):** `1P+1S` = Uncommon; `2P+0S`/`0P+2S` = Rare. See **Appendix M.3**. |
@@ -198,8 +198,8 @@ Disclosed in full so the register can be trusted:
 | **B-20** | **Vigil "Max Resist Cap +2%" scope undefined (v1.3):** with 4 resistance types now defined, it is unstated whether the bonus covers Radiant. | §2.1 | **CLOSED (v1.14):** applies to the **full percentage-resistance set** (incl. Radiant — and Umbral after v1.16) → **77%** cap. See **Appendix L.4**. |
 | **B-21** | **Breach underflow / double-source (v1.7):** the relic reductions sum to exactly `20.0` (5+5+10) and fully deplete the initial Act 7 value, yet the definition also credits "sub-objectives" with reducing Breach — so Breach could fall **below 0.0%**. | §1.1 (Act 7), App. F | **CLOSED (v1.19):** sub-objectives **activate** the relics (one sub-objective ↔ one relic) — a **single** reduction source, so the total is exactly `20.0`; Breach is additionally **clamped at `0.0`** unconditionally. See **App. F.4**. |
 | **B-22** | **Hero taint mechanics undefined (v1.8):** taint is now *narratively* defined (the Hero is corrupted by the campaign → drives the Rejection), but unstated: how it **accumulates**, whether it is **reducible**, whether it has **gameplay effects**, and whether a **narrative floor** guarantees rejection regardless of play. | §1.1, App. G | **CLOSED (v1.9)** — hybrid model (Act floor + exposure) ratified; mechanical/visible tradeoff ratified. See **Appendix G**. |
-| **B-23** | **Absolute Talent-Point budget unstated (v1.11):** §2.2 fixes only the *ratio* (Single = 2× Dual) and never the base per-tree award, so neither path's power can be evaluated. | §2.2 | Medium — **[Proposed]** `P = 60`/tree (both paths = 120); see **Appendix I**. Pending **Q-10**. |
-| **B-24** | **Actives-per-class (`S`) undefined (v1.12):** §2.4 describes slotted actives but never states how many actives a class has, so the size of *any* open fusion matrix is incomputable. | §2.3, §2.4 | Medium — moot for the **curated** table (App. J), but it still gates the class skill lists. |
+| **B-23** | **Absolute Talent-Point budget unstated (v1.11):** §2.2 fixes only the *ratio* (Single = 2× Dual) and never the base per-tree award, so neither path's power can be evaluated. | §2.2 | **CLOSED (v1.21):** `P = 60`/tree ratified → both paths award **120 TP**; depth gates **0/20/50/100**; faucet `+2`/level with hard cap `120`. See **Appendix O.3/O.4**; **Q-10** answered. |
+| **B-24** | **Actives-per-class (`S`) undefined (v1.12):** §2.4 describes slotted actives but never states how many actives a class has, so the size of *any* open fusion matrix is incomputable. | §2.3, §2.4 | **CLOSED (v1.21):** **`S = 8`** actives per class (**48** total). Bounds the class skill lists; the curated table (App. J) is unaffected. See **Appendix O.1**; **Q-11** answered. |
 
 ### 2.5 Open Questions Requiring Author Clarification
 
@@ -214,8 +214,8 @@ Disclosed in full so the register can be trusted:
 | Q-07 | ~~**Vigil points**: is a node's `points` the *Vigil Points* budget or a separate "rank" track? Reconcile 42 vs 275.~~ **ANSWERED (v1.13):** a node's `points` **is** the Vigil Points budget (there is no separate rank track — `points` and `softCapRank` measure the same accumulated total). The `42` was a stale earned-total; the fix is 1 pt/level past 100 (App. K). | — *(closed)* |
 | Q-08 | ~~Is Radiant an element?~~ **ANSWERED (v1.3): Radiant is NOT elemental** — it is a first-class damage type with its own resistance stat. Elemental ≡ {Fire, Lightning, Ice}. | — *(closed)* |
 | Q-09 | ~~**Base resistance cap**: the doc only grants "+2% Max Resist Cap" via Vigil — is the base 75%?~~ **ANSWERED (v1.14):** base **75%** [Proposed] → **77%** with Vigil; floor **−100%** (**Appendix L.4**). | — *(closed)* |
-| Q-10 | **Talent-Point budget `P`**: §2.2 gives only the *ratio*; ratify the absolute per-tree award (proposed `P = 60`, both paths = 120) and the **depth-gate values** (App. I.3). | Mastery parity (**B-23**) |
-| Q-11 | **Fusion coverage**: ratify the **21-recipe floor** (15 pairs + 6 apexes) and whether alternates are wanted beyond it (proposed cap `~27`). | Fusion table (**C-08**) |
+| Q-10 | ~~**Talent-Point budget `P`**: §2.2 gives only the *ratio*; ratify the absolute per-tree award (proposed `P = 60`, both paths = 120) and the **depth-gate values** (App. I.3).~~ **ANSWERED (v1.21):** `P = 60`/tree (both paths **120 TP**); depth gates **0/20/50/100**; faucet `+2`/level, cap `120` (**Appendix O.3/O.4**; B-23). | — *(closed)* |
+| Q-11 | ~~**Fusion coverage**: ratify the **21-recipe floor** (15 pairs + 6 apexes) and whether alternates are wanted beyond it (proposed cap `~27`).~~ **ANSWERED (v1.21):** floor **21** ratified; optional alternates permitted up to **`~27`** (**Appendix O.1 / J.3**; B-24). | — *(closed)* |
 
 ### 2.6 Underdeveloped Concepts (exist but too thin to build)
 
@@ -977,11 +977,9 @@ Talent nodes sit behind **cumulative-investment gates** (points already spent in
 
 > §2.2's **"higher cap thresholds"** (Single) is read **literally**: the Empowered tree's gates extend **past the Tier-3 cap that Dual hits**. That single sentence is the parity lever.
 
-### I.4 Proposed Numbers
+### I.4 Ratified Numbers (B-23 / Q-10 closed, v1.21)
 
-*(Numbers are proposals — see **B-23 / Q-10**.)*
-
-`P = 60` per tree → **both paths award 120 TP**.
+`P = 60` per tree → **both paths award 120 TP** (ratified; the level faucet that funds `2P` is in **Appendix O.4**).
 
 | Path | Trees | Points | Total | Deepest tier reached | Fusion |
 | :-- | :-- | :-- | :-- | :-- | :-- |
@@ -1055,14 +1053,13 @@ Matrix size is handled separately (**C-08**).
 }
 ```
 
-### I.8 New Findings & Questions
+### I.8 Findings & Questions — closed
 
-- **B-23** — the **absolute** Talent-Point budget is unstated (§2.2 gives only the 2× ratio).
-- **Q-10** — ratify `P` and the depth-gate values (I.3 / I.4).
+- **B-23 / Q-10** — **CLOSED (v1.21):** the absolute budget is ratified at **`P = 60`**/tree (both paths **120 TP**) with depth gates **0/20/50/100**. See **Appendix O.3/O.4**.
 
 ### I.9 Definition of Done
 
-**C-06 is closed.** The **structure** (independent pools, depth gating, Empowered-only Tier 4, breadth-vs-depth axis) is ratified. Remaining is **tuning only**: `P`, node count, the gate values, and the count/power budget of the Empowered-exclusive capstones.
+**C-06 is closed**; as of **v1.21** the tuning knobs `P` and the gate values are **ratified** (`P = 60`; gates `0/20/50/100` — **App. O.3**). The **structure** (independent pools, depth gating, Empowered-only Tier 4, breadth-vs-depth axis) stands. Remaining is **authoring only**: node count, the per-class node lists, and the count/power budget of the Empowered-exclusive capstones.
 
 ---
 
@@ -1076,7 +1073,7 @@ A **Design risk** (scope / QA surface), not a conflict — already retyped from 
 
 ### J.2 The Explosion (why an open matrix is infeasible)
 
-With **6 classes** and `S` actives per class (`S` is itself undefined — **B-24**):
+With **6 classes** and `S` actives per class (`S = 8` — **B-24 CLOSED, App. O.1**):
 
 | Matrix | Formula | `S=6` | `S=8` | `S=10` |
 | :-- | :-- | :-- | :-- | :-- |
@@ -1165,10 +1162,10 @@ Both modes resolve to `power_budget = 1.0`, which is exactly the parity statemen
 
 Fuse by **mechanic tags** rather than exact class pairs (e.g. `{Projectile, Fire}` × `{Melee, Physical}`), yielding a small tag-combination table from which any pair derives a result. **Fewer authored recipes**, but: unintended combos, weaker per-fusion polish, and harder balance. **Not adopted** — but recorded as the **scalability fallback** if the class roster ever grows past 6 (where `C(n,2)` becomes unmanageable).
 
-### J.8 Findings & Questions
+### J.8 Findings & Questions — closed
 
-- **B-24** — actives-per-class (`S`) is unstated; moot for the curated table, but it still gates the class skill lists.
-- **Q-11** — ratify the **21-recipe floor** and whether alternates beyond it are wanted (proposed cap `~27`).
+- **B-24** — **CLOSED (v1.21):** `S = 8` actives per class (**App. O.1**) bounds the class skill lists.
+- **Q-11** — **ANSWERED (v1.21):** the **floor of 21** is ratified; optional alternates are permitted up to **`~27`**.
 
 ### J.9 Definition of Done
 
@@ -1486,7 +1483,7 @@ Resulting table (all values [Proposed]):
 | **B-20** | Vigil "+2% Max Resist Cap" — Radiant? | **Closed** — applies to **all five** percentage resistances incl. Radiant & Umbral → 77% cap (L.4). |
 | **Q-09** | Base resistance cap unspecified | **Answered** — base **75%** [Proposed] (L.4). |
 
-**Still open after this appendix:** **B-18** (orphan damage types — *content*, not math) — **now CLOSED (v1.16)** in **App. B v2.0**; the active next items are **B-09** (skill slots), **B-23/B-24** (+ Q-10/Q-11). *(**B-04/B-17** relic timing / Sieve↔Ward — **CLOSED v1.18**, App. N; **B-14/B-16** terminology — **CLOSED v1.20**, App. K §K.10; **B-15** §5 Radiant misprint — **CLOSED v1.17**; **B-21** Breach clamp — **CLOSED v1.19**.)*
+**Still open after this appendix:** — *none* — the register is **clear** as of **v1.21**; the last items (**B-09**, **B-23/B-24** + **Q-10/Q-11**) are **CLOSED** in **App. O**. *(**B-04/B-17** relic timing / Sieve↔Ward — **CLOSED v1.18**, App. N; **B-14/B-16** terminology — **CLOSED v1.20**, App. K §K.10; **B-15** §5 Radiant misprint — **CLOSED v1.17**; **B-21** Breach clamp — **CLOSED v1.19**.)*
 
 ### L.9 Schema (resolver config + damage event)
 
@@ -1702,7 +1699,7 @@ Corruption's `ItemRarity` bonus (§7.6) shifts this distribution upward (deep Co
 | **B-02** | Implicits missing from schema | **Closed** — `implicits[]` added; grade-scaled per §4.1 (M.5/M.7). |
 | **B-03** | No tier values / ilvl / reqLevel | **Closed** — tier ladder + `maxTier(ilvl)` + `requiredLevel` (M.4/M.5). |
 
-**Still open after this appendix:** **B-09** (skill slots), **B-23/B-24** (+ Q-10/Q-11). *(**B-14/B-16** terminology — **CLOSED v1.20**, App. K §K.10; **B-04/B-17** relic timing / Ward relationship — **CLOSED v1.18**, App. N; **B-18** orphan damage-type *sources* — **CLOSED v1.16**, App. B v2.0; **B-15** §5 Radiant misprint — **CLOSED v1.17**; **B-21** Breach clamp — **CLOSED v1.19**.)*
+**Still open after this appendix:** — *none* — the register is **clear** as of **v1.21**; **B-09 / B-23 / B-24 + Q-10/Q-11** are **CLOSED** in **App. O**. *(**B-14/B-16** terminology — **CLOSED v1.20**, App. K §K.10; **B-04/B-17** relic timing / Ward relationship — **CLOSED v1.18**, App. N; **B-18** orphan damage-type *sources* — **CLOSED v1.16**, App. B v2.0; **B-15** §5 Radiant misprint — **CLOSED v1.17**; **B-21** Breach clamp — **CLOSED v1.19**.)*
 
 ### M.9 Definition of Done & Sign-off Gate
 
@@ -1777,3 +1774,91 @@ Relic favor is a **persistent global buff set** keyed by relic ID and gated by *
 **Sign-off required on the two rulings:** (1) **favor live on pickup** (N.1); (2) **Sieve Mirror continuity** across the Rejection (N.2). Both are behaviour-defining but *zero-number* — no balance re-derivation follows.
 
 **Cross-refs:** GDD **§10.2** (mirrors this ruling); **B-15** (copy, v1.17); **App. A** (relic model protected — this appendix specifies behaviour, not stats).
+
+---
+
+## Appendix O — Skill-Layer Budget: Actives, Slots & Talent Points (B-09 / B-23+Q-10 / B-24+Q-11 Resolution)
+
+*Ratified by author ruling (v1.21). **Closes B-09, B-23, B-24; answers Q-10, Q-11.** These findings are **one interlocking budget** and are fixed together — the per-class active roster `S` bounds the class skill lists (B-24), the equipped/specialization slot count bounds what a build can field (B-09), and the Talent-Point budget `P` bounds Layer 2 (B-23). Fixing them independently would let one layer silently contradict another.*
+
+### O.0 What this closes
+
+| Finding | Undefined quantity | Ruling |
+| :--- | :--- | :--- |
+| **B-24 / Q-11** | actives per class `S` | **`S = 8`** |
+| **B-09** | specialization / equipped slots | **6** (indexed `1–6`) |
+| **B-23 / Q-10** | Talent-Point budget `P` | **`P = 60`**/tree → both paths **120 TP**; gates `0/20/50/100` |
+
+### O.1 Actives per class — `S = 8` **[Ratified]**
+
+Each of the **6** classes fields a roster of **8 active skills** (**48** actives total).
+
+- **Coverage.** 8 slots comfortably satisfy the class-coverage rule (≥ **3** damage types per class, App. B): the roster admits ≥3 damaging actives spanning ≥3 types *plus* utility.
+- **Continuity.** `S = 8` is the doc's own canonical figure (the **J.2** explosion table), so the reference stays honest if the curated table is ever reopened.
+- **Choice, not checklist.** `S = 8 > 6` equipped slots (O.2) — the roster is **larger than the bar**, so equipping is a *decision*, matching the "every point is a choice" ethos of **I.1**.
+
+The class skill lists **must declare all 8**; the fusion validator (**J.5**, rule 4) checks every recipe input against this list.
+
+### O.2 Specialization / equipped slots — **6** **[Ratified]**
+
+An active is **equipped** into one of **6 slots** (`assignedSpecializationSlot` range `1–6`). An equipped active **is** its specialization slot: it earns skill-specific XP, exposes its **mini-tree**, and hosts **glyph sockets** (§5.4 / **F-07**).
+
+- **6 is the cross-input ceiling.** A standard gamepad binds a 6-skill bar with no chorded inputs (Input standard, §3), so keyboard/mouse and gamepad share **one** layout.
+- **Unifying "equipped" and "specialization"** avoids a second, hidden budget: you specialize exactly what you field.
+
+### O.3 Talent-Point budget — `P = 60` **[Ratified]**
+
+`P = 60` per tree → **both paths award 120 TP** (ratifies **I.4**):
+
+| Path | Trees | Points | Deepest tier |
+| :--- | :--- | :--- | :--- |
+| **Dual-Class** | 2 | `60 + 60 = 120` | Tier 3 — Keystone ×2 |
+| **Single-Class** | 1 (Empowered) | `120` | Tier 4 — Apex + 1 exclusive capstone |
+
+Depth gates **`0 / 20 / 50 / 100`** (**I.3**) stand. `120 < ~200` nominal capacity → **no point is wasted and no tree is completed** (**I.5** absorption parity).
+
+### O.4 Talent-Point faucet — funds the budget **[Ratified]**
+
+Fixing `P` without a faucet would repeat the **B-01** class of defect — a budget the faucet cannot fund. The faucet is therefore stated:
+
+- **+2 TP per level-up**, from Lv 2 through the campaign (Lv 1 → 70 = **69** level-ups).
+- **Hard cap at `2P = 120`** — the character's total TP pool (Dual: `P` per tree; Single: `2P` in one). The cap is reached at **Lv 61**; the campaign's last levels bank no further TP because the **pool**, not the tree, is exhausted.
+- **No TP from quests** — Layer-2 funding stays level-driven and separable from the passive tree's quest awards (**App. H**).
+
+### O.5 Schema
+
+```json
+{
+  "class": {
+    "id": "warrior",
+    "active_roster_size": 8,
+    "actives": ["whirlwind", "leap_slam", "earthquake", "shield_bash",
+                "sunder", "iron_hide", "cleave", "war_cry"]
+  },
+  "character": {
+    "talent_path": "dual_class",
+    "talent_points_earned": 120,
+    "talent_points_cap": 120,
+    "talent_faucet": { "rule": "2_per_level", "capReachedAtLevel": 61 },
+    "trees": [
+      { "tree_id": "warrior",  "points": 60, "deepest_tier": 3 },
+      { "tree_id": "sorcerer", "points": 60, "deepest_tier": 3 }
+    ]
+  },
+  "skill_bar": {
+    "slot_count": 6,
+    "slots": [
+      { "index": 1, "skill": "whirlwind", "specialized": true,
+        "glyphSockets": [ { "socketIndex": 0, "unlocked": true } ] }
+    ]
+  }
+}
+```
+
+> Skill **names** in `actives[]` are illustrative; the full 48-entry roster is **authoring work**, not a design gap (*cf.* **J.9**).
+
+### O.6 Definition of Done & Sign-off Gate
+
+**Sign-off required on three numbers:** `S = 8` (O.1); `slots = 6` (O.2); `P = 60` + faucet `+2`/level, cap `120` (O.3/O.4). All three are **budget-fixing**, so downstream content (class skill lists, action-bar UI, TP pacing) can be authored against them.
+
+**Cross-refs:** **App. I** (mastery parity — `P` / gates); **App. J** (fusion table — `S` bounds the roster and the 21-recipe floor); **App. H** (passive-tree faucet, kept separate); GDD **§5.2 / §5.3 / §5.4**.

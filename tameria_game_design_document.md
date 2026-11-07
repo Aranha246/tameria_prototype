@@ -136,7 +136,7 @@ Slain corrupted mobs drop **Calamity Motes** (ratified, §6.1). Motes visibly co
 | 3 Keystone | ≥ 50 | both paths |
 | 4 Apex | ≥ 100 | **Empowered (Single) only** |
 
-With `P = 60` **[Proposed]**, both paths award **120 TP**: **Dual** reaches **2 × Tier-3 Keystones** across two themes; **Single** reaches the **Tier-4 Apex + an Empowered-exclusive capstone** in one theme. **Parity axis [Ratified]: Dual = breadth/ceiling, Single = depth/consistency.** Full model in the action plan's **Appendix I**.
+With `P = 60` **[Ratified — B-23/Q-10, v1.21]**, both paths award **120 TP**: **Dual** reaches **2 × Tier-3 Keystones** across two themes; **Single** reaches the **Tier-4 Apex + an Empowered-exclusive capstone** in one theme. **Parity axis [Ratified]: Dual = breadth/ceiling, Single = depth/consistency.** Full model in the action plan's **Appendix I**; the level **faucet** that funds `2P` (`+2`/level, hard cap `120`, reached Lv 61) is in **Appendix O.3/O.4**.
 
 ### 5.3 Layer 3 — Mastery Tree & Fusion Skills **[Ratified + Proposed]**
 
@@ -145,17 +145,17 @@ With `P = 60` **[Proposed]**, both paths award **120 TP**: **Dual** reaches **2 
   - *Single-Class:* two skills from one class into an apex — e.g. *Leap Slam* + *Earthquake* = **Tectonic Cataclysm**.
 - **Fusion parity [Ratified] (C-06):** both paths receive **one** fused ability at **equal power budget** — Dual expresses it as *hybrid utility*, Single as *apex magnitude*.
 - **Fusion table [Ratified] (C-08 closed):** the open combinatorial matrix (≈`15S² + 3S(S−1)` → ~1,128 abilities at `S = 8`) is replaced by a **curated exact table** with a parity-driven **floor of 21** — **15 class-pair recipes + 6 single-class apexes** — enforced by a **coverage validator**. Each recipe resolves to an equal `power_budget` (App. I.6). Full spec in the action plan's **Appendix J**.
+- **Actives per class `S = 8` [Ratified — B-24/Q-11, v1.21]:** every class fields a roster of **8** actives (**48** total), which bounds the class skill lists and the fusion inputs (App. O.1). Optional alternates beyond the floor are permitted up to **`~27`**.
 
 ### 5.4 Layer 4 — Individual Skill Trees & Glyphs **[Ratified + Proposed]**
 
-- **Specialization slots [Ratified]:** slotted actives earn skill-specific XP in combat.
+- **Specialization slots [Ratified]:** **6** slots (indexed `1–6`). A slotted active earns skill-specific XP in combat, exposes its **mini-tree**, and hosts **glyph sockets** — *equipped* and *specialized* are the same slot, so the bar and the specialization budget never diverge (B-09 closed, v1.21 — App. O.2).
 - **Mini-trees [Ratified]:** Skill Points buy behavioral shifts, elemental conversions, and utility.
 - **Glyph sockets [Ratified]:** nodes accept **Glyphs** — e.g. *Glyph of Chaining, Multishot, Echoing, Execution*.
 - **[Proposed] (F-07):**
   - Glyph rarity ladder: Common → Mythic.
   - Socket rule: **1 at skill Lv 1, +1 per 10 skill levels, max 3**.
   - Glyphs are **stat/behavior modifiers only** (never new code paths) — implemented via the modifier stack.
-  - **[Open] (B-09):** number of specialization slots is undefined.
 
 ### 5.5 Attributes **[Proposed] (G-01)**
 
@@ -868,3 +868,4 @@ The load-bearing walls — no content authoring until these are resolved:
 | 18 | **Relic activation & Sieve continuity ratified** — favor is **live on pickup** (Aegis Act 2 / Hearth Act 3 / Astral Key Act 5; full total by Act 5); the "(Act 7+)" label re-scopes to the Sieve's operation, so socketing is a numeric no-op. Across the Rejection the **Sieve Mirror** carries the favor to the Ward — **continuous**, no power drop (§10.2) (B-04/B-17 closed, Q-05 answered) | Author ruling |
 | 19 | **Breach underflow resolved** — a sub-objective is the **delivery mechanism for relic activation** (one sub-objective ↔ one relic), so §1.1's "sub-objectives + relic activation" is a **single** reduction source (total exactly `20.0`); Breach is **clamped at `0.0`** unconditionally; `breach_clamp_min` added to the zone schema (§12.1.1) (B-21 closed) | Author ruling |
 | 20 | **Vigil vocabulary normalized** — the unit is the **point**, "Rank" retired, `softCapRank` → `softCapPoints`; `maxPoints` present ⇔ `HardCapped` / absent ⇒ unbounded (type is derived) (§5.1, A.3) (B-14/B-16 closed) | Author ruling |
+| 21 | **Skill-layer budget ratified** — actives per class **`S = 8`** (48 total); **6** specialization/equipped slots (unified with the action bar); **`P = 60`**/tree → both paths **120 TP** with depth gates `0/20/50/100`; TP faucet **`+2`/level, cap `120`** (reached Lv 61); fusion floor **21** re-ratified (optional to `~27`) (§5.2–§5.4) (B-09, B-23, B-24 closed; Q-10, Q-11 answered) | Author ruling |
