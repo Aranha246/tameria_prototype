@@ -3,7 +3,7 @@
 
 **Source analyzed:** `tameria_project_specifications.md` (v1 — Technical Specification & System Architecture)
 **Analysis date:** 2026-11-06
-**Revision:** **v1.18** — **Relic activation & Sieve continuity ratified (closes B-04, B-17; answers Q-05).** New **Appendix N**: relic favor is **live on pickup** (each relic self-activates the act it is recovered — Aegis Act 2, Hearth Act 3, Astral Key Act 5; the full total is assembled by **Act 5**), and the source's "(Act 7+)" label is re-scoped to the *Sieve's operation*, not activation — so socketing at the Act 7 climax is a **numeric no-op**. Across the Rejection the **Sieve Mirror** (portable focus) carries the relics' favor to the Ward, so the total is **continuous** with no post-campaign power drop. (v1.17 corrected the §5 relic-favor copy, B-15; v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
+**Revision:** **v1.19** — **Breach underflow resolved (B-21 closed).** In Act 7 a **sub-objective is the delivery mechanism for relic activation** (one sub-objective ↔ one relic), so §1.1's "sub-objectives + relic activation" is a **single** reduction source — the total is exactly `20.0` and can never exceed the initial value. Breach is additionally **clamped at `0.0` unconditionally** (`clamp(breach, 0.0, 100.0)`) as a hard invariant. See **Appendix F.4**. (v1.18 ratified relic activation + Sieve continuity, App. N, closed B-04/B-17, answered Q-05; v1.17 corrected the §5 relic-favor copy, B-15; v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
 **Scope:** Full review of speculative content, conflict/gap mapping, targeted design feedback, feasibility assessment, prioritized roadmap, balancing, narrative tie-ins, and ARPG-standard QC.
 
 > **How to read this document:** Existing spec content is referenced by section (e.g. §3.1). Findings are tagged `C-xx` (register item), `G-xx` (gap), `B-xx` (new finding, v1.1), `Q-xx` (open question), `F-xx` (proposed feature). Each register item is now **typed** as Conflict / Ambiguity / Gap / Design risk / Underdevelopment. All numbers outside of direct spec quotes are **proposals** and require design sign-off.
@@ -196,7 +196,7 @@ Disclosed in full so the register can be trusted:
 | **B-18** | **Orphan damage types (v1.3):** Lightning, Ice and Radiant have **zero damage sources** anywhere in the spec — no affix, skill, enemy or item produces them. Only Fire and Physical are sourced. | §3, §6, §7 | **CLOSED (v1.16):** taxonomy expanded to **six** types (adds **Umbral**); sources are guaranteed by the **class-coverage rule** (≥3 damage types per class) plus the **conversion channel** (tree node + glyph). See **Appendix B v2.0**. |
 | **B-19** | **"All Resistances" scope undefined (v1.3):** the §5 total uses a scope that matches no defined grouping (the Aegis says "All **Elemental**"). | §5 | **CLOSED (v1.14):** term **retired**; the only legal collective scope is **"All Elemental Resistance(s)"** ≡ Fire + Lightning + Ice. See **Appendix L.4**. |
 | **B-20** | **Vigil "Max Resist Cap +2%" scope undefined (v1.3):** with 4 resistance types now defined, it is unstated whether the bonus covers Radiant. | §2.1 | **CLOSED (v1.14):** applies to the **full percentage-resistance set** (incl. Radiant — and Umbral after v1.16) → **77%** cap. See **Appendix L.4**. |
-| **B-21** | **Breach underflow / double-source (v1.7):** the relic reductions sum to exactly `20.0` (5+5+10) and fully deplete the initial Act 7 value, yet the definition also credits "sub-objectives" with reducing Breach — so Breach could fall **below 0.0%**. | §1.1 (Act 7), App. F | Low |
+| **B-21** | **Breach underflow / double-source (v1.7):** the relic reductions sum to exactly `20.0` (5+5+10) and fully deplete the initial Act 7 value, yet the definition also credits "sub-objectives" with reducing Breach — so Breach could fall **below 0.0%**. | §1.1 (Act 7), App. F | **CLOSED (v1.19):** sub-objectives **activate** the relics (one sub-objective ↔ one relic) — a **single** reduction source, so the total is exactly `20.0`; Breach is additionally **clamped at `0.0`** unconditionally. See **App. F.4**. |
 | **B-22** | **Hero taint mechanics undefined (v1.8):** taint is now *narratively* defined (the Hero is corrupted by the campaign → drives the Rejection), but unstated: how it **accumulates**, whether it is **reducible**, whether it has **gameplay effects**, and whether a **narrative floor** guarantees rejection regardless of play. | §1.1, App. G | **CLOSED (v1.9)** — hybrid model (Act floor + exposure) ratified; mechanical/visible tradeoff ratified. See **Appendix G**. |
 | **B-23** | **Absolute Talent-Point budget unstated (v1.11):** §2.2 fixes only the *ratio* (Single = 2× Dual) and never the base per-tree award, so neither path's power can be evaluated. | §2.2 | Medium — **[Proposed]** `P = 60`/tree (both paths = 120); see **Appendix I**. Pending **Q-10**. |
 | **B-24** | **Actives-per-class (`S`) undefined (v1.12):** §2.4 describes slotted actives but never states how many actives a class has, so the size of *any* open fusion matrix is incomputable. | §2.3, §2.4 | Medium — moot for the **curated** table (App. J), but it still gates the class skill lists. |
@@ -679,7 +679,7 @@ All author decisions are made: risk retained, **two-anvil structure approved**, 
 | Phase | Breach | Trigger |
 | :-- | :-- | :-- |
 | Act 7 start | `20.0%` | Zone load |
-| Objective loop | ↓ dynamically | Sub-objectives + relic activation |
+| Objective loop | ↓ dynamically | Sub-objective **activates a relic** (single source) |
 | Purge | `0.0%` | World Sieve fires → zone becomes 100% cleansed & impenetrable → **Hero rejected** (rejection keyed to the hero's **personal taint** — see B-06) |
 
 **Relic reductions** (order-independent; sum = `20.0`):
@@ -699,6 +699,7 @@ Illustrative loop: `20.0 → 15.0 (Aegis) → 5.0 (Astral) → 0.0 (Hearth)`.
   "zone_id": "act7_tameria_sanctum",
   "zone_state": {
     "breach_percentage": 20.0,
+    "breach_clamp_min": 0.0,
     "is_purged": false,
     "active_environment_profile": "corrupted_sanctuary_tier1",
     "spawns_calamity_hazards": true
@@ -711,11 +712,25 @@ Illustrative loop: `20.0 → 15.0 (Aegis) → 5.0 (Astral) → 0.0 (Hearth)`.
 }
 ```
 
-### F.4 New Finding — **B-21** (underflow / double-source)
+### F.4 Resolution — **B-21 closed (v1.19)**
 
-The three relic reductions sum to **exactly `20.0`**, fully depleting the initial Act 7 value — yet §1.1 also credits "**sub-objectives**" with reducing Breach. If sub-objectives reduce it *in addition*, Breach can fall **below `0.0%`**.
+**The finding.** The three relic reductions sum to **exactly `20.0`**, fully depleting the initial Act 7 value — yet §1.1 also credits "**sub-objectives**" with reducing Breach. Read as *two independent reduction sources*, Breach could fall **below `0.0%`**.
 
-**Recommended resolution:** (a) treat sub-objectives as **gating** the relic activations rather than reducing Breach independently, **and** (b) **clamp at `0.0`** unconditionally.
+**Ratified resolution — single source, unconditional clamp.**
+
+1. **Sub-objectives are the delivery mechanism for relic activation, not a second reduction track.** In Act 7 a sub-objective is *how the player activates a relic* — one sub-objective ↔ one relic — and completing it fires that relic's breach reduction. §1.1's "sub-objectives + relic activation" therefore describes **one** reduction, not two. This removes the double-source at the root: the total reduction is exactly `20.0` and can never exceed the initial value.
+2. **Breach is clamped at `0.0` unconditionally** — `breach = clamp(breach, 0.0, 100.0)` — as a hard invariant regardless of future content edits. Any over-reduction is a no-op, never a negative value.
+
+**Consequence — the Act 7 loop is three sub-objectives, each firing one relic:**
+
+| Sub-objective | Activates | Δ Breach |
+| :-- | :-- | :-- |
+| *(Aegis objective)* | Sunken Aegis | −5.0 |
+| *(Hearth objective)* | Hearth of Ignition | −5.0 |
+| *(Astral objective)* | Astral Key | −10.0 |
+| **Total** | — | **−20.0 → clamped at `0.0`** |
+
+Order-independent; ends exactly at the floor; **no underflow path exists**.
 
 ### F.5 Relationship to Corruption *(addressed — see Appendix G)*
 
@@ -723,7 +738,7 @@ The three relic reductions sum to **exactly `20.0`**, fully depleting the initia
 
 ### F.6 Definition of Done
 
-**C-04 is closed:** the term is defined, the state machine is specified, and the schema is supplied. Remaining is implementation, plus resolving **B-21** (clamp/gating) and **B-06** (Corruption mechanics).
+**C-04 is closed:** the term is defined, the state machine is specified, and the schema is supplied. **B-21 is closed (v1.19)** — sub-objectives gate relic activation (single reduction source) and Breach is clamped at `0.0`. **B-06** (Corruption mechanics) closed v1.14 (App. L.7). Remaining is implementation.
 
 ---
 
@@ -1437,7 +1452,7 @@ Resulting table (all values [Proposed]):
 | **B-20** | Vigil "+2% Max Resist Cap" — Radiant? | **Closed** — applies to **all five** percentage resistances incl. Radiant & Umbral → 77% cap (L.4). |
 | **Q-09** | Base resistance cap unspecified | **Answered** — base **75%** [Proposed] (L.4). |
 
-**Still open after this appendix:** **B-18** (orphan damage types — *content*, not math) — **now CLOSED (v1.16)** in **App. B v2.0**; the active next items are **B-09** (skill slots), **B-14/B-16** (terminology), **B-21** (Breach clamp), **B-23/B-24** (+ Q-10/Q-11). *(**B-04/B-17** relic timing / Sieve↔Ward — **CLOSED v1.18**, App. N; **B-15** §5 Radiant misprint — **CLOSED v1.17**.)*
+**Still open after this appendix:** **B-18** (orphan damage types — *content*, not math) — **now CLOSED (v1.16)** in **App. B v2.0**; the active next items are **B-09** (skill slots), **B-14/B-16** (terminology), **B-23/B-24** (+ Q-10/Q-11). *(**B-04/B-17** relic timing / Sieve↔Ward — **CLOSED v1.18**, App. N; **B-15** §5 Radiant misprint — **CLOSED v1.17**; **B-21** Breach clamp — **CLOSED v1.19**.)*
 
 ### L.9 Schema (resolver config + damage event)
 
@@ -1653,7 +1668,7 @@ Corruption's `ItemRarity` bonus (§7.6) shifts this distribution upward (deep Co
 | **B-02** | Implicits missing from schema | **Closed** — `implicits[]` added; grade-scaled per §4.1 (M.5/M.7). |
 | **B-03** | No tier values / ilvl / reqLevel | **Closed** — tier ladder + `maxTier(ilvl)` + `requiredLevel` (M.4/M.5). |
 
-**Still open after this appendix:** **B-09** (skill slots), **B-14/B-16** (terminology), **B-21** (Breach clamp), **B-23/B-24** (+ Q-10/Q-11). *(**B-04/B-17** relic timing / Ward relationship — **CLOSED v1.18**, App. N; **B-18** orphan damage-type *sources* — **CLOSED v1.16**, App. B v2.0; **B-15** §5 Radiant misprint — **CLOSED v1.17**.)*
+**Still open after this appendix:** **B-09** (skill slots), **B-14/B-16** (terminology), **B-23/B-24** (+ Q-10/Q-11). *(**B-04/B-17** relic timing / Ward relationship — **CLOSED v1.18**, App. N; **B-18** orphan damage-type *sources* — **CLOSED v1.16**, App. B v2.0; **B-15** §5 Radiant misprint — **CLOSED v1.17**; **B-21** Breach clamp — **CLOSED v1.19**.)*
 
 ### M.9 Definition of Done & Sign-off Gate
 

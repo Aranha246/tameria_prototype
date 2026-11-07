@@ -567,7 +567,7 @@ Because **Radiant is not Elemental**, the Aegis's "+3% All Elemental" does **not
 
 - **Type:** dynamic float, `0.0%`–`100.0%`.
 - **Act 7 starts at `20.0%`** — 20% of the perimeter is breached; drives environment rendering (tainted ground vs. pristine marble), spawn density, and hazard spawns.
-- **Objective loop:** sub-objectives + relic activation reduce it: `20.0 → 0.0`.
+- **Objective loop:** each sub-objective **activates one relic** (single reduction source), driving `20.0 → 0.0`.
 - **At `0.0%`:** the World Sieve fires a total purge → the zone becomes cleansed & impenetrable → the Hero is rejected (keyed to personal taint).
 
 | Relic | Δ Breach |
@@ -576,13 +576,14 @@ Because **Radiant is not Elemental**, the Aegis's "+3% All Elemental" does **not
 | Hearth of Ignition | −5.0 |
 | Astral Key | −10.0 |
 
-Loop: `20.0 → 15.0 → 5.0 → 0.0` (order-independent; sum = `20.0`). **Clamp at `0.0` (B-21).**
+Loop: `20.0 → 15.0 → 5.0 → 0.0` (order-independent; total reduction = `20.0`). **[B-21 — CLOSED, v1.19]** A sub-objective is the **delivery mechanism** for relic activation (one sub-objective ↔ one relic), so there is a **single** reduction source and no double-count; Breach is **clamped at `0.0`** unconditionally (`clamp(breach, 0.0, 100.0)`).
 
 ```json
 {
   "zone_id": "act7_tameria_sanctum",
   "zone_state": {
     "breach_percentage": 20.0,
+    "breach_clamp_min": 0.0,
     "is_purged": false,
     "active_environment_profile": "corrupted_sanctuary_tier1",
     "spawns_calamity_hazards": true
@@ -864,3 +865,4 @@ The load-bearing walls — no content authoring until these are resolved:
 | 16 | **Damage taxonomy expanded to six types** — adds **`Umbral`** (corruption/void), the antonym of `Radiant` (cleansing/Beacon); Elemental ≡ {Fire, Lightning, Ice}, Radiant & Umbral ∉ Elemental. Adds the **conversion channel** (skill-tree node + glyph) and the **class-coverage rule** (≥3 damage types per class). Resistances now **five** (incl. Umbral); Vigil resist-cap covers all five; pipeline type order + ailment table updated (§7.1, §7.2, §7.4, §7.5) (B-18 closed) | Author ruling |
 | 17 | **§5 relic-favor copy corrected** — the printed `+3% All Resistances (+8% Fire/Radiant)` superseded by `+3% Fire/Lightning/Ice Resistance (+8% Fire, +5% Radiant)`; Radiant = **5%**, "All Resistances" scope retired; copy-only, model unchanged (§10.1) (B-15 closed) | Author ruling |
 | 18 | **Relic activation & Sieve continuity ratified** — favor is **live on pickup** (Aegis Act 2 / Hearth Act 3 / Astral Key Act 5; full total by Act 5); the "(Act 7+)" label re-scopes to the Sieve's operation, so socketing is a numeric no-op. Across the Rejection the **Sieve Mirror** carries the favor to the Ward — **continuous**, no power drop (§10.2) (B-04/B-17 closed, Q-05 answered) | Author ruling |
+| 19 | **Breach underflow resolved** — a sub-objective is the **delivery mechanism for relic activation** (one sub-objective ↔ one relic), so §1.1's "sub-objectives + relic activation" is a **single** reduction source (total exactly `20.0`); Breach is **clamped at `0.0`** unconditionally; `breach_clamp_min` added to the zone schema (§12.1.1) (B-21 closed) | Author ruling |
