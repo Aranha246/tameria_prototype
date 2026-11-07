@@ -3,7 +3,7 @@
 
 **Source analyzed:** `tameria_project_specifications.md` (v1 — Technical Specification & System Architecture)
 **Analysis date:** 2026-11-06
-**Revision:** **v1.19** — **Breach underflow resolved (B-21 closed).** In Act 7 a **sub-objective is the delivery mechanism for relic activation** (one sub-objective ↔ one relic), so §1.1's "sub-objectives + relic activation" is a **single** reduction source — the total is exactly `20.0` and can never exceed the initial value. Breach is additionally **clamped at `0.0` unconditionally** (`clamp(breach, 0.0, 100.0)`) as a hard invariant. See **Appendix F.4**. (v1.18 ratified relic activation + Sieve continuity, App. N, closed B-04/B-17, answered Q-05; v1.17 corrected the §5 relic-favor copy, B-15; v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
+**Revision:** **v1.20** — **Vigil vocabulary normalized (B-14 and B-16 closed).** Terminology-only. The single unit is the **point** — "Rank" is retired, `softCapRank` → **`softCapPoints`**, and §2.1's "past Rank 200" reads "past **200 points**". `maxPoints` semantics are made explicit: **present ⇔ HardCapped**, **absent ⇒ unbounded**; `softCapPoints` appears on **Uncapped** nodes only; the `type` label is **derived**, not independent data. **No numeric change** — the corrected `Lv 375 / 275` example stands. See **Appendix K.10**. (v1.19 closed B-21; v1.18 ratified relic activation + Sieve continuity, App. N, closed B-04/B-17, answered Q-05; v1.17 corrected the §5 relic-favor copy, B-15; v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
 **Scope:** Full review of speculative content, conflict/gap mapping, targeted design feedback, feasibility assessment, prioritized roadmap, balancing, narrative tie-ins, and ARPG-standard QC.
 
 > **How to read this document:** Existing spec content is referenced by section (e.g. §3.1). Findings are tagged `C-xx` (register item), `G-xx` (gap), `B-xx` (new finding, v1.1), `Q-xx` (open question), `F-xx` (proposed feature). Each register item is now **typed** as Conflict / Ambiguity / Gap / Design risk / Underdevelopment. All numbers outside of direct spec quotes are **proposals** and require design sign-off.
@@ -189,9 +189,9 @@ Disclosed in full so the register can be trusted:
 | B-11 | **Legendary 5–6 split rules absent** — Rare/Epic have explicit split constraints; Legendary only says "standard high-tier mix". | §3.1 | **CLOSED (v1.15):** 5 ⇒ `3P+2S`/`2P+3S`; 6 ⇒ `3P+3S`. See **Appendix M.3**. |
 | B-12 | **Uncommon vs Rare 2-affix overlap** — a 2-affix item fits both Uncommon (1–2) and Rare (2-affix skewed). | §3.1 | **CLOSED (v1.15):** `1P+1S` = Uncommon; `2P+0S`/`0P+2S` = Rare. See **Appendix M.3**. |
 | B-13 | **No Act × Level × Points map** — the 99 level points + 30 quest points are not distributed across the 7 Acts / 70 campaign levels. | §1.1, §2.1 | High — **CLOSED (v1.10):** full **Act × Level × Points** distribution authored in **Appendix H**. |
-| B-14 | **"points" vs "Rank" terminology drift** — §2.1 says "Past **Rank** 200"; §7.3 uses `points` and `softCapRank`. | §2.1, §7.3 | Low |
+| B-14 | **"points" vs "Rank" terminology drift** — §2.1 says "Past **Rank** 200"; §7.3 uses `points` and `softCapRank`. | §2.1, §7.3 | **CLOSED (v1.20):** single unit = **point**; "Rank" retired as a formal unit; `softCapRank` → **`softCapPoints`**; prose normalized to "past **200 points**". See **App. K.10**. |
 | B-15 | **CONFIRMED (v1.3):** the §5 total mis-states Radiant — it prints `+8% Fire/Radiant`, but under the author's ruling Fire = 8% and **Radiant = 5%**. | §5 | **CLOSED (v1.17):** corrected copy adopted — `+3% Fire/Lightning/Ice Resistance (+8% Fire, +5% Radiant)`; the undefined "All Resistances" scope is retired (B-19). Applied in GDD §10.1 and **App. B.5**. |
-| B-16 | **`maxPoints` semantics inconsistent** — the hard-capped node carries `maxPoints: 30`; uncapped nodes carry none. | §7.3 | Low |
+| B-16 | **`maxPoints` semantics inconsistent** — the hard-capped node carries `maxPoints: 30`; uncapped nodes carry none. | §7.3 | **CLOSED (v1.20):** `maxPoints` **present ⇔ HardCapped**, **absent ⇒ unbounded**; `softCapPoints` on **Uncapped** only; `type` is **derived**. See **App. K.10**. |
 | B-17 | **Sieve-favor ↔ Outer Ward relationship unstated** — the World Sieve sits on the now-inaccessible island, yet the endgame operates from the Ward. | §1.1, §5 | **CLOSED (v1.18):** the **Sieve Mirror** (portable focus) channels the socketed relics' favor to the hero at the Ward — favor is **continuous** across the Rejection; no post-campaign power drop. See **App. N**. |
 | **B-18** | **Orphan damage types (v1.3):** Lightning, Ice and Radiant have **zero damage sources** anywhere in the spec — no affix, skill, enemy or item produces them. Only Fire and Physical are sourced. | §3, §6, §7 | **CLOSED (v1.16):** taxonomy expanded to **six** types (adds **Umbral**); sources are guaranteed by the **class-coverage rule** (≥3 damage types per class) plus the **conversion channel** (tree node + glyph). See **Appendix B v2.0**. |
 | **B-19** | **"All Resistances" scope undefined (v1.3):** the §5 total uses a scope that matches no defined grouping (the Aegis says "All **Elemental**"). | §5 | **CLOSED (v1.14):** term **retired**; the only legal collective scope is **"All Elemental Resistance(s)"** ≡ Fire + Lightning + Ice. See **Appendix L.4**. |
@@ -1180,7 +1180,7 @@ Fuse by **mechanic tags** rather than exact class pairs (e.g. `{Projectile, Fire
 
 ### K.1 What B-01 Was
 
-The **§7.3 Vigil Power Matrix** worked example is a teaching block: it shows a high-level character crossing the **Rank-200 soft cap** on an uncapped node. The block is *internally contradictory*:
+The **§7.3 Vigil Power Matrix** worked example is a teaching block: it shows a high-level character crossing the **200-point soft cap** on an uncapped node. The block is *internally contradictory*:
 
 ```json
 { "characterLevel": 142, "totalVigilPointsEarned": 42,
@@ -1208,15 +1208,15 @@ K.3 and K.4 resolve which.
 | Node | `points` | Type | Check | `currentBonus` | ✔ |
 | :--- | ---: | :--- | :--- | :--- | :-- |
 | `conquest_crit_chance` | 15 | HardCapped (`maxPoints 30`) | `15 × 0.1% = 0.15%` | `0.015` | ✔ |
-| `conquest_primary_stat` | 210 | Uncapped, cap 200 | `200 × 0.5 + (210 − 200) × 0.5 × 0.5 = 100 + 2.5` | `102.5` | ✔ |
+| `conquest_primary_stat` | 210 | Uncapped, soft-cap 200 | `200 × 0.5 + (210 − 200) × 0.5 × 0.5 = 100 + 2.5` | `102.5` | ✔ |
 | `resiliency_max_health` | 50 | Uncapped, cap 200 | `50 × 2 = 100` | `100` | ✔ |
 | **Total points** | **275** | | | | |
 
 All three values reconcile exactly against the per-point rules in §2.1. **The nodes are not wrong.**
 
-### K.4 Proof the Nodes Cannot Shrink — §2.1's Rank-200 Soft Cap
+### K.4 Proof the Nodes Cannot Shrink — §2.1's 200-Point Soft Cap
 
-The *entire purpose* of the §7.3 block is to demonstrate a **soft-cap crossing**: `conquest_primary_stat` sits at rank **210**, i.e. **10 ranks past the Rank-200 soft cap** fixed in §2.1. To sit past a 200-rank cap you must have spent **at least 200 points in that single node**. Therefore:
+The *entire purpose* of the §7.3 block is to demonstrate a **soft-cap crossing**: `conquest_primary_stat` sits at **210 points**, i.e. **10 points past the 200-point soft cap** fixed in §2.1. To sit past a 200-point cap you must have spent **at least 200 points in that single node**. Therefore:
 
 - `conquest_primary_stat ≥ 200` — **forced by §2.1**, not a free choice.
 - The other two nodes then add `15 + 50`, so the minimum viable total is `≥ 265`.
@@ -1242,11 +1242,11 @@ corrected earned         : 375 − 100 = 275  ==  15 + 210 + 50  ✔
 
 ```json
 { "characterLevel": 375, "totalVigilPointsEarned": 275,
-  "softCapRank": 200,
+  "softCapPoints": 200,
   "nodes": {
-    "conquest_crit_chance":   { "type": "HardCapped", "points": 15,  "maxPoints": 30,  "currentBonus": 0.015 },
-    "conquest_primary_stat":  { "type": "Uncapped", "points": 210, "softCapRank": 200, "currentBonus": 102.5 },
-    "resiliency_max_health":  { "type": "Uncapped", "points": 50,  "softCapRank": 200, "currentBonus": 100 } },
+    "conquest_crit_chance":   { "type": "HardCapped", "points": 15,  "maxPoints": 30,      "currentBonus": 0.015 },
+    "conquest_primary_stat":  { "type": "Uncapped",   "points": 210, "softCapPoints": 200, "currentBonus": 102.5 },
+    "resiliency_max_health":  { "type": "Uncapped",   "points": 50,  "softCapPoints": 200, "currentBonus": 100 } },
   "pointsSpent": 275, "pointsUnspent": 0 }
 ```
 
@@ -1257,7 +1257,7 @@ corrected earned         : 375 − 100 = 275  ==  15 + 210 + 50  ✔
 | **A — 1 pt/level, bigger example (Lv 375)** *(adopted)* | Nothing except the example's level. §2.1's post-100 "exponentially scaling XP" rule is untouched; the soft-cap demo is preserved; **no new system** is introduced. | **Ratified.** This is the minimal change that makes the example true. |
 | B — raise points-per-level (e.g. 2/level) | Would rescale *all* post-cap pacing and every future Vigil demo. | Rejected — collides with the intentional infinite-XP curve (§2.1). |
 | C — add a second Vigil faucet (quests, rifts) | Introduces a new system to satisfy an *example*. | Rejected — over-engineering; the block only needs a truthful level. |
-| D — shrink the nodes | Deletes the soft-cap demo (§2.1 Rank 200). | **Impossible** (K.4). |
+| D — shrink the nodes | Deletes the soft-cap demo (§2.1's 200-point soft cap). | **Impossible** (K.4). |
 
 The choice is **levels only**, matching the author's ruling: *"Levels only, 1 pt/level."*
 
@@ -1289,7 +1289,41 @@ An authoring-time validator should reject any Vigil snapshot where the spend exc
 
 ### K.9 Definition of Done
 
-**B-01 is closed.** The node math is verified (K.3), the `42` is proven to be the error (K.4), and the faucet is ratified as **1 Vigil Point per level past 100** with the corrected example `characterLevel: 375, totalVigilPointsEarned: 275` (K.5). **Q-07** is answered (the node's `points` **is** the Vigil budget; there is no separate rank track). **§2.1 and its Rank-200 soft cap are untouched.** Remaining is **mirroring the correction into the GDD (§5.1 note, A.3 schema, change log)** — a transcription task, not a design decision.
+**B-01 is closed.** The node math is verified (K.3), the `42` is proven to be the error (K.4), and the faucet is ratified as **1 Vigil Point per level past 100** with the corrected example `characterLevel: 375, totalVigilPointsEarned: 275` (K.5). **Q-07** is answered (the node's `points` **is** the Vigil budget; there is no separate rank track). **§2.1 and its 200-point soft cap are untouched.** Remaining is **mirroring the correction into the GDD (§5.1 note, A.3 schema, change log)** — a transcription task, not a design decision.
+
+### K.10 Vocabulary Normalization — **B-14 / B-16 closed (v1.20)**
+
+Two **low-severity terminology** defects in the Vigil schema; both are *naming*, not math. (§2.1 / §7.3 prose is normalized in the GDD; the raw source spec is left unchanged.)
+
+**B-14 — "points" vs "Rank".** §2.1's prose says "Past **Rank** 200" while §7.3's schema writes `points` and `softCapRank: 200`. **Q-07** already established there is **no separate rank track** — a node's `points` and the soft-cap field measure the **same** accumulated total. So "Rank" is merely a *synonym for points invested in a node*, and a second word invites the reader to invent a second currency.
+
+**Ruling:** the single unit is the **point**; **"Rank" is retired** as a formal unit.
+- `softCapRank` → **`softCapPoints`** (value unchanged; unit made explicit).
+- §2.1 prose "Past Rank 200" → "past **200 points** in an uncapped node".
+
+**B-16 — `maxPoints` semantics.** The hard-capped node carries `maxPoints: 30`; the uncapped nodes carry none. The rule was *implicit*. Made explicit:
+
+| Field | Meaning | Present when |
+| :-- | :-- | :-- |
+| `maxPoints` | Hard ceiling on points in the node | **HardCapped only** |
+| `softCapPoints` | Point count past which per-point returns halve | **Uncapped only** |
+
+- **`maxPoints` absent ⇒ unbounded** (no hard ceiling).
+- `type` is **derived**: `HardCapped` ⇔ `maxPoints` present; `Uncapped` ⇔ `maxPoints` absent. The label is kept for readability **only** and must not be read as independent data — that redundancy is precisely what invited B-16.
+
+**Normalized adopted schema** (supersedes the `softCapRank` spelling; superset of the K.5 block):
+
+```json
+{ "characterLevel": 375, "totalVigilPointsEarned": 275,
+  "softCapPoints": 200,
+  "nodes": {
+    "conquest_crit_chance":   { "type": "HardCapped", "points": 15,  "maxPoints": 30,      "currentBonus": 0.015 },
+    "conquest_primary_stat":  { "type": "Uncapped",   "points": 210, "softCapPoints": 200, "currentBonus": 102.5 },
+    "resiliency_max_health":  { "type": "Uncapped",   "points": 50,  "softCapPoints": 200, "currentBonus": 100 } },
+  "pointsSpent": 275, "pointsUnspent": 0 }
+```
+
+**Impact:** **zero numeric change** — the K.5 example (`Lv 375 / 275`) stands. Two identifiers and one prose phrase are normalized; no node, cap, or bonus value moves.
 
 ---
 
@@ -1452,7 +1486,7 @@ Resulting table (all values [Proposed]):
 | **B-20** | Vigil "+2% Max Resist Cap" — Radiant? | **Closed** — applies to **all five** percentage resistances incl. Radiant & Umbral → 77% cap (L.4). |
 | **Q-09** | Base resistance cap unspecified | **Answered** — base **75%** [Proposed] (L.4). |
 
-**Still open after this appendix:** **B-18** (orphan damage types — *content*, not math) — **now CLOSED (v1.16)** in **App. B v2.0**; the active next items are **B-09** (skill slots), **B-14/B-16** (terminology), **B-23/B-24** (+ Q-10/Q-11). *(**B-04/B-17** relic timing / Sieve↔Ward — **CLOSED v1.18**, App. N; **B-15** §5 Radiant misprint — **CLOSED v1.17**; **B-21** Breach clamp — **CLOSED v1.19**.)*
+**Still open after this appendix:** **B-18** (orphan damage types — *content*, not math) — **now CLOSED (v1.16)** in **App. B v2.0**; the active next items are **B-09** (skill slots), **B-23/B-24** (+ Q-10/Q-11). *(**B-04/B-17** relic timing / Sieve↔Ward — **CLOSED v1.18**, App. N; **B-14/B-16** terminology — **CLOSED v1.20**, App. K §K.10; **B-15** §5 Radiant misprint — **CLOSED v1.17**; **B-21** Breach clamp — **CLOSED v1.19**.)*
 
 ### L.9 Schema (resolver config + damage event)
 
@@ -1668,7 +1702,7 @@ Corruption's `ItemRarity` bonus (§7.6) shifts this distribution upward (deep Co
 | **B-02** | Implicits missing from schema | **Closed** — `implicits[]` added; grade-scaled per §4.1 (M.5/M.7). |
 | **B-03** | No tier values / ilvl / reqLevel | **Closed** — tier ladder + `maxTier(ilvl)` + `requiredLevel` (M.4/M.5). |
 
-**Still open after this appendix:** **B-09** (skill slots), **B-14/B-16** (terminology), **B-23/B-24** (+ Q-10/Q-11). *(**B-04/B-17** relic timing / Ward relationship — **CLOSED v1.18**, App. N; **B-18** orphan damage-type *sources* — **CLOSED v1.16**, App. B v2.0; **B-15** §5 Radiant misprint — **CLOSED v1.17**; **B-21** Breach clamp — **CLOSED v1.19**.)*
+**Still open after this appendix:** **B-09** (skill slots), **B-23/B-24** (+ Q-10/Q-11). *(**B-14/B-16** terminology — **CLOSED v1.20**, App. K §K.10; **B-04/B-17** relic timing / Ward relationship — **CLOSED v1.18**, App. N; **B-18** orphan damage-type *sources* — **CLOSED v1.16**, App. B v2.0; **B-15** §5 Radiant misprint — **CLOSED v1.17**; **B-21** Breach clamp — **CLOSED v1.19**.)*
 
 ### M.9 Definition of Done & Sign-off Gate
 

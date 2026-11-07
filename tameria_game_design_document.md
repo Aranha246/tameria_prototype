@@ -111,9 +111,9 @@ Slain corrupted mobs drop **Calamity Motes** (ratified, §6.1). Motes visibly co
 - **Vigil Power (post-100):** each level past 100 awards **Vigil Points**.
   - **Hard-capped nodes** — high-impact stats, e.g. Crit Chance max **+3%**, Max Resist Cap max **+2%**, CDR max **+5%**, Move Speed max **+5%**.
   - **Uncapped nodes** — baseline stats, e.g. `+0.5 Primary Stat`, `+2 Health`, `+3 Armor`.
-  - **Soft-cap rule** — past **Rank 200** in any uncapped node, per-point returns drop by **50%**.
+  - **Soft-cap rule** — past **200 points** in any uncapped node, per-point returns drop by **50%**.
 
-> **Resolved (B-01, v1.13).** The §7.3 JSON example formerly stated `totalVigilPointsEarned: 42` while its nodes allocate `15 + 210 + 50 = 275`. The **per-point math was correct** (see below) and the nodes are **provably correct** — §2.1's Rank-200 soft cap forces `conquest_primary_stat ≥ 200` points, so the nodes cannot shrink (§7.3 exists *to demonstrate* the soft-cap crossing). The `42` (= `142 − 100`) was therefore the error. **Ratified faucet: 1 Vigil Point per level past 100**, so the earned total must equal the allocated total. Corrected example → `characterLevel: 375, totalVigilPointsEarned: 275`. **Q-07 answered.** Full derivation in Action Plan **Appendix K**. *(This is the separate, infinite Vigil budget — not the finite 130-point tree above.)*
+> **Resolved (B-01, v1.13).** The §7.3 JSON example formerly stated `totalVigilPointsEarned: 42` while its nodes allocate `15 + 210 + 50 = 275`. The **per-point math was correct** (see below) and the nodes are **provably correct** — §2.1's 200-point soft cap forces `conquest_primary_stat ≥ 200` points, so the nodes cannot shrink (§7.3 exists *to demonstrate* the soft-cap crossing). The `42` (= `142 − 100`) was therefore the error. **Ratified faucet: 1 Vigil Point per level past 100**, so the earned total must equal the allocated total. Corrected example → `characterLevel: 375, totalVigilPointsEarned: 275`. **Q-07 answered.** Full derivation in Action Plan **Appendix K**. *(This is the separate, infinite Vigil budget — not the finite 130-point tree above.)*
 
 **Verified per-point conversions [Ratified, math audited]:**
 - `conquest_primary_stat`: 200 pts × 0.5 = 100 → 10 pts × 0.5 × 0.5 = 2.5 → **102.5** ✔
@@ -829,17 +829,18 @@ The load-bearing walls — no content authoring until these are resolved:
 {
   "characterLevel": 375,
   "totalVigilPointsEarned": 275,
-  "softCapRank": 200,
+  "softCapPoints": 200,
   "nodes": {
     "conquest_crit_chance":   { "type": "HardCapped", "points": 15,  "maxPoints": 30,  "currentBonus": 0.015 },
-    "conquest_primary_stat":  { "type": "Uncapped",   "points": 210, "softCapRank": 200, "currentBonus": 102.5 },
-    "resiliency_max_health":  { "type": "Uncapped",   "points": 50,  "softCapRank": 200, "currentBonus": 100 }
+    "conquest_primary_stat":  { "type": "Uncapped",   "points": 210, "softCapPoints": 200, "currentBonus": 102.5 },
+    "resiliency_max_health":  { "type": "Uncapped",   "points": 50,  "softCapPoints": 200, "currentBonus": 100 }
   },
   "pointsSpent": 275,
   "pointsUnspent": 0
 }
 ```
 > Faucet rule: **1 Vigil Point per level past 100** (`earned == characterLevel − 100`). `375 − 100 = 275` = `15 + 210 + 50` ✔. See §5.1 and Action Plan **Appendix K**.
+> **Vocabulary (B-14/B-16, v1.20).** The unit is the **point**; "Rank" is retired (`softCapRank` → `softCapPoints`). `maxPoints` is the **hard** ceiling on a node's points and is present **only** on `HardCapped` nodes; its **absence ⇒ unbounded** (`Uncapped`). Node `type` is therefore **derived**: `HardCapped ⇔ maxPoints present`. Numeric values unchanged.
 
 ---
 
@@ -866,3 +867,4 @@ The load-bearing walls — no content authoring until these are resolved:
 | 17 | **§5 relic-favor copy corrected** — the printed `+3% All Resistances (+8% Fire/Radiant)` superseded by `+3% Fire/Lightning/Ice Resistance (+8% Fire, +5% Radiant)`; Radiant = **5%**, "All Resistances" scope retired; copy-only, model unchanged (§10.1) (B-15 closed) | Author ruling |
 | 18 | **Relic activation & Sieve continuity ratified** — favor is **live on pickup** (Aegis Act 2 / Hearth Act 3 / Astral Key Act 5; full total by Act 5); the "(Act 7+)" label re-scopes to the Sieve's operation, so socketing is a numeric no-op. Across the Rejection the **Sieve Mirror** carries the favor to the Ward — **continuous**, no power drop (§10.2) (B-04/B-17 closed, Q-05 answered) | Author ruling |
 | 19 | **Breach underflow resolved** — a sub-objective is the **delivery mechanism for relic activation** (one sub-objective ↔ one relic), so §1.1's "sub-objectives + relic activation" is a **single** reduction source (total exactly `20.0`); Breach is **clamped at `0.0`** unconditionally; `breach_clamp_min` added to the zone schema (§12.1.1) (B-21 closed) | Author ruling |
+| 20 | **Vigil vocabulary normalized** — the unit is the **point**, "Rank" retired, `softCapRank` → `softCapPoints`; `maxPoints` present ⇔ `HardCapped` / absent ⇒ unbounded (type is derived) (§5.1, A.3) (B-14/B-16 closed) | Author ruling |
