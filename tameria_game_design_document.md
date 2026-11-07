@@ -514,8 +514,13 @@ Because **Radiant is not Elemental**, the Aegis's "+3% All Elemental" does **not
 
 **[B-15 — CLOSED, v1.17]** This is the **adopted wording**; the source's printed `+3% All Resistances (+8% Fire/Radiant)` is superseded. **Copy-only** change — relic numbers are unchanged.
 
-> **[Open] (B-04 / Q-05):** are relic favor effects **live on pickup**, or only once **socketed into the World Sieve**? The source labels the total "(Act 7+)" but never states activation timing.
-> **[Open] (B-17):** the Sieve sits on the now-inaccessible island, yet the endgame operates from the Ward — the relationship is unstated.
+### 10.2 Activation & Continuity **[Ratified — B-04/B-17; Q-05 answered]**
+
+**Favor is live on pickup.** Each relic grants its favor from the Act it is recovered — **Aegis (Act 2)**, **Hearth (Act 3)**, **Astral Key (Act 5)**. The full total is assembled by **Act 5**, two Acts before the finale. The source's "(Act 7+)" label marks when the **World Sieve operates** (the Act 7 purge), *not* when favor turns on — so **socketing at the climax is a numeric no-op**.
+
+**Continuity across the Rejection.** At the Act 7 climax the relics are socketed into the Sieve to purge the sanctuary; the Rejection then seals the island. Favor does **not** lapse: the **Sieve Mirror** — the portable focus used to open Calamity Rifts from *The Lonely Watch* — channels the relics' favor to the hero at the Ward. Favor is therefore **continuous** across the campaign → endgame transition, with **no post-campaign power drop** (P4 — the cost of exile is *home*, not *power*).
+
+> Full ruling, timeline table and the data model: **action plan Appendix N**.
 
 ---
 
@@ -858,3 +863,4 @@ The load-bearing walls — no content authoring until these are resolved:
 | 15 | **Item generation specified** — *rarity-first* ordering, canonical rarity→count→split table, T0–T10 tier ladder with `maxTier(ilvl)`, `implicits[]` + `itemLevel`/`requiredLevel` in the schema (§8.2b, §8.3, §8.5, §7.1) (R2 resolved; B-02, B-03, B-10, B-11, B-12 closed; Q-01…Q-04 answered) | Author ruling |
 | 16 | **Damage taxonomy expanded to six types** — adds **`Umbral`** (corruption/void), the antonym of `Radiant` (cleansing/Beacon); Elemental ≡ {Fire, Lightning, Ice}, Radiant & Umbral ∉ Elemental. Adds the **conversion channel** (skill-tree node + glyph) and the **class-coverage rule** (≥3 damage types per class). Resistances now **five** (incl. Umbral); Vigil resist-cap covers all five; pipeline type order + ailment table updated (§7.1, §7.2, §7.4, §7.5) (B-18 closed) | Author ruling |
 | 17 | **§5 relic-favor copy corrected** — the printed `+3% All Resistances (+8% Fire/Radiant)` superseded by `+3% Fire/Lightning/Ice Resistance (+8% Fire, +5% Radiant)`; Radiant = **5%**, "All Resistances" scope retired; copy-only, model unchanged (§10.1) (B-15 closed) | Author ruling |
+| 18 | **Relic activation & Sieve continuity ratified** — favor is **live on pickup** (Aegis Act 2 / Hearth Act 3 / Astral Key Act 5; full total by Act 5); the "(Act 7+)" label re-scopes to the Sieve's operation, so socketing is a numeric no-op. Across the Rejection the **Sieve Mirror** carries the favor to the Ward — **continuous**, no power drop (§10.2) (B-04/B-17 closed, Q-05 answered) | Author ruling |

@@ -3,7 +3,7 @@
 
 **Source analyzed:** `tameria_project_specifications.md` (v1 — Technical Specification & System Architecture)
 **Analysis date:** 2026-11-06
-**Revision:** **v1.17** — **§5 relic-favor copy corrected (B-15 closed).** The source's printed World Sieve total `+3% All Resistances (+8% Fire/Radiant)` is replaced with `+3% Fire/Lightning/Ice Resistance (+8% Fire, +5% Radiant)` — Radiant is **5%**, not 8% (it is not Elemental, so the Aegis's "+3% All Elemental" never applied to it), and the undefined "All Resistances" scope is retired. **Copy-only** fix; the relic model itself is unchanged and protected (App. A). (v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
+**Revision:** **v1.18** — **Relic activation & Sieve continuity ratified (closes B-04, B-17; answers Q-05).** New **Appendix N**: relic favor is **live on pickup** (each relic self-activates the act it is recovered — Aegis Act 2, Hearth Act 3, Astral Key Act 5; the full total is assembled by **Act 5**), and the source's "(Act 7+)" label is re-scoped to the *Sieve's operation*, not activation — so socketing at the Act 7 climax is a **numeric no-op**. Across the Rejection the **Sieve Mirror** (portable focus) carries the relics' favor to the Ward, so the total is **continuous** with no post-campaign power drop. (v1.17 corrected the §5 relic-favor copy, B-15; v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
 **Scope:** Full review of speculative content, conflict/gap mapping, targeted design feedback, feasibility assessment, prioritized roadmap, balancing, narrative tie-ins, and ARPG-standard QC.
 
 > **How to read this document:** Existing spec content is referenced by section (e.g. §3.1). Findings are tagged `C-xx` (register item), `G-xx` (gap), `B-xx` (new finding, v1.1), `Q-xx` (open question), `F-xx` (proposed feature). Each register item is now **typed** as Conflict / Ambiguity / Gap / Design risk / Underdevelopment. All numbers outside of direct spec quotes are **proposals** and require design sign-off.
@@ -179,7 +179,7 @@ Disclosed in full so the register can be trusted:
 | **B-01** | **Vigil point accounting contradicts itself.** `totalVigilPointsEarned: 42` (Lv 142 − 100) but the three nodes allocate `15 + 210 + 50 = 275` points. | §7.3 | **CLOSED (v1.13)** — `42` was the error, not the nodes. Ratified fix: **1 Vigil Point per level past 100**, earned total = allocated total. Corrected example → `characterLevel: 375, totalVigilPointsEarned: 275`. See **Appendix K**; **Q-07** answered. |
 | B-02 | **Affix schema omits implicits**, even though §4.1 says the grade multiplies "implicits". No `implicit` field exists in §7.1. | §4.1 vs §7.1 | **CLOSED (v1.15):** `implicits[]` added to the schema; grade multiplier applies. See **Appendix M.5/M.7**. |
 | B-03 | **No `itemLevel` / `requiredLevel` / affix `min`–`max` range / tier table** in the item schema; §3.2 promises T0–T10 but no values exist. | §3.2, §7.1 | **CLOSED (v1.15):** shared **tier ladder** + per-stat anchor, `maxTier(ilvl)`, `requiredLevel = ilvl − 4`. See **Appendix M.4/M.5**. |
-| B-04 | **Relic activation timing unclear.** Relics are recovered in Acts 2/3/5, but the favor block is labelled "(Act 7+)" and §5 says they are "socketed into the World Sieve". Unclear whether favor is live on pickup or only after socketing. | §5, §1.1 | Medium |
+| B-04 | **Relic activation timing unclear.** Relics are recovered in Acts 2/3/5, but the favor block is labelled "(Act 7+)" and §5 says they are "socketed into the World Sieve". Unclear whether favor is live on pickup or only after socketing. | §5, §1.1 | **CLOSED (v1.18):** favor is **live on pickup** — each relic self-activates the act it is recovered (Aegis 2 / Hearth 3 / Astral Key 5). "(Act 7+)" re-scopes to the *Sieve's operation*, so socketing is a numeric no-op. See **App. N / Q-05**. |
 | B-05 | **"Breach" is never defined** (Act 7 "20% Breach"). | §1.1 | **CLOSED (v1.7)** — defined by author as a zone-level **barrier-penetration** metric (0–100%); see **Appendix F**. |
 | B-06 | **Corruption % has no stated mechanical effect** — 10/25/45/60/75/95 are labels only. | §1.1 | **CLOSED (v1.14):** Corruption formalised as the campaign's **master difficulty scalar** — drives enemy HP/damage/ailment-chance/rare-pack density, and yields **item rarity** (two-sided). See **Appendix L.7**; **Q-06** answered. |
 | B-07 | **Grade-cap behaviour undefined** — §4.2 defines Success/Neutral/Failure but not what happens on Success at max grade (S / SSS). | §4.2 | Low — **CLOSED (v1.5):** at the cap a Success roll is a **no-op** (materials not consumed); at the floor a Failure is likewise a no-op. See **Appendix E.5**. |
@@ -192,7 +192,7 @@ Disclosed in full so the register can be trusted:
 | B-14 | **"points" vs "Rank" terminology drift** — §2.1 says "Past **Rank** 200"; §7.3 uses `points` and `softCapRank`. | §2.1, §7.3 | Low |
 | B-15 | **CONFIRMED (v1.3):** the §5 total mis-states Radiant — it prints `+8% Fire/Radiant`, but under the author's ruling Fire = 8% and **Radiant = 5%**. | §5 | **CLOSED (v1.17):** corrected copy adopted — `+3% Fire/Lightning/Ice Resistance (+8% Fire, +5% Radiant)`; the undefined "All Resistances" scope is retired (B-19). Applied in GDD §10.1 and **App. B.5**. |
 | B-16 | **`maxPoints` semantics inconsistent** — the hard-capped node carries `maxPoints: 30`; uncapped nodes carry none. | §7.3 | Low |
-| B-17 | **Sieve-favor ↔ Outer Ward relationship unstated** — the World Sieve sits on the now-inaccessible island, yet the endgame operates from the Ward. | §1.1, §5 | Medium |
+| B-17 | **Sieve-favor ↔ Outer Ward relationship unstated** — the World Sieve sits on the now-inaccessible island, yet the endgame operates from the Ward. | §1.1, §5 | **CLOSED (v1.18):** the **Sieve Mirror** (portable focus) channels the socketed relics' favor to the hero at the Ward — favor is **continuous** across the Rejection; no post-campaign power drop. See **App. N**. |
 | **B-18** | **Orphan damage types (v1.3):** Lightning, Ice and Radiant have **zero damage sources** anywhere in the spec — no affix, skill, enemy or item produces them. Only Fire and Physical are sourced. | §3, §6, §7 | **CLOSED (v1.16):** taxonomy expanded to **six** types (adds **Umbral**); sources are guaranteed by the **class-coverage rule** (≥3 damage types per class) plus the **conversion channel** (tree node + glyph). See **Appendix B v2.0**. |
 | **B-19** | **"All Resistances" scope undefined (v1.3):** the §5 total uses a scope that matches no defined grouping (the Aegis says "All **Elemental**"). | §5 | **CLOSED (v1.14):** term **retired**; the only legal collective scope is **"All Elemental Resistance(s)"** ≡ Fire + Lightning + Ice. See **Appendix L.4**. |
 | **B-20** | **Vigil "Max Resist Cap +2%" scope undefined (v1.3):** with 4 resistance types now defined, it is unstated whether the bonus covers Radiant. | §2.1 | **CLOSED (v1.14):** applies to the **full percentage-resistance set** (incl. Radiant — and Umbral after v1.16) → **77%** cap. See **Appendix L.4**. |
@@ -209,7 +209,7 @@ Disclosed in full so the register can be trusted:
 | Q-02 | ~~**Rare definition**: is Rare strictly the 2P/2S (4-affix) family, or does it still include the 2-affix and 3-affix cases in the §3.1 Rare row?~~ **ANSWERED (v1.15):** the **2–4 family** — 2 ⇒ skewed, 3 ⇒ `2P+1S`/`1P+2S`, 4 ⇒ `2P+2S` (**Appendix M.3**). | — *(closed)* |
 | Q-03 | ~~**Roll order**: is rarity rolled first (then affix count within range), or is affix count + split rolled first (then rarity mapped)?~~ **ANSWERED (v1.15):** **rarity first** → count → split → stat → tier → value (**Appendix M.2/M.6**). | — *(closed)* |
 | Q-04 | ~~**Legendary 5–6 affixes**: any split constraints, or genuinely free "mixed"?~~ **ANSWERED (v1.15):** constrained — 5 ⇒ `3P+2S`/`2P+3S`; 6 ⇒ `3P+3S` (**Appendix M.3**). | — *(closed)* |
-| Q-05 | **Relic favor**: active on pickup, or only once socketed into the Sieve (Act 7)? | Progression curve |
+| Q-05 | ~~**Relic favor**: active on pickup, or only once socketed into the Sieve (Act 7)?~~ **ANSWERED (v1.18): live on pickup** — each relic self-activates the act it is recovered; socketing at Act 7 is a narrative no-op (**Appendix N**; B-04). | — *(closed)* |
 | Q-06 | ~~**Corruption %**: what does each step actually change (hp / dmg / ailment chance / rare-pack odds)?~~ **ANSWERED (v1.14):** all four, plus item rarity — the master difficulty scalar (**Appendix L.7**). | — *(closed)* |
 | Q-07 | ~~**Vigil points**: is a node's `points` the *Vigil Points* budget or a separate "rank" track? Reconcile 42 vs 275.~~ **ANSWERED (v1.13):** a node's `points` **is** the Vigil Points budget (there is no separate rank track — `points` and `softCapRank` measure the same accumulated total). The `42` was a stale earned-total; the fix is 1 pt/level past 100 (App. K). | — *(closed)* |
 | Q-08 | ~~Is Radiant an element?~~ **ANSWERED (v1.3): Radiant is NOT elemental** — it is a first-class damage type with its own resistance stat. Elemental ≡ {Fire, Lightning, Ice}. | — *(closed)* |
@@ -442,7 +442,7 @@ No content authoring begins until: **the open register (C-02→C-08, B-01→B-17
 These elements are strong and should be **protected from scope creep**:
 
 - Vigil Power soft-cap **math** (§2.1) — per-point conversion verified correct (§1.3); fix only the B-01 accounting.
-- Precursor Relic global-favor model (§5) — clean and thematic. Its printed total was numerically wrong under the author's Radiant ruling; the **copy is now corrected** (B-15, v1.17; B-19, v1.14). Fix the **copy only** — the model itself is protected.
+- Precursor Relic global-favor model (§5) — clean and thematic. Its printed total was numerically wrong under the author's Radiant ruling; the **copy is now corrected** (B-15, v1.17; B-19, v1.14), and its **activation timing + Sieve continuity are now specified** (B-04/B-17, App. N, v1.18). Fix the **copy/wording only** — the model itself is protected.
 - Rarity → affix-count → prefix/suffix-split ladder (§3.1, §3.2) — now **verified sound** (see §2.2).
 - Gear sockets vs skill-tree sockets separation (§3.4) — good clarity.
 - The Rejection / Outer Ward endgame pivot (§1.1) — the game's best idea; expand, don't rewrite.
@@ -1437,7 +1437,7 @@ Resulting table (all values [Proposed]):
 | **B-20** | Vigil "+2% Max Resist Cap" — Radiant? | **Closed** — applies to **all five** percentage resistances incl. Radiant & Umbral → 77% cap (L.4). |
 | **Q-09** | Base resistance cap unspecified | **Answered** — base **75%** [Proposed] (L.4). |
 
-**Still open after this appendix:** **B-18** (orphan damage types — *content*, not math) — **now CLOSED (v1.16)** in **App. B v2.0**; the active next items are **B-04/B-17** (relic timing / Sieve↔Ward), **B-09** (skill slots), **B-14/B-16** (terminology), **B-21** (Breach clamp), **B-23/B-24** (+ Q-10/Q-11). *(**B-15** §5 Radiant misprint — **CLOSED v1.17**.)*
+**Still open after this appendix:** **B-18** (orphan damage types — *content*, not math) — **now CLOSED (v1.16)** in **App. B v2.0**; the active next items are **B-09** (skill slots), **B-14/B-16** (terminology), **B-21** (Breach clamp), **B-23/B-24** (+ Q-10/Q-11). *(**B-04/B-17** relic timing / Sieve↔Ward — **CLOSED v1.18**, App. N; **B-15** §5 Radiant misprint — **CLOSED v1.17**.)*
 
 ### L.9 Schema (resolver config + damage event)
 
@@ -1653,7 +1653,7 @@ Corruption's `ItemRarity` bonus (§7.6) shifts this distribution upward (deep Co
 | **B-02** | Implicits missing from schema | **Closed** — `implicits[]` added; grade-scaled per §4.1 (M.5/M.7). |
 | **B-03** | No tier values / ilvl / reqLevel | **Closed** — tier ladder + `maxTier(ilvl)` + `requiredLevel` (M.4/M.5). |
 
-**Still open after this appendix:** **B-04/B-17** (relic timing / Ward relationship), **B-09** (skill slots), **B-14/B-16** (terminology), **B-21** (Breach clamp), **B-23/B-24** (+ Q-10/Q-11). *(**B-18** orphan damage-type *sources* — **CLOSED v1.16**, App. B v2.0; **B-15** §5 Radiant misprint — **CLOSED v1.17**.)*
+**Still open after this appendix:** **B-09** (skill slots), **B-14/B-16** (terminology), **B-21** (Breach clamp), **B-23/B-24** (+ Q-10/Q-11). *(**B-04/B-17** relic timing / Ward relationship — **CLOSED v1.18**, App. N; **B-18** orphan damage-type *sources* — **CLOSED v1.16**, App. B v2.0; **B-15** §5 Radiant misprint — **CLOSED v1.17**.)*
 
 ### M.9 Definition of Done & Sign-off Gate
 
@@ -1664,3 +1664,67 @@ Corruption's `ItemRarity` bonus (§7.6) shifts this distribution upward (deep Co
 4. **Implicits in the schema** and the `requiredLevel` rule (M.5).
 
 **After sign-off:** author the **base-type catalog** and the **per-stat `T10Anchor` table**, then implement the generator as a single `ItemGenerator` with a seeded RNG (reproducible for QA). Absolute **drop rates** remain part of the economy gap (**G-06**).
+
+---
+
+## Appendix N — Precursor Relic Activation & Sieve Continuity
+
+*Ratified by author ruling (v1.18). **Closes B-04 and B-17; answers Q-05.** The relic **numbers** are unchanged — **B-15** corrected only the copy (v1.17). This appendix fixes **when** the favor is live and **how** it survives the campaign → endgame transition.*
+
+### N.0 What this closes
+
+| Finding | Question it answered | Ruling |
+| :--- | :--- | :--- |
+| **B-04 / Q-05** | Is favor live **on pickup** or only after **socketing into the Sieve**? | **Live on pickup** — each relic self-activates the act it is recovered. |
+| **B-17** | The Sieve is sealed on the inaccessible island, yet the endgame runs from the Ward — how does favor persist? | **The Sieve Mirror carries it** — the portable focus channels the relics' favor to the hero at the Ward; the total never drops. |
+
+### N.1 Activation timing — favor is live on pickup **[Ratified]**
+
+Favor applies from the moment a relic is **recovered**; there is no dormant period.
+
+| Relic | Recovered | Favor live from | Favor |
+| :--- | :--- | :--- | :--- |
+| The Sunken Aegis | Act 2 | **Act 2** | `+5% Max Life` \| `+3% Armor/DR` \| `+3% All Elemental Resistance` |
+| The Hearth of Ignition | Act 3 | **Act 3** | `+5% Fire & Radiant Resistance` \| `-10% Debuff Duration` \| `+3% Damage vs. Calamity` |
+| The Astral Key | Act 5 | **Act 5** | `+3% Move Speed` \| `+5% CDR` \| `-10% Hazard Damage Taken` |
+| **Full total assembled** | — | **Act 5** | All three in hand — the aggregate block is complete **two Acts before the finale** |
+
+**Re-scoping the source's "(Act 7+)" label.** The label is **retained**, but it marks when the **World Sieve operates** (the Act 7 purge), *not* when favor turns on. "Socketing into the World Sieve" is the **narrative culmination** of the three relics — not an activation gate.
+
+**Socketing is a numeric no-op.** Because favor is already live, the Act 7 socketing changes **fiction, not stats**. This avoids a hidden second power spike at the climax and keeps the Act 5 → 7 curve legible.
+
+### N.2 Continuity across the Rejection — the Sieve Mirror carries favor **[Ratified]**
+
+At the Act 7 climax the three relics are socketed into the Sieve to purge the sanctuary; the Rejection then seals the island. Favor **does not lapse**.
+
+- The **Sieve Mirror** — already canonical as the device the hero uses to open *Calamity Rifts* from *The Lonely Watch* — is the **portable focus** that channels the socketed relics' favor to the hero.
+- The relics stay physically at the sealed Sieve; their **favor travels with the Mirror**. Favor is therefore **continuous**: full total before the Rejection, full total after.
+- **No re-acquisition, no post-campaign power drop.** The endgame opens at the same favor baseline on which the campaign closed (reinforcing Pillar **P4 — earned exile**: the cost is *home*, not *power*).
+
+### N.3 Data-model implication
+
+Relic favor is a **persistent global buff set** keyed by relic ID and gated by **recovery** — never by a Sieve socket state:
+
+```json
+{
+  "relicFavor": {
+    "source": "hero",              // char-scoped; delivered by the Sieve Mirror
+    "activation": "onPickup",      // B-04 / Q-05 ruling
+    "socketingGated": false,       // Act 7 socketing is a narrative no-op
+    "survivesRejection": true,     // B-17 ruling — Sieve Mirror continuity
+    "relics": [
+      { "id": "sunken_aegis",       "recoveredAct": 2, "active": true },
+      { "id": "hearth_of_ignition", "recoveredAct": 3, "active": true },
+      { "id": "astral_key",         "recoveredAct": 5, "active": true }
+    ]
+  }
+}
+```
+
+`active` is derived from `recoveredAct <= currentAct`. **Nothing** in the relic system reads the World Sieve's physical state, so the sealed-island state (B-17) can never strand or drop the favor.
+
+### N.4 Definition of Done & Sign-off Gate
+
+**Sign-off required on the two rulings:** (1) **favor live on pickup** (N.1); (2) **Sieve Mirror continuity** across the Rejection (N.2). Both are behaviour-defining but *zero-number* — no balance re-derivation follows.
+
+**Cross-refs:** GDD **§10.2** (mirrors this ruling); **B-15** (copy, v1.17); **App. A** (relic model protected — this appendix specifies behaviour, not stats).
