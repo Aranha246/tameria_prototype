@@ -3,7 +3,7 @@
 
 **Source analyzed:** `tameria_project_specifications.md` (v1 — Technical Specification & System Architecture)
 **Analysis date:** 2026-11-06
-**Revision:** **v1.21** — **Skill-layer budget ratified (B-09, B-23, B-24 closed; Q-10, Q-11 answered).** The three findings are one interlocking budget and are fixed together: **actives per class `S = 8`** (B-24), **specialization/equipped slots = 6** (B-09), and the **Talent-Point budget `P = 60`** per tree → both paths award **120 TP** with depth gates **0/20/50/100** (B-23/Q-10). A **TP faucet (`+2`/level, hard cap `120`, reached Lv 61)** is stated so the budget is funded — avoiding a repeat of the **B-01** class of defect. **Q-11** ratified: curated fusion **floor 21** (15 pairs + 6 apexes), optional alternates to `~27`. See **Appendix O**. **(Register status: all findings closed.)** (v1.20 normalized Vigil vocabulary, closed B-14/B-16, App. K.10; v1.19 closed B-21; v1.18 ratified relic activation + Sieve continuity, App. N, closed B-04/B-17, answered Q-05; v1.17 corrected the §5 relic-favor copy, B-15; v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
+**Revision:** **v1.22** — **Talent-point model re-ratified.** The author revised the skill-layer budget: Talent Points now **unlock at Lv 10** (the mastery-choice level) and award **+2 per level**, **hard-capped at 180** — ≈**120 TP by campaign end (Lv 70)**, the **cap landing at Lv 100** (aligned with the passive tree completing at Lv 100 and Vigil starting at Lv 101). Parity keeps the 2:1 ratio → **`P = 90`/tree** (Dual `90+90`; Single `180`). A class tree is **≥100 nodes / ~220 TP** — still **never completable** — with **notables-only multi-rank** nodes (filler / keystone / skill-behavior = **1 pt**) and a clarified **skill-behavior node** role (behaviour, **not stats**). App. **I** and **O** revised. **New:** **B-25** logged (Layer-2 behaviour nodes vs Layer-4 mini-trees). (v1.21 ratified the skill-layer budget, App. O, closed B-09/B-23/B-24 + Q-10/Q-11; v1.20 normalized Vigil vocabulary, closed B-14/B-16, App. K.10; v1.19 closed B-21; v1.18 ratified relic activation + Sieve continuity, App. N, closed B-04/B-17, answered Q-05; v1.17 corrected the §5 relic-favor copy, B-15; v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
 **Scope:** Full review of speculative content, conflict/gap mapping, targeted design feedback, feasibility assessment, prioritized roadmap, balancing, narrative tie-ins, and ARPG-standard QC.
 
 > **How to read this document:** Existing spec content is referenced by section (e.g. §3.1). Findings are tagged `C-xx` (register item), `G-xx` (gap), `B-xx` (new finding, v1.1), `Q-xx` (open question), `F-xx` (proposed feature). Each register item is now **typed** as Conflict / Ambiguity / Gap / Design risk / Underdevelopment. All numbers outside of direct spec quotes are **proposals** and require design sign-off.
@@ -198,8 +198,9 @@ Disclosed in full so the register can be trusted:
 | **B-20** | **Vigil "Max Resist Cap +2%" scope undefined (v1.3):** with 4 resistance types now defined, it is unstated whether the bonus covers Radiant. | §2.1 | **CLOSED (v1.14):** applies to the **full percentage-resistance set** (incl. Radiant — and Umbral after v1.16) → **77%** cap. See **Appendix L.4**. |
 | **B-21** | **Breach underflow / double-source (v1.7):** the relic reductions sum to exactly `20.0` (5+5+10) and fully deplete the initial Act 7 value, yet the definition also credits "sub-objectives" with reducing Breach — so Breach could fall **below 0.0%**. | §1.1 (Act 7), App. F | **CLOSED (v1.19):** sub-objectives **activate** the relics (one sub-objective ↔ one relic) — a **single** reduction source, so the total is exactly `20.0`; Breach is additionally **clamped at `0.0`** unconditionally. See **App. F.4**. |
 | **B-22** | **Hero taint mechanics undefined (v1.8):** taint is now *narratively* defined (the Hero is corrupted by the campaign → drives the Rejection), but unstated: how it **accumulates**, whether it is **reducible**, whether it has **gameplay effects**, and whether a **narrative floor** guarantees rejection regardless of play. | §1.1, App. G | **CLOSED (v1.9)** — hybrid model (Act floor + exposure) ratified; mechanical/visible tradeoff ratified. See **Appendix G**. |
-| **B-23** | **Absolute Talent-Point budget unstated (v1.11):** §2.2 fixes only the *ratio* (Single = 2× Dual) and never the base per-tree award, so neither path's power can be evaluated. | §2.2 | **CLOSED (v1.21):** `P = 60`/tree ratified → both paths award **120 TP**; depth gates **0/20/50/100**; faucet `+2`/level with hard cap `120`. See **Appendix O.3/O.4**; **Q-10** answered. |
+| **B-23** | **Absolute Talent-Point budget unstated (v1.11):** §2.2 fixes only the *ratio* (Single = 2× Dual) and never the base per-tree award, so neither path's power can be evaluated. | §2.2 | **CLOSED (v1.21; re-ratified v1.22):** **`P = 90`**/tree → both paths award **180 TP**; depth gates **0/20/50/100**; faucet **Lv-10 unlock, `+2`/level, hard cap `180`**. See **Appendix O.3/O.4**; **Q-10** answered. |
 | **B-24** | **Actives-per-class (`S`) undefined (v1.12):** §2.4 describes slotted actives but never states how many actives a class has, so the size of *any* open fusion matrix is incomputable. | §2.3, §2.4 | **CLOSED (v1.21):** **`S = 8`** actives per class (**48** total). Bounds the class skill lists; the curated table (App. J) is unaffected. See **Appendix O.1**; **Q-11** answered. |
+| **B-25** | **Layer-2 skill-behavior nodes vs Layer-4 mini-trees overlap (v1.22):** the class tree now contains nodes that alter *skill behaviour* (§2.2 / App. O.7), and the Layer-4 mini-tree is *also* described as behavioural (§2.4) — the boundary is unstated. | §2.2, §2.4 | **[Proposed]:** split by **scope** — class-tree behaviour nodes act at **family/archetype** scope; mini-trees act at **single-skill** scope. See **Appendix O.7**. Pending sign-off. |
 
 ### 2.5 Open Questions Requiring Author Clarification
 
@@ -214,7 +215,7 @@ Disclosed in full so the register can be trusted:
 | Q-07 | ~~**Vigil points**: is a node's `points` the *Vigil Points* budget or a separate "rank" track? Reconcile 42 vs 275.~~ **ANSWERED (v1.13):** a node's `points` **is** the Vigil Points budget (there is no separate rank track — `points` and `softCapRank` measure the same accumulated total). The `42` was a stale earned-total; the fix is 1 pt/level past 100 (App. K). | — *(closed)* |
 | Q-08 | ~~Is Radiant an element?~~ **ANSWERED (v1.3): Radiant is NOT elemental** — it is a first-class damage type with its own resistance stat. Elemental ≡ {Fire, Lightning, Ice}. | — *(closed)* |
 | Q-09 | ~~**Base resistance cap**: the doc only grants "+2% Max Resist Cap" via Vigil — is the base 75%?~~ **ANSWERED (v1.14):** base **75%** [Proposed] → **77%** with Vigil; floor **−100%** (**Appendix L.4**). | — *(closed)* |
-| Q-10 | ~~**Talent-Point budget `P`**: §2.2 gives only the *ratio*; ratify the absolute per-tree award (proposed `P = 60`, both paths = 120) and the **depth-gate values** (App. I.3).~~ **ANSWERED (v1.21):** `P = 60`/tree (both paths **120 TP**); depth gates **0/20/50/100**; faucet `+2`/level, cap `120` (**Appendix O.3/O.4**; B-23). | — *(closed)* |
+| Q-10 | ~~**Talent-Point budget `P`**: §2.2 gives only the *ratio*; ratify the absolute per-tree award (proposed `P = 60`, both paths = 120) and the **depth-gate values** (App. I.3).~~ **ANSWERED (v1.21; re-ratified v1.22):** **`P = 90`**/tree (both paths **180 TP**); depth gates **0/20/50/100**; faucet **Lv-10 unlock, `+2`/level, hard cap `180` (reached Lv 100)**; class tree **≥100 nodes / ~220 TP**; multi-rank = **notables only** (**Appendix O.3/O.4/O.7**; B-23/B-25). | — *(closed)* |
 | Q-11 | ~~**Fusion coverage**: ratify the **21-recipe floor** (15 pairs + 6 apexes) and whether alternates are wanted beyond it (proposed cap `~27`).~~ **ANSWERED (v1.21):** floor **21** ratified; optional alternates permitted up to **`~27`** (**Appendix O.1 / J.3**; B-24). | — *(closed)* |
 
 ### 2.6 Underdeveloped Concepts (exist but too thin to build)
@@ -222,7 +223,7 @@ Disclosed in full so the register can be trusted:
 | System | What's missing |
 | :--- | :--- |
 | Classes (§2.2) | No fantasy, no resource system, no signature mechanic, no skill list, no attribute bias |
-| Class talent trees (§2.2) | "Unlock Active Skills at depth thresholds" — **[PARTIAL v1.11]** the **depth-gate model** (Tier 1–4, gates 0/20/50/100) and the **parity budget** are now defined (**Appendix I**); the per-class **node lists, branch structure and skill-unlock thresholds** remain to be authored. |
+| Class talent trees (§2.2) | "Unlock Active Skills at depth thresholds" — **[PARTIAL v1.22]** the **depth-gate model** (Tier 1–4, gates 0/20/50/100), the **parity budget** (`P = 90`/tree → 180 TP, Lv-10 faucet), the **node taxonomy** (filler / notable / skill-behavior / keystone) and the **tree size** (**≥100 nodes / ~220 TP**) are defined (**App. I / O.7**); the per-class **node lists, branch structure and skill-unlock thresholds** remain to be authored. |
 | Mastery tree (§2.3) | **[PARTIAL v1.12]** the **fusion table structure + 21-recipe floor** are now defined (**Appendix J**); the per-class **passive list** and the **actual 21 recipes** (names, inputs, effects) remain to be authored. |
 | Skill mini-trees (§2.4) | No node taxonomy; "behavioral shifts, elemental conversions, utility" is a category, not a design |
 | Glyphs (§2.4) | 4 named examples; no socket-count rules, no rarity, no acquisition |
@@ -947,7 +948,7 @@ Level points = `1` (awarded at Lv 1) + one per level-up. Quest points per H.3.
 
 ## Appendix I — Dual vs Single Mastery Parity (C-06 Resolution)
 
-*Ratified from author direction (v1.11). Closes **C-06**. Author rulings: (1) class trees are **deliberately larger than any budget** (≈150 nodes / ≈200 TP — a player *never* completes one); (2) **Single-Class gains Empowered-exclusive capstones**; (3) the parity axis is **Dual = breadth/ceiling, Single = depth/consistency**.*
+*Ratified from author direction (v1.11; **budget & tree size re-ratified v1.22**). Closes **C-06**. Author rulings: (1) class trees are **deliberately larger than any budget** (**≥100 nodes / ~220 TP** — a player *never* completes one); (2) **Single-Class gains Empowered-exclusive capstones**; (3) the parity axis is **Dual = breadth/ceiling, Single = depth/consistency**.*
 
 ### I.1 What C-06 Was
 
@@ -955,7 +956,7 @@ An **Underdevelopment**, not a conflict. §2.2 commits the *shape* of both paths
 
 ### I.2 The Design Fact That Resolves It
 
-Because a tree (~200 TP / ~150 nodes) can **never** be cleared, **every point is exclusive**. A budget is therefore a *set of choices*, and the two paths differ only in how those choices are distributed:
+Because a tree (~220 TP / ≥100 nodes) can **never** be cleared, **every point is exclusive**. A budget is therefore a *set of choices*, and the two paths differ only in how those choices are distributed:
 
 ```text
 Dual   →  P  into tree A  +  P  into tree B     (independent pools; the source forbids merging them)
@@ -977,14 +978,14 @@ Talent nodes sit behind **cumulative-investment gates** (points already spent in
 
 > §2.2's **"higher cap thresholds"** (Single) is read **literally**: the Empowered tree's gates extend **past the Tier-3 cap that Dual hits**. That single sentence is the parity lever.
 
-### I.4 Ratified Numbers (B-23 / Q-10 closed, v1.21)
+### I.4 Ratified Numbers (B-23 / Q-10 closed v1.21; **budget re-ratified v1.22**)
 
-`P = 60` per tree → **both paths award 120 TP** (ratified; the level faucet that funds `2P` is in **Appendix O.4**).
+`P = 90` per tree → **both paths award 180 TP** (ratified; the Lv-10 faucet that funds `2P` is in **Appendix O.4**).
 
 | Path | Trees | Points | Total | Deepest tier reached | Fusion |
 | :-- | :-- | :-- | :-- | :-- | :-- |
-| **Dual-Class** | 2 | `60 + 60` | **120** | **Tier 3 — Keystone ×2** | cross-class hybrid |
-| **Single-Class** | 1 (Empowered) | `120` | **120** | **Tier 4 — Apex** + exclusive capstone | intra-class apex |
+| **Dual-Class** | 2 | `90 + 90` | **180** | **Tier 3 — Keystone ×2** | cross-class hybrid |
+| **Single-Class** | 1 (Empowered) | `180` | **180** | **Tier 4 — Apex** + exclusive capstone | intra-class apex |
 
 Result:
 - **Dual** reaches **two Keystones** in **two themes** — but can *never* touch an Apex.
@@ -994,8 +995,8 @@ Result:
 
 | Condition | Check |
 | :-- | :-- |
-| **Budget parity** | `120 = 120` ✔ |
-| **Absorption parity** | tree holds ~200 > 120, so **no point is wasted** on either path ✔ *(this is precisely why the author's "never complete a tree" ruling matters)* |
+| **Budget parity** | `180 = 180` ✔ |
+| **Absorption parity** | tree holds ~220 > 180, so **no point is wasted** on either path ✔ *(this is precisely why the author's "never complete a tree" ruling matters)* |
 | **Value parity** *(design target)* | `1 Apex + 1 exclusive capstone` ≈ `2 Keystones + cross-theme synergy` |
 
 **The ratified tradeoff:**
@@ -1023,8 +1024,9 @@ Matrix size is handled separately (**C-08**).
 {
   "talent_tree": {
     "tree_id": "warrior",
-    "node_count": 150,
-    "nominal_capacity_points": 200,
+    "node_count": 120,
+    "nominal_capacity_points": 220,
+    "multi_rank": "notables_only",
     "depth_gates": {
       "tier_1_minor": 0,
       "tier_2_major": 20,
@@ -1035,16 +1037,16 @@ Matrix size is handled separately (**C-08**).
   "mastery_path": {
     "mode": "dual_class",
     "trees": ["warrior", "sorcerer"],
-    "points_per_tree": 60,
-    "total_points": 120,
+    "points_per_tree": 90,
+    "total_points": 180,
     "deepest_tier": 3,
     "fusion_mode": "cross_class"
   },
   "mastery_path_empowered": {
     "mode": "single_class_empowered",
     "tree": "warrior_empowered",
-    "points": 120,
-    "total_points": 120,
+    "points": 180,
+    "total_points": 180,
     "deepest_tier": 4,
     "apex_unlocked": true,
     "exclusive_capstones": 6,
@@ -1055,11 +1057,11 @@ Matrix size is handled separately (**C-08**).
 
 ### I.8 Findings & Questions — closed
 
-- **B-23 / Q-10** — **CLOSED (v1.21):** the absolute budget is ratified at **`P = 60`**/tree (both paths **120 TP**) with depth gates **0/20/50/100**. See **Appendix O.3/O.4**.
+- **B-23 / Q-10** — **CLOSED (v1.21; budget re-ratified v1.22):** the absolute budget is **`P = 90`**/tree (both paths **180 TP**) with depth gates **0/20/50/100**. See **Appendix O.3/O.4**.
 
 ### I.9 Definition of Done
 
-**C-06 is closed**; as of **v1.21** the tuning knobs `P` and the gate values are **ratified** (`P = 60`; gates `0/20/50/100` — **App. O.3**). The **structure** (independent pools, depth gating, Empowered-only Tier 4, breadth-vs-depth axis) stands. Remaining is **authoring only**: node count, the per-class node lists, and the count/power budget of the Empowered-exclusive capstones.
+**C-06 is closed**; as of **v1.22** the budget and tree size are **ratified** (`P = 90`/tree → `180` total; tree **≥100 nodes / ~220 TP**; gates `0/20/50/100` — **App. O.3/O.4**). The **structure** (independent pools, depth gating, Empowered-only Tier 4, breadth-vs-depth axis) stands. Remaining is **authoring only**: the per-class node lists, the count/power budget of the Empowered-exclusive capstones, and the **skill-behavior node** content (App. O.7).
 
 ---
 
@@ -1779,7 +1781,7 @@ Relic favor is a **persistent global buff set** keyed by relic ID and gated by *
 
 ## Appendix O — Skill-Layer Budget: Actives, Slots & Talent Points (B-09 / B-23+Q-10 / B-24+Q-11 Resolution)
 
-*Ratified by author ruling (v1.21). **Closes B-09, B-23, B-24; answers Q-10, Q-11.** These findings are **one interlocking budget** and are fixed together — the per-class active roster `S` bounds the class skill lists (B-24), the equipped/specialization slot count bounds what a build can field (B-09), and the Talent-Point budget `P` bounds Layer 2 (B-23). Fixing them independently would let one layer silently contradict another.*
+*Ratified by author ruling (v1.21; **talent-point budget, tree size & node taxonomy re-ratified v1.22**). **Closes B-09, B-23, B-24; answers Q-10, Q-11.** These findings are **one interlocking budget** and are fixed together — the per-class active roster `S` bounds the class skill lists (B-24), the equipped/specialization slot count bounds what a build can field (B-09), and the Talent-Point budget `P` bounds Layer 2 (B-23). Fixing them independently would let one layer silently contradict another.*
 
 ### O.0 What this closes
 
@@ -1787,7 +1789,7 @@ Relic favor is a **persistent global buff set** keyed by relic ID and gated by *
 | :--- | :--- | :--- |
 | **B-24 / Q-11** | actives per class `S` | **`S = 8`** |
 | **B-09** | specialization / equipped slots | **6** (indexed `1–6`) |
-| **B-23 / Q-10** | Talent-Point budget `P` | **`P = 60`**/tree → both paths **120 TP**; gates `0/20/50/100` |
+| **B-23 / Q-10** | Talent-Point budget `P` | **`P = 90`**/tree → both paths **180 TP**; gates `0/20/50/100` (re-ratified v1.22) |
 
 ### O.1 Actives per class — `S = 8` **[Ratified]**
 
@@ -1806,23 +1808,24 @@ An active is **equipped** into one of **6 slots** (`assignedSpecializationSlot` 
 - **6 is the cross-input ceiling.** A standard gamepad binds a 6-skill bar with no chorded inputs (Input standard, §3), so keyboard/mouse and gamepad share **one** layout.
 - **Unifying "equipped" and "specialization"** avoids a second, hidden budget: you specialize exactly what you field.
 
-### O.3 Talent-Point budget — `P = 60` **[Ratified]**
+### O.3 Talent-Point budget — `P = 90` → **180 TP** **[Ratified v1.22]**
 
-`P = 60` per tree → **both paths award 120 TP** (ratifies **I.4**):
+`P = 90` per tree → **both paths award 180 TP** (ratifies **I.4**):
 
 | Path | Trees | Points | Deepest tier |
 | :--- | :--- | :--- | :--- |
-| **Dual-Class** | 2 | `60 + 60 = 120` | Tier 3 — Keystone ×2 |
-| **Single-Class** | 1 (Empowered) | `120` | Tier 4 — Apex + 1 exclusive capstone |
+| **Dual-Class** | 2 | `90 + 90 = 180` | Tier 3 — Keystone ×2 |
+| **Single-Class** | 1 (Empowered) | `180` | Tier 4 — Apex + 1 exclusive capstone |
 
-Depth gates **`0 / 20 / 50 / 100`** (**I.3**) stand. `120 < ~200` nominal capacity → **no point is wasted and no tree is completed** (**I.5** absorption parity).
+Depth gates **`0 / 20 / 50 / 100`** (**I.3**) stand: `90 < 100` keeps **Tier 4 Apex single-only** (parity), while `180 ≥ 100` lets Single reach it with room to spare. `180 < ~220` nominal capacity → **no point is wasted and no tree is completed** (**I.5** absorption parity).
 
-### O.4 Talent-Point faucet — funds the budget **[Ratified]**
+### O.4 Talent-Point faucet — funds the budget **[Ratified v1.22]**
 
 Fixing `P` without a faucet would repeat the **B-01** class of defect — a budget the faucet cannot fund. The faucet is therefore stated:
 
-- **+2 TP per level-up**, from Lv 2 through the campaign (Lv 1 → 70 = **69** level-ups).
-- **Hard cap at `2P = 120`** — the character's total TP pool (Dual: `P` per tree; Single: `2P` in one). The cap is reached at **Lv 61**; the campaign's last levels bank no further TP because the **pool**, not the tree, is exhausted.
+- **Unlock at Lv 10** — the level at which the mastery choice is made (**2nd class**, or **double-down** on the first). Levels 1–9 grant **no** TP, keeping early play class-agnostic onboarding.
+- **+2 TP per level-up** from Lv 10. **Hard cap at `2P = 180`** — the character's total TP pool (Dual: `P` per tree; Single: `2P` in one tree).
+- **Milestones.** ≈**120 TP by campaign end (Lv 70)** *(60 level-ups × 2)*; the **180 cap lands at Lv 100** *(90 level-ups × 2)* — deliberately aligned with the **passive tree completing at Lv 100** (App. H) and **Vigil Power starting at Lv 101** (App. K).
 - **No TP from quests** — Layer-2 funding stays level-driven and separable from the passive tree's quest awards (**App. H**).
 
 ### O.5 Schema
@@ -1837,12 +1840,12 @@ Fixing `P` without a faucet would repeat the **B-01** class of defect — a budg
   },
   "character": {
     "talent_path": "dual_class",
-    "talent_points_earned": 120,
-    "talent_points_cap": 120,
-    "talent_faucet": { "rule": "2_per_level", "capReachedAtLevel": 61 },
+    "talent_points_earned": 180,
+    "talent_points_cap": 180,
+    "talent_faucet": { "rule": "2_per_level", "unlockLevel": 10, "capReachedAtLevel": 100 },
     "trees": [
-      { "tree_id": "warrior",  "points": 60, "deepest_tier": 3 },
-      { "tree_id": "sorcerer", "points": 60, "deepest_tier": 3 }
+      { "tree_id": "warrior",  "points": 90, "deepest_tier": 3 },
+      { "tree_id": "sorcerer", "points": 90, "deepest_tier": 3 }
     ]
   },
   "skill_bar": {
@@ -1859,6 +1862,25 @@ Fixing `P` without a faucet would repeat the **B-01** class of defect — a budg
 
 ### O.6 Definition of Done & Sign-off Gate
 
-**Sign-off required on three numbers:** `S = 8` (O.1); `slots = 6` (O.2); `P = 60` + faucet `+2`/level, cap `120` (O.3/O.4). All three are **budget-fixing**, so downstream content (class skill lists, action-bar UI, TP pacing) can be authored against them.
+**Sign-off required on the budget knobs:** `S = 8` (O.1); `slots = 6` (O.2); `P = 90` + faucet **Lv 10 unlock, `+2`/level, cap `180`** (O.3/O.4); tree **≥100 nodes / ~220 TP**, **notables-only multi-rank** (O.7). All are **budget-fixing**, so downstream content (class skill lists, action-bar UI, TP pacing, the talent-tree layout) can be authored against them.
+
+### O.7 Class-Tree Anatomy & Node Taxonomy **[Ratified v1.22]**
+
+The class talent tree is **≥100 nodes** (**target ~120**) with **~220 TP** nominal capacity — comfortably larger than the 180-TP budget, so it is **never completable** (**I.1**). Nodes fall into four roles:
+
+| Role | Scope | Points | Notes |
+| :--- | :--- | :--- | :--- |
+| **Filler (minor)** | stats | **1** | small flat / % stats |
+| **Notable (major)** | stats | **multi-rank (2–3)** | the **only** multi-rank role |
+| **Skill-behavior** | a skill / skill family | **1** | changes **how** a skill behaves — **not stats** |
+| **Keystone** | build-defining | **1** | behind the Tier-3 gate |
+
+**Multi-rank policy — notables only.** Per author ruling, **only notable nodes** may take more than one point (rank cap 2–3). Filler, skill-behavior and keystone nodes are single-rank, so keystones stay **hard commits**. Multi-rank notables supply the capacity *above* 1 pt/node — ≈120 nodes × ~1.8 avg ≈ **220 TP** — which is what keeps the tree > the 180 budget.
+
+**Skill-behavior nodes (author clarification).** Passives that alter **skill behaviour rather than stats** — e.g. a projectile gains pierce, a channel becomes mobile, a hit converts damage type. They gate the *feel* of the archetype, not its numbers.
+
+**Scope reconciliation with Layer 4 (mini-trees).** Class-tree skill-behavior nodes act at **family / archetype scope** (e.g. "all your projectiles pierce +1"); the Layer-4 **mini-tree** is the **single-skill** layer (§2.4 — behavioural shifts, elemental conversions, utility for *one slotted skill*). The layers are therefore **complementary, not duplicative**: the class tree shapes *how the archetype plays*, the mini-tree *tunes the individual skill*. *(Logged as **B-25** for sign-off.)*
+
+**Capacity is a band, not a contract.** Exact node counts and rank distributions are **authoring work**; the binding constraints are (a) **≥100 nodes**, (b) **nominal capacity > 180 TP**.
 
 **Cross-refs:** **App. I** (mastery parity — `P` / gates); **App. J** (fusion table — `S` bounds the roster and the 21-recipe floor); **App. H** (passive-tree faucet, kept separate); GDD **§5.2 / §5.3 / §5.4**.

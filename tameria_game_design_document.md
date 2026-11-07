@@ -123,7 +123,8 @@ Slain corrupted mobs drop **Calamity Motes** (ratified, §6.1). Motes visibly co
 ### 5.2 Layer 2 — Class Talent Trees & Mastery Parity **[Ratified]**
 
 - **Six base archetypes:** Warrior, Rogue, Sorcerer, Vanguard, Sage, Artificer.
-- **Tree size [Ratified]:** each class tree is **~150 nodes / ~200 nominal TP** — **deliberately larger than any budget**. A player **never completes one**, so every point is a *choice*.
+- **Tree size [Ratified — v1.22]:** each class tree is **≥ 100 nodes (target ~120) / ~220 nominal TP** — **deliberately larger than any budget**. A player **never completes one**, so every point is a *choice*.
+- **Node taxonomy [Ratified — v1.22]:** four roles — **Filler (minor, 1 pt)**, **Notable (major, multi-rank `2–3`)**, **Skill-behavior** (1 pt; changes *how* a skill behaves — pierce, mobile channel, type-convert — **not stats**), and **Keystone** (1 pt; behind the Tier-3 gate). **Notables are the only multi-rank role** (App. O.7).
 - **Dual-Class Mastery:** access to **two** distinct Class Talent Trees, with **full independent Talent Point pools for both** (no split required) — `P` into each tree.
 - **Single-Class Mastery:** an **Empowered** tree with **higher depth gates** and **2× Talent Points** (`2P`) into that one tree.
 
@@ -136,7 +137,7 @@ Slain corrupted mobs drop **Calamity Motes** (ratified, §6.1). Motes visibly co
 | 3 Keystone | ≥ 50 | both paths |
 | 4 Apex | ≥ 100 | **Empowered (Single) only** |
 
-With `P = 60` **[Ratified — B-23/Q-10, v1.21]**, both paths award **120 TP**: **Dual** reaches **2 × Tier-3 Keystones** across two themes; **Single** reaches the **Tier-4 Apex + an Empowered-exclusive capstone** in one theme. **Parity axis [Ratified]: Dual = breadth/ceiling, Single = depth/consistency.** Full model in the action plan's **Appendix I**; the level **faucet** that funds `2P` (`+2`/level, hard cap `120`, reached Lv 61) is in **Appendix O.3/O.4**.
+With `P = 90` **[Ratified — B-23/Q-10, v1.21; re-ratified v1.22]**, both paths award **180 TP**: **Dual** reaches **2 × Tier-3 Keystones** across two themes; **Single** reaches the **Tier-4 Apex + an Empowered-exclusive capstone** in one theme. **Parity axis [Ratified]: Dual = breadth/ceiling, Single = depth/consistency.** Full model in the action plan's **Appendix I**; the level **faucet** that funds `2P` — **unlock at Lv 10, `+2`/level, hard cap `180` (≈120 TP by Lv 70, cap reached Lv 100)** — is in **Appendix O.3/O.4**.
 
 ### 5.3 Layer 3 — Mastery Tree & Fusion Skills **[Ratified + Proposed]**
 
@@ -869,3 +870,4 @@ The load-bearing walls — no content authoring until these are resolved:
 | 19 | **Breach underflow resolved** — a sub-objective is the **delivery mechanism for relic activation** (one sub-objective ↔ one relic), so §1.1's "sub-objectives + relic activation" is a **single** reduction source (total exactly `20.0`); Breach is **clamped at `0.0`** unconditionally; `breach_clamp_min` added to the zone schema (§12.1.1) (B-21 closed) | Author ruling |
 | 20 | **Vigil vocabulary normalized** — the unit is the **point**, "Rank" retired, `softCapRank` → `softCapPoints`; `maxPoints` present ⇔ `HardCapped` / absent ⇒ unbounded (type is derived) (§5.1, A.3) (B-14/B-16 closed) | Author ruling |
 | 21 | **Skill-layer budget ratified** — actives per class **`S = 8`** (48 total); **6** specialization/equipped slots (unified with the action bar); **`P = 60`**/tree → both paths **120 TP** with depth gates `0/20/50/100`; TP faucet **`+2`/level, cap `120`** (reached Lv 61); fusion floor **21** re-ratified (optional to `~27`) (§5.2–§5.4) (B-09, B-23, B-24 closed; Q-10, Q-11 answered) | Author ruling |
+| 22 | **Talent-point model re-ratified** — TP **unlock at Lv 10** (second-class / double-down gate), **`+2`/level**, **hard cap `180`** (≈120 TP by Lv 70; cap reached **Lv 100**, aligned with the passive tree completing and Vigil starting Lv 101); **`P = 90`**/tree → both paths **180 TP**; class tree **≥ 100 nodes (target ~120) / ~220 nominal TP**; **node taxonomy** (filler / notable / skill-behavior / keystone) with **notables the only multi-rank role (2–3 pts)**; **skill-behavior nodes change *how* a skill behaves — not stats** (§5.2) (B-23/Q-10 re-ratified; **B-25** logged for mini-tree scope split) | Author ruling |
