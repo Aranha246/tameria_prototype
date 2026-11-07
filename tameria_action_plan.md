@@ -3,7 +3,7 @@
 
 **Source analyzed:** `tameria_project_specifications.md` (v1 — Technical Specification & System Architecture)
 **Analysis date:** 2026-11-06
-**Revision:** **v1.23** — **B-25 closed (register clear).** The Layer-2 skill-behavior nodes and the Layer-4 skill mini-trees are now **split by scope**: class-tree behaviour nodes act at **family / archetype** scope, mini-trees at **single-skill** scope (**App. O.7**). No budget or number changed; the register is **clear** again. (v1.22 re-ratified the talent-point model: TP **unlock at Lv 10**, **+2/level**, **hard cap 180** — ≈**120 TP by campaign end (Lv 70)**, cap at **Lv 100**; parity keeps 2:1 → **`P = 90`/tree** (Dual `90+90`; Single `180`); class tree **≥100 nodes / ~220 TP** — never completable — with **notables-only multi-rank** (filler / keystone / skill-behavior = **1 pt**), App. **I** / **O**; logged **B-25**. v1.21 ratified the skill-layer budget, App. O, closed B-09/B-23/B-24 + Q-10/Q-11; v1.20 normalized Vigil vocabulary, closed B-14/B-16, App. K.10; v1.19 closed B-21; v1.18 ratified relic activation + Sieve continuity, App. N, closed B-04/B-17, answered Q-05; v1.17 corrected the §5 relic-favor copy, B-15; v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
+**Revision:** **v1.24** — **Class foundations authored.** With the audit register clear (v1.23), authoring began on the dependency root — the six archetypes. GDD **§6** now defines each class's **resource behaviour**, **signature mechanic**, **attribute bias**, and **guaranteed damage-type coverage** (≥ 3 types, per the B-18 rule), plus a **damage-coverage matrix** (every type on **≥ 2 classes**; the Radiant ↔ Umbral axis kept scarce). Mirrored in **§6.1**. (v1.23 closed **B-25** (Layer-2 / Layer-4 behaviour-node scope split) — register clear. v1.22 re-ratified the talent-point model: TP **unlock at Lv 10**, **+2/level**, **hard cap 180** — ≈**120 TP by campaign end (Lv 70)**, cap at **Lv 100**; parity keeps 2:1 → **`P = 90`/tree** (Dual `90+90`; Single `180`); class tree **≥100 nodes / ~220 TP**, **notables-only multi-rank**, App. **I** / **O**. v1.21 ratified the skill-layer budget, App. O, closed B-09/B-23/B-24 + Q-10/Q-11; v1.20 normalized Vigil vocabulary, closed B-14/B-16, App. K.10; v1.19 closed B-21; v1.18 ratified relic activation + Sieve continuity, App. N, closed B-04/B-17, answered Q-05; v1.17 corrected the §5 relic-favor copy, B-15; v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
 **Scope:** Full review of speculative content, conflict/gap mapping, targeted design feedback, feasibility assessment, prioritized roadmap, balancing, narrative tie-ins, and ARPG-standard QC.
 
 > **How to read this document:** Existing spec content is referenced by section (e.g. §3.1). Findings are tagged `C-xx` (register item), `G-xx` (gap), `B-xx` (new finding, v1.1), `Q-xx` (open question), `F-xx` (proposed feature). Each register item is now **typed** as Conflict / Ambiguity / Gap / Design risk / Underdevelopment. All numbers outside of direct spec quotes are **proposals** and require design sign-off.
@@ -222,7 +222,7 @@ Disclosed in full so the register can be trusted:
 
 | System | What's missing |
 | :--- | :--- |
-| Classes (§2.2) | No fantasy, no resource system, no signature mechanic, no skill list, no attribute bias |
+| Classes (§2.2) | **[PARTIAL v1.24]** — fantasy, resource **behaviour**, signature mechanic, attribute bias, and **damage-type coverage** (≥3 types; coverage matrix) are authored (**§6.1 / GDD §6**); the per-class **skill list** (`S = 8`), resource tuning values and tree node lists remain. |
 | Class talent trees (§2.2) | "Unlock Active Skills at depth thresholds" — **[PARTIAL v1.22]** the **depth-gate model** (Tier 1–4, gates 0/20/50/100), the **parity budget** (`P = 90`/tree → 180 TP, Lv-10 faucet), the **node taxonomy** (filler / notable / skill-behavior / keystone) and the **tree size** (**≥100 nodes / ~220 TP**) are defined (**App. I / O.7**); the per-class **node lists, branch structure and skill-unlock thresholds** remain to be authored. |
 | Mastery tree (§2.3) | **[PARTIAL v1.12]** the **fusion table structure + 21-recipe floor** are now defined (**Appendix J**); the per-class **passive list** and the **actual 21 recipes** (names, inputs, effects) remain to be authored. |
 | Skill mini-trees (§2.4) | No node taxonomy; "behavioral shifts, elemental conversions, utility" is a category, not a design |
@@ -341,18 +341,22 @@ Balance pass against live-metrics proxies, soak/performance testing, persistence
 
 ## 6. Balancing Recommendations
 
-### 6.1 Character Classes (`F-09`)
+### 6.1 Character Classes (`F-09`) — **[authored v1.24, GDD §6]**
 
-| Class | Suggested fantasy | Resource | Signature | Attribute bias |
-| :--- | :--- | :--- | :--- | :--- |
-| Warrior | Duelist / raw physical | Rage (built by hits) | Whirlwind, Leap Slam | Might / Resilience |
-| Rogue | Assassin / evasion | Combo points | Shadow Step, multishot | Agility |
-| Sorcerer | Arcane artillery | Mana | Chain Lightning, Frost Nova | Insight |
-| Vanguard | Shield bruiser / protector | Stamina | Shield Bash, Guard aura | Might / Resilience |
-| Sage | Support / summoner / DoT | Focus | Ailment spread, wards | Insight / Agility |
-| Artificer | Traps, constructs, elements | Charges (gadgets) | Turrets, mines, elemental infusions | Insight / Might |
+Authored into the GDD **(§6)**. Each class now has a **resource behaviour**, a **signature mechanic**, an **attribute bias**, and a **guaranteed damage-type coverage** (≥ 3 types, per the B-18 rule). The **damage-coverage matrix** guarantees every type is reachable by **≥ 2 classes**, with the Radiant ↔ Umbral axis kept scarce (Vanguard/Sage and Rogue/Sage).
 
-**Parity rule:** each class must have ≥1 viable **melee-range** and ≥1 **ranged** archetype so no class is locked out of a fight pattern.
+| Class | Fantasy | Resource | Signature | Attribute bias | Types |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Warrior | Duelist / raw physical | Rage (builders decay) | Momentum chain | Might / Resilience | Phys, Fire, Lightning |
+| Rogue | Assassin / evasion | Combo Points (decay) | Shadow Step | Agility | Phys, Ice, Umbral |
+| Sorcerer | Arcane artillery | Mana (regen) | Overcharge channel | Insight | Fire, Lightning, Ice |
+| Vanguard | Shield bruiser / protector | Stamina (regen) | Guard → Radiant retaliation | Might / Resilience | Phys, Radiant, Lightning |
+| Sage | Support / summoner / DoT | Focus (regen) | Warding (mirrors Radiant ↔ Umbral) | Insight / Agility | Radiant, Umbral, Ice |
+| Artificer | Traps, constructs, elements | Charges (regen) | Deployables | Insight / Might | Phys, Fire, Lightning, Ice |
+
+**Parity rule [Proposed]:** each class must have ≥1 viable **melee-range** and ≥1 **ranged** archetype so no class is locked out of a fight pattern.
+
+**Remaining authoring:** per-class **skill lists** (the `S = 8` roster, App. O.1), resource tuning values, and the per-class **tree node lists** (App. O.7).
 
 ### 6.2 Loot System (`F-10`) — address R2 (double-variance)
 
