@@ -192,7 +192,7 @@ Retains the §7.3 convention of `+0.5 Primary Stat` per Vigil point.
 
 | Class | Fantasy | Resource | Signature | Attribute bias | Guaranteed damage types |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Warrior** | Duelist / raw physical | **Rage** (built by dealing *and* taking hits; decays out of combat) | **Momentum** — consecutive hits escalate damage; taking a hit resets the chain | Might / Resilience | Physical, Fire, Lightning, Umbral |
+| **Warrior** | Duelist / raw physical | **Rage** (built by dealing *and* taking hits; decays out of combat) | **Momentum** — consecutive hits escalate damage; taking a hit resets the chain | Might / Resilience | Physical, Fire, Umbral |
 | **Rogue** | Assassin / evasion | **Combo Points** (built by basics; spent on finishers; expire) | **Shadow Step** — blink to a target and open a guaranteed-crit window | Agility | Physical, Ice, Umbral |
 | **Sorcerer** | Arcane artillery | **Mana** (large pool, passive regen) | **Overcharge** — channel to amplify the next spell; interruptible | Insight | Fire, Lightning, Ice, Radiant |
 | **Vanguard** | Shield bruiser / protector | **Stamina** (regen; spent on guard skills) | **Guard** — directional block that converts blocked damage into a Radiant retaliation | Might / Resilience | Physical, Radiant, Lightning |
@@ -205,7 +205,7 @@ Retains the §7.3 convention of `+0.5 Primary Stat` per Vigil point.
 | :--- | :--- | :-- |
 | Physical | Warrior, Rogue, Vanguard, Artificer | 4 |
 | Fire | Warrior, Sorcerer, Artificer | 3 |
-| Lightning | Warrior, Sorcerer, Vanguard, Artificer | 4 |
+| Lightning | Sorcerer, Vanguard, Artificer | 3 |
 | Ice | Rogue, Sorcerer, Sage, Artificer | 4 |
 | Radiant | Sorcerer, Vanguard, Sage | 3 |
 | Umbral | Warrior, Rogue, Sage | 3 |
@@ -891,3 +891,4 @@ The load-bearing walls — no content authoring until these are resolved:
 | 23 | **Layer-2 / Layer-4 behaviour-node boundary resolved** — class-tree **skill-behavior nodes** act at **family/archetype scope**; Layer-4 **mini-trees** act at **single-skill scope**; complementary, not duplicative (§5.2, §5.4) (B-25 closed; register clear) | Author ruling |
 | 24 | **Class foundations authored** — six archetypes expanded with resource behaviour, signature mechanic, attribute bias, and **guaranteed damage-type coverage**; adds the **damage-coverage matrix** and standardizes resource behaviour (builders decay / pools regenerate / charges regen) (§6) (F-09 advanced) | Author ruling |
 | 25 | **Damage-coverage rule tightened** — every damage type must be reachable by **≥ 3 classes** (was: ≥ 2). Radiant gains **Sorcerer** (channels the Beacon's light); Umbral gains **Warrior** (rage channels the Calamity's taint). Each type now sits on **3–4 classes**; each class on **3–4 types** (§6) | Author ruling |
+| 26 | **Warrior damage types trimmed** — **Lightning removed** (poor thematic fit for a raw duelist); Warrior is now **Physical, Fire, Umbral** (3 types, still compliant). Lightning still sits on **Sorcerer, Vanguard, Artificer**, so every type remains on ≥ 3 classes (§6) | Author ruling |
