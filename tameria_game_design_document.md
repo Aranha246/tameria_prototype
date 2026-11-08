@@ -218,6 +218,32 @@ Retains the §7.3 convention of `+0.5 Primary Stat` per Vigil point.
 - **Polar-axis coverage.** The Radiant ↔ Umbral axis is spread across **three classes each** (Radiant: Sorcerer, Vanguard, Sage; Umbral: Warrior, Rogue, Sage), so it is a *specialization* axis without being class-exclusive — no build is locked out of a damage type.
 - **Sage is the mirror class** — the only class native to *both* poles, matching its **Warding** signature.
 
+### 6.2 Class Skill Rosters **[Proposed] (App. Q)**
+
+Each class fields the ratified **`S = 15`** actives (**§5.3**), authored as concrete rosters. **Roster schema:** `Skill · Family · Type · Range · Role · Cost · CD · Effect`, where **Family** is the **Layer-2 skill-behavior scope** (e.g. `Projectile`, `Cleave`) that class-tree behaviour nodes modify (§5.2, App. O.7). Full tables live in the action plan's **Appendix Q**; **only the Warrior is authored so far**.
+
+**Warrior (`S = 15`) — Rage.** Types {Physical, Fire, Umbral}; families `Cleave · Whirlwind · Rend · Bash · Slam · Projectile · Shout · Ultimate`.
+
+| # | Skill | Family | Type | Range | Role | Rage | CD |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 1 | Cleave | Cleave | Physical | Melee | Builder | +8 | – |
+| 2 | Whirlwind | Whirlwind | Physical | Melee | Spender (channel) | 20 | – |
+| 3 | Rend | Rend | Physical | Melee | Spender | 15 | – |
+| 4 | Sunder | Cleave | Physical | Melee | Spender | 18 | 6s |
+| 5 | Shield Bash | Bash | Physical | Melee | Spender (CC) | 12 | 8s |
+| 6 | Leap Slam | Slam | Physical | Melee | Mobility | 15 | 5s |
+| 7 | Earthquake | Slam | Physical | Melee | Spender | 25 | 10s |
+| 8 | Seismic Wave | Slam | Physical | Ranged | Spender | 20 | 7s |
+| 9 | Hatchet Throw | Projectile | Physical | Ranged | Builder | +6 | – |
+| 10 | Cinder Strike | Cleave | Fire | Melee | Spender | 16 | – |
+| 11 | Ember Volley | Projectile | Fire | Ranged | Spender | 22 | 6s |
+| 12 | Umbral Bite | Rend | Umbral | Melee | Spender | 18 | 9s |
+| 13 | War Cry | Shout | – | Self/AoE | Buff | 10 | 20s |
+| 14 | Iron Hide | Shout | – | Self | Defense | 15 | 18s |
+| 15 | Avatar of War | Ultimate | – | Self | Ultimate | 50 | 90s |
+
+**Remaining:** the **Rogue, Sorcerer, Vanguard, Sage, Artificer** rosters (template-first review), plus a **shared skill-family vocabulary** across classes.
+
 ---
 
 ## 7. Combat & Damage System
@@ -899,3 +925,4 @@ The load-bearing walls — no content authoring until these are resolved:
 | 28 | **Skill-layer budget re-based (v1.27)** — actives per class **`S = 8` → `S = 15`** (**48 → 90** total); the open-matrix fusion explosion re-bases to **~4,005 at `S = 15`** (curated floor stays **21**); a **dedicated 7th *fusion* slot** is added to the action bar on a **separate budget** (§5.3–§5.4) (B-24/Q-11 re-based) | Author ruling |
 | 29 | **Layer-3 Mastery Tree authored (App. P; B-26 closed)** — defines **Skill Overhauls** (mastery nodes that *replace* a base class skill with an upgraded, themed version in-slot), the **Mastery-Point faucet** (`M = 36`), fusion equip rules (one equipped, inherited tags, own L4 tree), and the **expansion hook** (2 masteries per combo → **42 total**); names the path-exclusive amplifiers (**Single** = Empowered value-scaling / **Dual** = **Resonance**) (§5.2–§5.3) (B-26 closed; **Q-12** logged) | Author ruling |
 | 30 | **Mastery-Point economics ratified (v1.28)** — Layer-3 budget locked at **`M = 36`** (**+3 MP/Act** ×7 + **+3 MP/Calamity-Rift-tier first-clear** ×5), **Lv-10 unlock**, **refundable** (§5.3) (Q-12 closed) | Author ruling |
+| 31 | **Warrior skill roster authored (v1.29)** — first **`S = 15`** class roster: the roster **schema** + the **Warrior** 15 actives (families `Cleave · Whirlwind · Rend · Bash · Slam · Projectile · Shout · Ultimate`); the **five** other class rosters are pending template-first review (§6.2, App. Q) | Author ruling |
