@@ -269,7 +269,7 @@ Each class fields the ratified **`S = 15`** actives (**§5.3**), authored as con
 | 1 | Spark Bolt | Bolt | Lightning | Ranged | Spender | 6 | – |
 | 2 | Fireball | Bolt | Fire | Ranged | Spender | 12 | – |
 | 3 | Frost Lance | Bolt | Ice | Ranged | Spender | 10 | – |
-| 4 | *(name TBD)* | Spellblade | Lightning | Melee | Spender (build) | 10 | – |
+| 4 | Voltedge | Spellblade | Lightning | Melee | Spender (build) | 10 | – |
 | 5 | Luminous Ray | Beam | Radiant | Ranged | Channel | 4/s | – |
 | 6 | Flame Lash | Spellblade | Fire | Melee | Spender | 9 | – |
 | 7 | Frost Nova | Nova | Ice | Melee (AoE) | Spender | 18 | 8s |
@@ -316,7 +316,7 @@ Each class fields the ratified **`S = 15`** actives (**§5.3**), authored as con
 | 8 | Umbral Aura | Aura | Umbral | Self/AoE | Aura | 6/s | – |
 | 9 | Spirit Lance | Chain | Umbral | Ranged | Spender | 14 | 6s |
 | 10 | Radiant Chain | Chain | Radiant | Ranged | Spender | 14 | 6s |
-| 11 | *(name TBD)* | Spellblade | Radiant/Umbral | Melee | Builder | 10 | – |
+| 11 | Twilight Sweep | Spellblade | Radiant/Umbral | Melee | Builder | 10 | – |
 | 12 | Wraith Companion | Summon | Umbral | Ranged | Summon | 20 | 30s |
 | 13 | Seraph Companion | Summon | Radiant | Ranged | Summon | 20 | 30s |
 | 14 | Phase Step | Mobility | Ice | Self | Mobility | 8 | 5s |
@@ -1041,3 +1041,4 @@ The load-bearing walls — no content authoring until these are resolved:
 | 33 | **Melee parity (Sorcerer/Sage) (v1.31)** — the two caster classes gain a genuine **melee option** through a new **shared `Spellblade` family**: the Sorcerer's `Arc` becomes a **Spellblade** melee strike (element-infused, refunds Mana) with `Flame Lash` re-tagged `Beam`→`Spellblade`, and the Sage's `Searing Light` becomes a **Spellblade** melee sweep (builds Focus). The **Warrior roster is author-named** (§6.2, App. Q) | Author ruling |
 | 34 | **DoT ailments + build archetypes + roster naming (v1.32–v1.33)** — **each damage type owns exactly one DoT ailment, each with a distinct rider** (Bleed · Ignite · Shock · Chill→Freeze · Scorch · Decay; `Corrupt` is the thematic 7th; CC split out as a shared layer) (§7.5); **build archetypes locked at 11** with the **universal-rule exclusions** (Single Target · Clear · Buffs · Auras · Chain · Control · Mobility) and the rule that **every class & mastery is legible in ≥3 archetypes** (§6.3, App. R); the **Rogue roster is author-named** and the **6 apex masteries are named** (Titanborn · Nightprowler · Archmage · Bastion · Equinox · Machinist) (§6.2, App. J.4 / P.7) | Author ruling |
 | 35 | **All 21 masteries named + 2-per-type ailments (v1.34)** — the **15 dual-pair masteries are author-named** (Skirmisher · Spellknight · Rampart · Oathsworn · Forgewarden · Shadowbinder · Sentry · Whisperblade · Tinkerer · Sigilwarden · Spellsinger · Runewright · Aegisborn · Cogwarden · Reliquary), completing the **21-name launch set**; names must be **damage-type-neutral** (§6.2, App. J.4 / P.7); the **ailment model splits to two per damage type** — one **damage** + one **utility** (control/debuff) ailment, **12 total** — and `Corrupt` is **dropped** to a boss/rift modifier (§7.5); the Rogue's #5 blink is renamed **Umbral Step → Nightdash** (§6.2) | Author ruling |
+| 36 | **Skill rosters complete (v1.35)** — the last two `*(name TBD)*` rows are named: the Sorcerer's #4 `Spellblade` melee strike (**Lightning · Spender**) becomes **Voltedge** and the Sage's #11 `Spellblade` staff sweep (**Radiant/Umbral · Builder**) becomes **Twilight Sweep** — closing all **90 actives** across the six rosters (§6.2, App. Q.4 / Q.6); every roster row is now author-named | Author ruling |
