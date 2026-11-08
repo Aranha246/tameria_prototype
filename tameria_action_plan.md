@@ -3,7 +3,7 @@
 
 **Source analyzed:** `tameria_project_specifications.md` (v1 — Technical Specification & System Architecture)
 **Analysis date:** 2026-11-06
-**Revision:** **v1.35** — **Skill rosters complete (90/90).** The last two `*(name TBD)*` rows are named: the Sorcerer's #4 `Spellblade` melee strike (**Lightning · Spender**) becomes **Voltedge**, and the Sage's #11 `Spellblade` staff sweep (**Radiant/Umbral · Builder**) becomes **Twilight Sweep** — closing all **90 actives** across the six rosters (**Appendix Q.4 / Q.6**); every roster row is now author-named. (v1.34 — **All 21 mastery names locked + 2-per-type ailment model + Rogue #5 renamed.** The **15 dual-pair masteries are now author-named** (Skirmisher · Spellknight · Rampart · Oathsworn · Forgewarden · Shadowbinder · Sentry · Whisperblade · Tinkerer · Sigilwarden · Spellsinger · Runewright · Aegisborn · Cogwarden · Reliquary) — completing the **21-name launch set** begun with the 6 apexes (**App. J.4 / P.7**); mastery names must stay **damage-type-neutral**. The **ailment model splits to two per damage type** — one **damage** ailment + one **utility** (control/debuff) ailment, **12 total** — and `Corrupt` is **dropped** (it owned no damage type; its resist-ignore flavour folds into a **boss/rift modifier**) (**§3.2 / GDD §7.5**). The Rogue's #5 blink is renamed **Umbral Step → Nightdash** (**Q.3**). (v1.33 — **Build archetypes locked (11) + Rogue roster named + 6 apex masteries named.** A **build archetype is a mechanic noun** (**Blade · Cleave · Bow · Spells · Spellblade · Traps · Mines · Totems · Minions · DoT · Shield**), and **every class and every mastery must be legible in ≥3** of them (**Appendix R**). **Seven tags are excluded under the universal rule** — Single Target, Clear, Buffs, Auras, Chain, **Control** and **Mobility** — because every class/mastery already has them, so they cannot define a build. The **Rogue roster is author-named** (Slash · Ambuscade · Blade Spray · Coldspike · Umbral Step · Smokeveil · Spikeward · Siphon Cut · Frostsnare · Ironhail · Mirage Strike · Doomseal · Adrenaline · Ghostwalk · Razor Tempest), and the **6 apex (single-class) masteries are named** (Titanborn · Nightprowler · Archmage · Bastion · Equinox · Machinist; **App. J.4 / P.7**); the 15 dual-pair names are the next authoring pass. (v1.32 — **Per-damage-type DoT ailments + mastery passive baseline.** **Each of the six damage types owns exactly one DoT ailment, no two sharing a rider** (Bleed · Ignite · Shock · Chill→Freeze · Scorch · Decay; **§3.2 / G-04**), and **every mastery's passive pool carries ≥1 Buff + ≥1 Aura** node — which is why **Auras / Buffs are not archetypes** (**§3.3**)). (v1.31 — **Melee parity (Sorcerer/Sage) + roster naming pass (in progress).** The two caster classes gain a **real melee option** through a new **shared `Spellblade` family**: a dedicated melee skill replaces a redundant ranged pick — Sorcerer's `Arc` → a **Spellblade** melee strike (element-infused, **refunds Mana on hit**) and Sage's `Searing Light` → a **Spellblade** melee sweep (Radiant/Umbral stance, **builds Focus**); Sorcerer's `Flame Lash` is **re-tagged** `Beam` → `Spellblade` for a 2-skill melee package. `Spellblade` joins the shared family vocabulary (**Q.8**, Sorcerer + Sage). The **Warrior roster is author-named** (Reaping Arc · Whirlwind · Laceration · Platecracker · Shield Bash · Titan's Leap · Worldbreaker · Ground Surge · Bladeflight · Ashen Strike · Ashen Barrage · Gloomstrike · Warcry · Ironhide · Titan Ascendant); the five remaining rosters' names follow. (v1.30 — **All six class skill rosters authored (`S = 15` × 6 = 90 actives) — Appendix Q.** Completes the roster begun in v1.29: **Rogue, Sorcerer, Vanguard, Sage and Artificer** join the **Warrior** on the ratified `S = 15` ratchet (**O.1 / B-24**). Every class keeps its damage coverage (≥3 types) and the melee/ranged parity rule, and each roster declares its **skill families** — the Layer-2 behaviour scope (**O.7**). The rosters are the lists the fusion inputs (**App. J**), the family-scope skill-behavior nodes and the Layer-4 mini-trees (**§5.4**) bind to. (v1.29 — **Class skill rosters begun: the Warrior `S = 15` roster authored (Appendix Q).** Realises the ratified `S = 15` ratchet (**O.1 / B-24**) as a concrete skill list — a roster **schema** (**Q.1**) plus the **Warrior** roster (**Q.2**, 15 actives, families `Cleave/Whirlwind/Rend/Bash/Slam/Projectile/Shout/Ultimate`) — with the **five remaining class rosters** pending template-first review. The roster is the list the fusion inputs (**App. J**), the family-scope skill-behavior nodes (**O.7**) and the Layer-4 mini-trees (**§5.4**) all bind to. (v1.28 — **Mastery-Point economics ratified (Q-12).** The Layer-3 Mastery Tree budget is locked: **`M = 36`** Mastery Points (**+3 MP/Act** ×7 + **+3 MP/Calamity-Rift-tier first-clear** ×5), **unlock at Lv 10**, **refundable** (**Appendix P.2**). (v1.27 — **Layer-3 Mastery System authored; Talent-Point budget rounded to `P = 100` → 200.** The mastery model is now fully specified: depth gates moved from **four tiers `0/20/50/100`** to **five tiers `0/20/50/80/135`** (Tier 5 = **Single/Empowered-only**); per-gate **milestone unlocks** fixed (Dual **2 actives + 1 passive**/gate → **8 actives + 4 passives per tree**; Single **3 actives**/gate + **8 passives** → **15 actives + 8 passives**); actives per class **`S`: 8 → 15** (**48 → 90** total) with the fusion explosion recomputed (**~4,005** at `S = 15`; curated floor stays **21**); **dedicated 7th fusion slot**; **Skill Overhauls** (Layer 3) that **replace** base class skills with upgraded mastery-themed versions; **Resonance** — Dual-only cross-tree synergy nodes (the counterweight to Single's Empowered amplification); and the **expansion hook** — **2 masteries per dual combo + 2 per single double-down** (**42** total; launch **21**, matching the fusion floor). New **Appendix P**; Appendix **I / J / O** updated. (v1.26 Warrior damage types trimmed — **Lightning** was dropped from the Warrior (poor thematic fit for a raw duelist); the Warrior now carries **Physical, Fire, Umbral** (**3** types — still compliant). Lightning remains on **Sorcerer, Vanguard, Artificer**, so **every type is still reachable by ≥ 3 classes** (coverage matrix unchanged in rule; Lightning row now 3). GDD **§6** / **§6.1**. (v1.25 tightened the coverage rule to **≥ 3 classes per type** — Radiant +Sorcerer, Umbral +Warrior. v1.24 authored the class foundations — resource behaviour, signature mechanic, attribute bias, coverage matrix. v1.23 closed **B-25** — register clear. v1.22 re-ratified the talent-point model: TP **unlock at Lv 10**, **+2/level**, **hard cap 180**, **`P = 90`/tree** → **180 TP**, class tree **≥100 nodes / ~220 TP**, **notables-only multi-rank**, App. **I** / **O**. v1.21 ratified the skill-layer budget, App. O, closed B-09/B-23/B-24 + Q-10/Q-11; v1.20 normalized Vigil vocabulary, closed B-14/B-16, App. K.10; v1.19 closed B-21; v1.18 ratified relic activation + Sieve continuity, App. N, closed B-04/B-17, answered Q-05; v1.17 corrected the §5 relic-favor copy, B-15; v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
+**Revision:** **v1.36** — **Mastery node model defined + Warrior mastery column authored.** The Layer-3 mastery tree is pinned as **passive *nodes*** (not skills — active/passive *skills* belong to the Layer-2 class trees, **App. Q**): **36 MP = 12 named passives (1 Buff + 1 Aura + 9 Notable + 1 Keystone) + 6 Skill Overhaul nodes + 18 shared fillers**, all **single-rank**, with **no depth gates** (**Appendix S.0**). The **Warrior column** is authored — apex **Titanborn** + duals **Skirmisher · Spellknight · Rampart · Oathsworn · Forgewarden**, each with 12 named nodes and 6 overhauls, each legible in **≥3 archetypes** (**Appendix S.2–S.7**). Also fixed the stale **`Spellblade`-as-mastery** references in **P.3 / P.6** → **Spellknight** (the term stays reserved for the skill family). (v1.35 — **Skill rosters complete (90/90).** The last two `*(name TBD)*` rows are named: the Sorcerer's #4 `Spellblade` melee strike (**Lightning · Spender**) becomes **Voltedge**, and the Sage's #11 `Spellblade` staff sweep (**Radiant/Umbral · Builder**) becomes **Twilight Sweep** — closing all **90 actives** across the six rosters (**Appendix Q.4 / Q.6**); every roster row is now author-named. (v1.34 — **All 21 mastery names locked + 2-per-type ailment model + Rogue #5 renamed.** The **15 dual-pair masteries are now author-named** (Skirmisher · Spellknight · Rampart · Oathsworn · Forgewarden · Shadowbinder · Sentry · Whisperblade · Tinkerer · Sigilwarden · Spellsinger · Runewright · Aegisborn · Cogwarden · Reliquary) — completing the **21-name launch set** begun with the 6 apexes (**App. J.4 / P.7**); mastery names must stay **damage-type-neutral**. The **ailment model splits to two per damage type** — one **damage** ailment + one **utility** (control/debuff) ailment, **12 total** — and `Corrupt` is **dropped** (it owned no damage type; its resist-ignore flavour folds into a **boss/rift modifier**) (**§3.2 / GDD §7.5**). The Rogue's #5 blink is renamed **Umbral Step → Nightdash** (**Q.3**). (v1.33 — **Build archetypes locked (11) + Rogue roster named + 6 apex masteries named.** A **build archetype is a mechanic noun** (**Blade · Cleave · Bow · Spells · Spellblade · Traps · Mines · Totems · Minions · DoT · Shield**), and **every class and every mastery must be legible in ≥3** of them (**Appendix R**). **Seven tags are excluded under the universal rule** — Single Target, Clear, Buffs, Auras, Chain, **Control** and **Mobility** — because every class/mastery already has them, so they cannot define a build. The **Rogue roster is author-named** (Slash · Ambuscade · Blade Spray · Coldspike · Umbral Step · Smokeveil · Spikeward · Siphon Cut · Frostsnare · Ironhail · Mirage Strike · Doomseal · Adrenaline · Ghostwalk · Razor Tempest), and the **6 apex (single-class) masteries are named** (Titanborn · Nightprowler · Archmage · Bastion · Equinox · Machinist; **App. J.4 / P.7**); the 15 dual-pair names are the next authoring pass. (v1.32 — **Per-damage-type DoT ailments + mastery passive baseline.** **Each of the six damage types owns exactly one DoT ailment, no two sharing a rider** (Bleed · Ignite · Shock · Chill→Freeze · Scorch · Decay; **§3.2 / G-04**), and **every mastery's passive pool carries ≥1 Buff + ≥1 Aura** node — which is why **Auras / Buffs are not archetypes** (**§3.3**)). (v1.31 — **Melee parity (Sorcerer/Sage) + roster naming pass (in progress).** The two caster classes gain a **real melee option** through a new **shared `Spellblade` family**: a dedicated melee skill replaces a redundant ranged pick — Sorcerer's `Arc` → a **Spellblade** melee strike (element-infused, **refunds Mana on hit**) and Sage's `Searing Light` → a **Spellblade** melee sweep (Radiant/Umbral stance, **builds Focus**); Sorcerer's `Flame Lash` is **re-tagged** `Beam` → `Spellblade` for a 2-skill melee package. `Spellblade` joins the shared family vocabulary (**Q.8**, Sorcerer + Sage). The **Warrior roster is author-named** (Reaping Arc · Whirlwind · Laceration · Platecracker · Shield Bash · Titan's Leap · Worldbreaker · Ground Surge · Bladeflight · Ashen Strike · Ashen Barrage · Gloomstrike · Warcry · Ironhide · Titan Ascendant); the five remaining rosters' names follow. (v1.30 — **All six class skill rosters authored (`S = 15` × 6 = 90 actives) — Appendix Q.** Completes the roster begun in v1.29: **Rogue, Sorcerer, Vanguard, Sage and Artificer** join the **Warrior** on the ratified `S = 15` ratchet (**O.1 / B-24**). Every class keeps its damage coverage (≥3 types) and the melee/ranged parity rule, and each roster declares its **skill families** — the Layer-2 behaviour scope (**O.7**). The rosters are the lists the fusion inputs (**App. J**), the family-scope skill-behavior nodes and the Layer-4 mini-trees (**§5.4**) bind to. (v1.29 — **Class skill rosters begun: the Warrior `S = 15` roster authored (Appendix Q).** Realises the ratified `S = 15` ratchet (**O.1 / B-24**) as a concrete skill list — a roster **schema** (**Q.1**) plus the **Warrior** roster (**Q.2**, 15 actives, families `Cleave/Whirlwind/Rend/Bash/Slam/Projectile/Shout/Ultimate`) — with the **five remaining class rosters** pending template-first review. The roster is the list the fusion inputs (**App. J**), the family-scope skill-behavior nodes (**O.7**) and the Layer-4 mini-trees (**§5.4**) all bind to. (v1.28 — **Mastery-Point economics ratified (Q-12).** The Layer-3 Mastery Tree budget is locked: **`M = 36`** Mastery Points (**+3 MP/Act** ×7 + **+3 MP/Calamity-Rift-tier first-clear** ×5), **unlock at Lv 10**, **refundable** (**Appendix P.2**). (v1.27 — **Layer-3 Mastery System authored; Talent-Point budget rounded to `P = 100` → 200.** The mastery model is now fully specified: depth gates moved from **four tiers `0/20/50/100`** to **five tiers `0/20/50/80/135`** (Tier 5 = **Single/Empowered-only**); per-gate **milestone unlocks** fixed (Dual **2 actives + 1 passive**/gate → **8 actives + 4 passives per tree**; Single **3 actives**/gate + **8 passives** → **15 actives + 8 passives**); actives per class **`S`: 8 → 15** (**48 → 90** total) with the fusion explosion recomputed (**~4,005** at `S = 15`; curated floor stays **21**); **dedicated 7th fusion slot**; **Skill Overhauls** (Layer 3) that **replace** base class skills with upgraded mastery-themed versions; **Resonance** — Dual-only cross-tree synergy nodes (the counterweight to Single's Empowered amplification); and the **expansion hook** — **2 masteries per dual combo + 2 per single double-down** (**42** total; launch **21**, matching the fusion floor). New **Appendix P**; Appendix **I / J / O** updated. (v1.26 Warrior damage types trimmed — **Lightning** was dropped from the Warrior (poor thematic fit for a raw duelist); the Warrior now carries **Physical, Fire, Umbral** (**3** types — still compliant). Lightning remains on **Sorcerer, Vanguard, Artificer**, so **every type is still reachable by ≥ 3 classes** (coverage matrix unchanged in rule; Lightning row now 3). GDD **§6** / **§6.1**. (v1.25 tightened the coverage rule to **≥ 3 classes per type** — Radiant +Sorcerer, Umbral +Warrior. v1.24 authored the class foundations — resource behaviour, signature mechanic, attribute bias, coverage matrix. v1.23 closed **B-25** — register clear. v1.22 re-ratified the talent-point model: TP **unlock at Lv 10**, **+2/level**, **hard cap 180**, **`P = 90`/tree** → **180 TP**, class tree **≥100 nodes / ~220 TP**, **notables-only multi-rank**, App. **I** / **O**. v1.21 ratified the skill-layer budget, App. O, closed B-09/B-23/B-24 + Q-10/Q-11; v1.20 normalized Vigil vocabulary, closed B-14/B-16, App. K.10; v1.19 closed B-21; v1.18 ratified relic activation + Sieve continuity, App. N, closed B-04/B-17, answered Q-05; v1.17 corrected the §5 relic-favor copy, B-15; v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
 **Scope:** Full review of speculative content, conflict/gap mapping, targeted design feedback, feasibility assessment, prioritized roadmap, balancing, narrative tie-ins, and ARPG-standard QC.
 
 > **How to read this document:** Existing spec content is referenced by section (e.g. §3.1). Findings are tagged `C-xx` (register item), `G-xx` (gap), `B-xx` (new finding, v1.1), `Q-xx` (open question), `F-xx` (proposed feature). Each register item is now **typed** as Conflict / Ambiguity / Gap / Design risk / Underdevelopment. All numbers outside of direct spec quotes are **proposals** and require design sign-off.
@@ -1984,7 +1984,7 @@ The source's four-layer diagram names **Layer 3 — "Mastery Tree & Fusion Skill
 
 ```text
 base:      Warrior — Whirlwind
-overhaul:  Warrior × Sorcerer (Spellblade) — Whirlwind becomes "Arcane Tempest"
+overhaul:  Warrior × Sorcerer (Spellknight) — Whirlwind becomes "Arcane Tempest"
            (same slot, same cooldown family; adds the mastery's theme — e.g. Fire / Lightning)
 ```
 
@@ -2001,7 +2001,7 @@ The three layers form a clean escalation: **modify the family (L2) → replace a
 **Rules [Ratified].**
 1. An overhaul **substitutes in the same slot** — the player does not gain an extra skill, they gain a *better version* of one.
 2. An overhaul **inherits the base skill's tags** and adds the mastery's theme (consistent with the fusion tag rule, **P.4**).
-3. Overhauls are **mastery-specific** — the Spellblade's Whirlwind overhaul is not the Warmaster's.
+3. Overhauls are **mastery-specific** — the Spellknight's Whirlwind overhaul is not the Titanborn's.
 4. The overhauled skill **keeps its Layer-4 mini-tree and glyph sockets** (they travel with the slot).
 
 **Parity with the gate model.** Overhauls unlock at the **same gates** as the mastery's actives (**App. I.4b**): a **Dual** build's overhauls are tuned for **hybridising** (the *Whirlwind → Arcane Tempest* pattern); a **Single/Focused** build's overhauls push **one theme to its ceiling**.
@@ -2035,8 +2035,8 @@ The three layers form a clean escalation: **modify the family (L2) → replace a
 ```json
 {
   "mastery": {
-    "mastery_id": "mastery_spellblade",
-    "display_name": "Spellblade",
+    "mastery_id": "mastery_spellknight",
+    "display_name": "Spellknight",
     "path": "dual_class",
     "pair": ["warrior", "sorcerer"],
     "mastery_slot": 1,
@@ -2048,11 +2048,11 @@ The three layers form a clean escalation: **modify the family (L2) → replace a
       "respec": "refundable"
     },
     "mastery_passives": [
-      { "node_id": "spellblade_p01", "type": "passive", "ranks": 1 }
+      { "node_id": "spellknight_p01", "type": "passive", "ranks": 1 }
     ],
     "skill_overhauls": [
       {
-        "node_id": "spellblade_ov01",
+        "node_id": "spellknight_ov01",
         "replaces": { "class": "warrior", "skill": "whirlwind" },
         "becomes": "arcane_tempest",
         "added_tags": ["fire", "lightning"],
@@ -2064,7 +2064,7 @@ The three layers form a clean escalation: **modify the family (L2) → replace a
   },
   "fusion_skill": {
     "fusion_id": "fusion_storm_gale",
-    "mastery_id": "mastery_spellblade",
+    "mastery_id": "mastery_spellknight",
     "inputs": ["warrior.whirlwind", "sorcerer.chain_lightning"],
     "inherits_tags": true,
     "power_budget": 1.0,
@@ -2104,7 +2104,7 @@ The three layers form a clean escalation: **modify the family (L2) → replace a
 
 **Naming constraint [standing]:** avoid terms already **signature** in **PoE 1 & 2, Diablo 1–4, Last Epoch, Grim Dawn**, or any majorly-known RPG — unless the term is a **classic** shared across several games; and keep each name **damage-type-neutral**. A `mastery_id` is a **pair that is 1-of-2** (**P.5**), keyed `{ pair, mastery_slot }` (**P.6**).
 
-**Remaining:** per-mastery **passives** (incl. the mandatory **≥1 Buff + ≥1 Aura**, **§3.3**), **Skill Overhaul** lists, and **fusion recipes** (**App. J**).
+**Remaining:** per-mastery **nodes** (the mandated **≥1 Buff + ≥1 Aura** included — **§3.3**; **Warrior column authored, App. S**), the **Skill Overhaul** lists (**Warrior column authored, App. S**), and **fusion recipes** (**App. J**).
 
 ### P.8 Definition of Done
 
@@ -2353,3 +2353,232 @@ Each of the **6** classes declares exactly **15** actives (**O.1**). Every skill
 **Consequence.** Mobility, Control, Buffs and Auras are **baseline access**, not build identity: a mastery is *defined* by its archetypes (e.g. **Mines × Traps × DoT**), while mobility / CC / buff / aura access is **assumed present** for every build.
 
 **Cross-refs:** **Q.1** (roster schema — family = archetype skeleton); **§3.3** (mastery Buff/Aura baseline); **§3.2 / GDD §7.5** (ailments); **O.7** (family-scope nodes); **P.7 / App. J** (masteries + fusion recipes).
+
+---
+
+## Appendix S — Mastery Node Model & Passive Pools **[Proposed v1.36]**
+
+*Authored from author direction (v1.36). Fills the last content gap left open by **P.7** — *what each mastery tree actually contains*. Authored **class by class**; this appendix ships the **Warrior column** (the apex **Titanborn** + the five Warrior dual masteries).*
+
+### S.0 Layer-3 node model — what a mastery tree is made of
+
+**Author ruling (v1.36).** **Active and passive *skills* belong to the class trees** — the `S = 15` rosters of **App. Q** (Layer 2). A **mastery tree contains passive *nodes*** — stat/utility nodes drawn from the same taxonomy as the class tree (**O.7**) — plus its **Skill Overhaul** nodes (**P.3**) and the **fusion capstone** (**P.4**). **A mastery tree grants no new equippable skills.**
+
+**Node roles (mastery scope).**
+
+| Role | Points | What it is |
+| :-- | :-- | :-- |
+| **Notable** | 1 | the mastery's signature stats / utility (single-rank) |
+| **Buff node** | 1 | **mandated (×1)** — a self/party **buff** effect, always-on or triggered — **§3.3** |
+| **Aura node** | 1 | **mandated (×1)** — a persistent **aura** effect — **§3.3** |
+| **Keystone** | 1 | **one per mastery** — build-defining |
+| **Skill Overhaul** | 1 | replaces a base class skill **in-slot** (**P.3**) |
+
+All nodes are **single-rank** — multi-rank stays **exclusive to class-tree notables** (**O.7 / P.2**). A mastery tree therefore has **no rank inflation**, only breadth.
+
+**Anatomy per mastery — `M = 36` MP.**
+
+| Band | Nodes | MP | Notes |
+| :-- | :-- | :-- | :-- |
+| **Named passives** | **12** | 12 | **1 Buff + 1 Aura + 9 Notable + 1 Keystone** — the mastery's authored identity |
+| **Skill Overhaul nodes** | **6** | 6 | 3 from each class (Dual) · 6 from the class (Apex) |
+| **Filler nodes** | 18 | 18 | generic stats (functionally identical across masteries) |
+| **Total** | 36 | **36** | matches the ratified `M = 36` (**P.2**) |
+
+**No depth gates.** Unlike the Layer-2 class trees (five gates, **I.3**), the mastery tree has **no gate ladder** — it is compact and its only limiter is the **36-MP budget** (Act milestones + Rift tiers, **P.2**). Purchase order is free.
+
+**Mandate.** Every pool carries **≥1 Buff** and **≥1 Aura** node (**§3.3**) — so those effects are always reachable **without spending an active slot**. This is *why* Buffs and Auras are **not** archetypes (**App. R**).
+
+**Parity.** A Dual mastery's overhauls are **3 + 3** (hybridising — one theme from each class); an apex mastery's are **6 from its own class** (single-theme ceiling). Both pools are **12 nodes** — **count parity** holds (mirrors **I.4b**).
+
+### S.1 Authoring order
+
+Authored **class by class** (author direction, v1.36). **Warrior column shipped here:** **Titanborn** (apex) · **Skirmisher · Spellknight · Rampart · Oathsworn · Forgewarden** (the five Warrior duals). The remaining **15 masteries** (Rogue, Sorcerer, Vanguard, Sage, Artificer columns) follow in later passes.
+
+### S.2 Titanborn — Warrior apex
+
+`mastery_id: mastery_titanborn` · `path: single_class_apex` · **Archetypes: Cleave · Shield · DoT**
+
+| # | Node | Role | Effect |
+| :-- | :-- | :-- | :-- |
+| 1 | **Undying Fury** | Buff | Below 50% Rage: +20% damage, +25% Rage generation |
+| 2 | **Warband Presence** | Aura | You and nearby allies: +8% Armor, +10% damage |
+| 3 | **Emberforged** | Notable | Fire skills grant +4 Rage per enemy hit; +15% Ignite duration |
+| 4 | **Titan's Grip** | Notable | Two-handed melee: +12% damage, +20% stun duration |
+| 5 | **Calamity's Toll** | Notable | Umbral hits apply **Decay** (scales with missing life) |
+| 6 | **Rising Momentum** | Notable | Momentum builds 25% faster, decays 50% slower |
+| 7 | **Bloodcall** | Notable | Killing a Bleeding enemy restores 15% max Rage and 5% life |
+| 8 | **Unbroken Stance** | Notable | +30% DR while channelling Whirlwind; channel cannot be interrupted |
+| 9 | **Beacon's Edge** | Notable | +10% damage vs. **Sundered** (armor-shredded) targets |
+| 10 | **Apex of Might** | Notable | +5% Might |
+| 11 | **Second Wind** | Notable | +2% Rage generation; +5% max life |
+| 12 | **Godbreaker** | Keystone | Titan Ascendant also refills Rage and grants 3s unstoppable; Ultimate CD −20% |
+
+**Skill Overhauls (6 — own class).**
+
+| Replaces (Warrior) | Becomes | Note |
+| :-- | :-- | :-- |
+| #1 Reaping Arc | **Titan's Arc** | arc +50% wider; each enemy hit grants +2 extra Rage |
+| #2 Whirlwind | **Godstorm** | spin leaves burning ground and **pulls enemies in** |
+| #5 Shield Bash | **Titan's Rebuke** | bash knocks back and grants a 3s DR buff |
+| #9 Bladeflight | **Titan's Hurl** | thrown axe ricochets to 3 enemies |
+| #13 Warcry | **Titan's Roar** | taunt radius +50%; allies also gain Rage |
+| #15 Titan Ascendant | **Ascendant Eternal** | duration +50%; adds a damage-**reflection** aura |
+
+### S.3 Skirmisher — Warrior × Rogue
+
+`mastery_id: mastery_skirmisher` · `path: dual_class` · **Archetypes: Blade · Bow · DoT**
+
+| # | Node | Role | Effect |
+| :-- | :-- | :-- | :-- |
+| 1 | **Battle Trance** | Buff | After a kill: +25% attack speed, +15% Rage generation for 5s |
+| 2 | **Bloodhaze** | Aura | Nearby **Bleeding** enemies take +12% damage from you and allies |
+| 3 | **Rend and Run** | Notable | Moving 3m+ grants +20% damage to your next melee strike |
+| 4 | **Flanking Fury** | Notable | +25% damage vs. **flanked / full-HP** targets |
+| 5 | **Serrated Edge** | Notable | Bleed you apply also applies **Sunder** (−Armor) |
+| 6 | **Lithe Momentum** | Notable | Combo and Momentum generate 20% faster; spenders cost 10% less |
+| 7 | **Guerrilla Reflexes** | Notable | +12% evasion; a perfect dodge grants +15 Rage |
+| 8 | **Shadowsurge** | Notable | Umbral strikes leech 3% life and add +1 Combo |
+| 9 | **Caltrop Discipline** | Notable | Your traps and caltrops grant Rage on trigger |
+| 10 | **Skirmish Training** | Notable | +5% Agility |
+| 11 | **Field Rations** | Notable | +6% max life; +10% Rage from kills |
+| 12 | **No Quarter** | Keystone | Spending 5 Combo in one strike grants one **free skill cast** within 2s (8s CD) |
+
+**Skill Overhauls (6 — 3 Warrior + 3 Rogue).**
+
+| Replaces | Becomes | Note |
+| :-- | :-- | :-- |
+| Warrior #3 Laceration | **Butcher's Arc** | applies 2 Bleed stacks; **Sunder** on crit |
+| Warrior #9 Bladeflight | **Ricochet Blades** | axe becomes thrown blades that bounce 3× |
+| Warrior #13 Warcry | **Hunter's Cry** | taunt + **marks** targets (+damage taken) |
+| Rogue #1 Slash | **Riposte Slash** | generates 2 Combo on a perfect-dodge window |
+| Rogue #5 Nightdash | **Ambush Dash** | blink leaves a bleed cloud; next strike auto-crits |
+| Rogue #15 Razor Tempest | **Tempest of Blades** | adds a Whirlwind-style spin during the flurry |
+
+### S.4 Spellknight — Warrior × Sorcerer
+
+`mastery_id: mastery_spellknight` · `path: dual_class` · **Archetypes: Spellblade · Spells · Blade**
+
+| # | Node | Role | Effect |
+| :-- | :-- | :-- | :-- |
+| 1 | **Arcane Frenzy** | Buff | Casting a spell grants +20% melee damage for 4s (stacks 2×) |
+| 2 | **Runed Aegis** | Aura | You and allies: +10% elemental resistance, +8% spell damage |
+| 3 | **Spellsteel** | Notable | Melee strikes gain +15% of your spell damage as added elemental damage |
+| 4 | **Mana-Fed Rage** | Notable | Mana spent grants Rage at 50% rate |
+| 5 | **Voltedge Mastery** | Notable | **Spellblade** hits refund +5 Mana and apply **Conduction** |
+| 6 | **Flamebrand** | Notable | Fire melee hits extend Ignite by 2s and spread it to 1 nearby enemy |
+| 7 | **Warded Momentum** | Notable | While a Ward is active: +15% attack speed, +10% DR |
+| 8 | **Arcing Steel** | Notable | Melee hits have a 20% chance to **chain** to a nearby enemy |
+| 9 | **Blink Discipline** | Notable | Mobility skills cost 30% less; +5% damage for 3s after |
+| 10 | **Runic Physique** | Notable | +5% Insight |
+| 11 | **Meditative Edge** | Notable | +10% Mana; +5% Rage generation |
+| 12 | **Spellstorm** | Keystone | Every 5th melee hit casts a free **Frost Nova** at your location |
+
+**Skill Overhauls (6 — 3 Warrior + 3 Sorcerer).**
+
+| Replaces | Becomes | Note |
+| :-- | :-- | :-- |
+| Warrior #2 Whirlwind | **Arcane Tempest** | spin gains an element; leaves a chaining vortex |
+| Warrior #10 Ashen Strike | **Runed Strike** | Fire + Umbral hit; applies **Ignite** and **Smolder** |
+| Warrior #15 Titan Ascendant | **Ascendant Sigil** | ult also casts a free Nova and grants a Ward |
+| Sorcerer #4 Voltedge | **Stormedge** | refunds Mana on hit; adds a chaining arc |
+| Sorcerer #11 Mana Shield | **Aegis of Rage** | shield scales with Rage spent; reflects 15% damage |
+| Sorcerer #15 Cataclysm | **Warstorm** | meteor lands as a melee slam: burning ground + stun |
+
+### S.5 Rampart — Warrior × Vanguard
+
+`mastery_id: mastery_rampart` · `path: dual_class` · **Archetypes: Shield · Cleave · Blade**
+
+| # | Node | Role | Effect |
+| :-- | :-- | :-- | :-- |
+| 1 | **Hold the Line** | Buff | After standing still 1s+: +20% DR, +15% damage |
+| 2 | **Bulwark Banner** | Aura | Allies: +12% Armor, +6% block chance |
+| 3 | **Fortress Momentum** | Notable | Momentum also grants +2% DR per stack |
+| 4 | **Shieldwall** | Notable | +15% block chance; blocked hits grant Rage |
+| 5 | **Concussive Force** | Notable | +25% stun duration; +10% damage vs. Stunned targets |
+| 6 | **Unmovable** | Notable | Knockback immunity; −30% slow duration on you |
+| 7 | **Zealous Guard** | Notable | Hitting with a Radiant skill grants allies a stacking +5% DR |
+| 8 | **Radiant Bulwark** | Notable | Blocking builds a Radiant shield that bursts for AoE damage |
+| 9 | **Taunt Discipline** | Notable | Taunt also applies **Sunder** and grants +10 Rage |
+| 10 | **Ironbound** | Notable | +5% Resilience |
+| 11 | **Field Plate** | Notable | +8% Armor |
+| 12 | **Immovable Object** | Keystone | A hit that would exceed 25% max life instead grants 2s of 50% DR (10s CD) |
+
+**Skill Overhauls (6 — 3 Warrior + 3 Vanguard).**
+
+| Replaces | Becomes | Note |
+| :-- | :-- | :-- |
+| Warrior #5 Shield Bash | **Rampart Bash** | bash taunts, **Sunders** and grants Rage |
+| Warrior #7 Worldbreaker | **Seismic Bulwark** | crater slows enemies; you gain DR standing in it |
+| Warrior #14 Ironhide | **Unbreakable Hide** | also grants Knockback + Stun immunity for 3s |
+| Vanguard #6 Bulwark | **Warplate** | DR scales with Rage; nearby allies gain half |
+| Vanguard #13 Ironclad | **Warlord's Stand** | DR burst shared with allies in range |
+| Vanguard #15 Avatar of the Bulwark | **Avatar of War** | adds Rage generation and a retribution AoE |
+
+### S.6 Oathsworn — Warrior × Sage
+
+`mastery_id: mastery_oathsworn` · `path: dual_class` · **Archetypes: Spellblade · Blade · DoT**
+
+| # | Node | Role | Effect |
+| :-- | :-- | :-- | :-- |
+| 1 | **Zeal** | Buff | On dealing Radiant or Umbral damage: +15% damage, +5% life regen for 5s |
+| 2 | **Sacred Ground** | Aura | Allies: +8% damage; −10% ailment duration on themselves |
+| 3 | **Sanctified Rage** | Notable | Radiant skills generate **double** Rage; **Scorch** also purges buffs |
+| 4 | **Umbral Oath** | Notable | Umbral skills leech life and apply **Hex** (−healing) |
+| 5 | **Spellbound Steel** | Notable | **Spellblade** sweeps: +15% area; build Focus **and** Rage on hit |
+| 6 | **Radiant Ward** | Notable | +10% max Radiant resistance; Ward skills cost 20% less |
+| 7 | **Sigil of Wrath** | Notable | Your DoT sigils also deal your **melee** damage type |
+| 8 | **Polarity** | Notable | Alternating Radiant and Umbral hits build +4% damage (max 5 stacks) |
+| 9 | **Vigil Bond** | Notable | Summons gain +20% damage and inherit your auras |
+| 10 | **Steadfast Oath** | Notable | +5% Might and +5% Insight |
+| 11 | **Rite of Endurance** | Notable | +6% max life; +5% Ward effectiveness |
+| 12 | **Sworn Reckoning** | Keystone | Every 6th hit deals bonus Radiant/Umbral damage equal to 5% of the target's **missing life** |
+
+**Skill Overhauls (6 — 3 Warrior + 3 Sage).**
+
+| Replaces | Becomes | Note |
+| :-- | :-- | :-- |
+| Warrior #12 Gloomstrike | **Gloomsworn** | Umbral strike applies **Hex**; leeches life to allies |
+| Warrior #10 Ashen Strike | **Consecrated Strike** | Radiant/Fire hit; **purges** target buffs (Scorch) |
+| Warrior #15 Titan Ascendant | **Oathsworn Ascension** | ult aura heals allies and burns Umbral enemies |
+| Sage #11 Twilight Sweep | **Pledged Sweep** | sweeps both stances at once; builds Focus **and** Rage |
+| Sage #3 Frost Sigil | **Judgment Sigil** | sigil deals Radiant/Umbral; heals allies standing in it |
+| Sage #15 Eclipse | **Oath of the Eclipse** | adds a melee nova applying **Scorch** + **Hex** |
+
+### S.7 Forgewarden — Warrior × Artificer
+
+`mastery_id: mastery_forgewarden` · `path: dual_class` · **Archetypes: Blade · Totems · Mines**
+
+| # | Node | Role | Effect |
+| :-- | :-- | :-- | :-- |
+| 1 | **Overforge** | Buff | After deploying a construct: +20% damage, +10% charge regen for 6s |
+| 2 | **Forge Aura** | Aura | Allies' attacks gain +10% Fire damage; constructs gain +15% damage |
+| 3 | **Molten Core** | Notable | Fire damage applies **Smolder**; constructs inherit your Fire bonus |
+| 4 | **Salvage** | Notable | Destroyed constructs refund 50% of their Charge cost and grant Rage |
+| 5 | **Armory** | Notable | +1 maximum construct; construct duration +25% |
+| 6 | **Hammerfall** | Notable | Slam skills deal +15% damage and stun |
+| 7 | **Blast Tuning** | Notable | Mines and bombs: +20% area, apply **Bleed** on hit |
+| 8 | **Forge Momentum** | Notable | Momentum grants +2% construct damage per stack |
+| 9 | **Scrap Plate** | Notable | +10% Armor; broken constructs leave a damaging scrap burst |
+| 10 | **Smith's Arms** | Notable | +5% Might; +5% charge regen |
+| 11 | **Industrial Vigour** | Notable | +6% max life |
+| 12 | **Master Smith** | Keystone | Your constructs inherit your Rage-scaling damage bonuses at 100% |
+
+**Skill Overhauls (6 — 3 Warrior + 3 Artificer).**
+
+| Replaces | Becomes | Note |
+| :-- | :-- | :-- |
+| Warrior #2 Whirlwind | **Forge Cyclone** | spin throws igniting sparks; deploys a Flame Turret at the end |
+| Warrior #4 Platecracker | **Anvil Cracker** | **Sunder**; +50% damage vs. constructs / armored |
+| Warrior #13 Warcry | **Rally the Forge** | taunt + buffs your constructs' damage and attack speed |
+| Artificer #2 Flame Turret | **Warforge Turret** | turret scales with your melee damage; applies **Bleed** |
+| Artificer #14 Overclock | **Battle Overclock** | buff also grants Rage and +melee damage |
+| Artificer #15 Foundry | **Warbringer Foundry** | constructs a melee bruiser that **taunts** |
+
+### S.8 Definition of Done
+
+**Warrior column complete** — **Titanborn** (apex) + **Skirmisher · Spellknight · Rampart · Oathsworn · Forgewarden** (duals), each with **12 named passive nodes** (1 Buff + 1 Aura + 9 Notable + 1 Keystone) and **6 Skill Overhauls**, each legible in **≥3 archetypes** (**App. R**).
+
+**Remaining:** (a) the **15 masteries** of the Rogue, Sorcerer, Vanguard, Sage and Artificer columns (further `class-by-class` passes); (b) **fusion recipes** — the 21 floor (15 pairs + 6 apexes) with the **J.5** coverage validator; (c) the **shared filler-node library** (18 fillers/mastery) and the **Empowered multiplier / Resonance thresholds** (**App. I.5**).
+
+**Cross-refs:** **P.2** (`M = 36`); **P.3** (Skill Overhauls); **P.4 / App. J** (fusion); **O.7** (node taxonomy — mastery nodes reuse it); **§3.3** (Buff/Aura mandate); **App. Q** (rosters — the overhauls' `skill_id` set); **App. R** (archetype legibility).
