@@ -3,7 +3,7 @@
 
 **Source analyzed:** `tameria_project_specifications.md` (v1 — Technical Specification & System Architecture)
 **Analysis date:** 2026-11-06
-**Revision:** **v1.29** — **Class skill rosters begun: the Warrior `S = 15` roster authored (Appendix Q).** Realises the ratified `S = 15` ratchet (**O.1 / B-24**) as a concrete skill list — a roster **schema** (**Q.1**) plus the **Warrior** roster (**Q.2**, 15 actives, families `Cleave/Whirlwind/Rend/Bash/Slam/Projectile/Shout/Ultimate`) — with the **five remaining class rosters** pending template-first review. The roster is the list the fusion inputs (**App. J**), the family-scope skill-behavior nodes (**O.7**) and the Layer-4 mini-trees (**§5.4**) all bind to. (v1.28 — **Mastery-Point economics ratified (Q-12).** The Layer-3 Mastery Tree budget is locked: **`M = 36`** Mastery Points (**+3 MP/Act** ×7 + **+3 MP/Calamity-Rift-tier first-clear** ×5), **unlock at Lv 10**, **refundable** (**Appendix P.2**). (v1.27 — **Layer-3 Mastery System authored; Talent-Point budget rounded to `P = 100` → 200.** The mastery model is now fully specified: depth gates moved from **four tiers `0/20/50/100`** to **five tiers `0/20/50/80/135`** (Tier 5 = **Single/Empowered-only**); per-gate **milestone unlocks** fixed (Dual **2 actives + 1 passive**/gate → **8 actives + 4 passives per tree**; Single **3 actives**/gate + **8 passives** → **15 actives + 8 passives**); actives per class **`S`: 8 → 15** (**48 → 90** total) with the fusion explosion recomputed (**~4,005** at `S = 15`; curated floor stays **21**); **dedicated 7th fusion slot**; **Skill Overhauls** (Layer 3) that **replace** base class skills with upgraded mastery-themed versions; **Resonance** — Dual-only cross-tree synergy nodes (the counterweight to Single's Empowered amplification); and the **expansion hook** — **2 masteries per dual combo + 2 per single double-down** (**42** total; launch **21**, matching the fusion floor). New **Appendix P**; Appendix **I / J / O** updated. (v1.26 Warrior damage types trimmed — **Lightning** was dropped from the Warrior (poor thematic fit for a raw duelist); the Warrior now carries **Physical, Fire, Umbral** (**3** types — still compliant). Lightning remains on **Sorcerer, Vanguard, Artificer**, so **every type is still reachable by ≥ 3 classes** (coverage matrix unchanged in rule; Lightning row now 3). GDD **§6** / **§6.1**. (v1.25 tightened the coverage rule to **≥ 3 classes per type** — Radiant +Sorcerer, Umbral +Warrior. v1.24 authored the class foundations — resource behaviour, signature mechanic, attribute bias, coverage matrix. v1.23 closed **B-25** — register clear. v1.22 re-ratified the talent-point model: TP **unlock at Lv 10**, **+2/level**, **hard cap 180**, **`P = 90`/tree** → **180 TP**, class tree **≥100 nodes / ~220 TP**, **notables-only multi-rank**, App. **I** / **O**. v1.21 ratified the skill-layer budget, App. O, closed B-09/B-23/B-24 + Q-10/Q-11; v1.20 normalized Vigil vocabulary, closed B-14/B-16, App. K.10; v1.19 closed B-21; v1.18 ratified relic activation + Sieve continuity, App. N, closed B-04/B-17, answered Q-05; v1.17 corrected the §5 relic-favor copy, B-15; v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
+**Revision:** **v1.30** — **All six class skill rosters authored (`S = 15` × 6 = 90 actives) — Appendix Q.** Completes the roster begun in v1.29: **Rogue, Sorcerer, Vanguard, Sage and Artificer** join the **Warrior** on the ratified `S = 15` ratchet (**O.1 / B-24**). Every class keeps its damage coverage (≥3 types) and the melee/ranged parity rule, and each roster declares its **skill families** — the Layer-2 behaviour scope (**O.7**). The rosters are the lists the fusion inputs (**App. J**), the family-scope skill-behavior nodes and the Layer-4 mini-trees (**§5.4**) bind to. (v1.29 — **Class skill rosters begun: the Warrior `S = 15` roster authored (Appendix Q).** Realises the ratified `S = 15` ratchet (**O.1 / B-24**) as a concrete skill list — a roster **schema** (**Q.1**) plus the **Warrior** roster (**Q.2**, 15 actives, families `Cleave/Whirlwind/Rend/Bash/Slam/Projectile/Shout/Ultimate`) — with the **five remaining class rosters** pending template-first review. The roster is the list the fusion inputs (**App. J**), the family-scope skill-behavior nodes (**O.7**) and the Layer-4 mini-trees (**§5.4**) all bind to. (v1.28 — **Mastery-Point economics ratified (Q-12).** The Layer-3 Mastery Tree budget is locked: **`M = 36`** Mastery Points (**+3 MP/Act** ×7 + **+3 MP/Calamity-Rift-tier first-clear** ×5), **unlock at Lv 10**, **refundable** (**Appendix P.2**). (v1.27 — **Layer-3 Mastery System authored; Talent-Point budget rounded to `P = 100` → 200.** The mastery model is now fully specified: depth gates moved from **four tiers `0/20/50/100`** to **five tiers `0/20/50/80/135`** (Tier 5 = **Single/Empowered-only**); per-gate **milestone unlocks** fixed (Dual **2 actives + 1 passive**/gate → **8 actives + 4 passives per tree**; Single **3 actives**/gate + **8 passives** → **15 actives + 8 passives**); actives per class **`S`: 8 → 15** (**48 → 90** total) with the fusion explosion recomputed (**~4,005** at `S = 15`; curated floor stays **21**); **dedicated 7th fusion slot**; **Skill Overhauls** (Layer 3) that **replace** base class skills with upgraded mastery-themed versions; **Resonance** — Dual-only cross-tree synergy nodes (the counterweight to Single's Empowered amplification); and the **expansion hook** — **2 masteries per dual combo + 2 per single double-down** (**42** total; launch **21**, matching the fusion floor). New **Appendix P**; Appendix **I / J / O** updated. (v1.26 Warrior damage types trimmed — **Lightning** was dropped from the Warrior (poor thematic fit for a raw duelist); the Warrior now carries **Physical, Fire, Umbral** (**3** types — still compliant). Lightning remains on **Sorcerer, Vanguard, Artificer**, so **every type is still reachable by ≥ 3 classes** (coverage matrix unchanged in rule; Lightning row now 3). GDD **§6** / **§6.1**. (v1.25 tightened the coverage rule to **≥ 3 classes per type** — Radiant +Sorcerer, Umbral +Warrior. v1.24 authored the class foundations — resource behaviour, signature mechanic, attribute bias, coverage matrix. v1.23 closed **B-25** — register clear. v1.22 re-ratified the talent-point model: TP **unlock at Lv 10**, **+2/level**, **hard cap 180**, **`P = 90`/tree** → **180 TP**, class tree **≥100 nodes / ~220 TP**, **notables-only multi-rank**, App. **I** / **O**. v1.21 ratified the skill-layer budget, App. O, closed B-09/B-23/B-24 + Q-10/Q-11; v1.20 normalized Vigil vocabulary, closed B-14/B-16, App. K.10; v1.19 closed B-21; v1.18 ratified relic activation + Sieve continuity, App. N, closed B-04/B-17, answered Q-05; v1.17 corrected the §5 relic-favor copy, B-15; v1.16 expanded the taxonomy to six types + closed B-18; v1.15 specified the item generator, App. M + closed B-02/B-03/B-10/B-11/B-12, Q-01…Q-04; v1.14 authored the Combat Charter, App. L + closed B-06/B-08/B-19/B-20, Q-06/Q-09; v1.13 closed B-01; v1.12 C-08; v1.11 C-06; v1.10 C-05 + B-13.)
 **Scope:** Full review of speculative content, conflict/gap mapping, targeted design feedback, feasibility assessment, prioritized roadmap, balancing, narrative tie-ins, and ARPG-standard QC.
 
 > **How to read this document:** Existing spec content is referenced by section (e.g. §3.1). Findings are tagged `C-xx` (register item), `G-xx` (gap), `B-xx` (new finding, v1.1), `Q-xx` (open question), `F-xx` (proposed feature). Each register item is now **typed** as Conflict / Ambiguity / Gap / Design risk / Underdevelopment. All numbers outside of direct spec quotes are **proposals** and require design sign-off.
@@ -224,7 +224,7 @@ Disclosed in full so the register can be trusted:
 
 | System | What's missing |
 | :--- | :--- |
-| Classes (§2.2) | **[PARTIAL v1.29]** — fantasy, resource **behaviour**, signature mechanic, attribute bias, and **damage-type coverage** (≥3 types; coverage matrix) are authored (**§6.1 / GDD §6**); the roster **schema** + the **Warrior** `S = 15` skill list are authored (**Appendix Q**); the **five remaining class rosters**, resource tuning values and tree node lists remain. |
+| Classes (§2.2) | **[PARTIAL v1.30]** — fantasy, resource **behaviour**, signature mechanic, attribute bias, and **damage-type coverage** (≥3 types; coverage matrix) are authored (**§6.1 / GDD §6**); the roster **schema** + **all six** `S = 15` skill lists (90 actives) are authored (**Appendix Q.1–Q.7**, with the shared-family + coverage matrix in **Q.8**); resource tuning values and tree node lists remain. |
 | Class talent trees (§2.2) | "Unlock Active Skills at depth thresholds" — **[PARTIAL v1.27]** the **depth-gate model** (Tier 1–5, gates 0/20/50/80/135), the **parity budget** (`P = 100`/tree → 200 TP, Lv-10 faucet), the **per-gate milestone unlocks**, the **node taxonomy** (filler / notable / skill-behavior / keystone) and the **tree size** (**≥100 nodes / ~220 TP**) are defined (**App. I / O.7**); the per-class **node lists, branch structure and skill-unlock thresholds** remain to be authored. |
 | Mastery tree (§2.3) | **[PARTIAL v1.27]** the **fusion table structure + 21-recipe floor** (**Appendix J**) and the full **Layer-3 Mastery Tree** — Mastery Points, mastery passives, **skill overhauls**, fusion rules, and the **42-mastery expansion hook** — are now defined (**Appendix P**); the per-class **mastery passives**, the **overhaul skill lists**, and the **actual 21 recipes** (names, inputs, effects) remain to be authored. |
 | Skill mini-trees (§2.4) | No node taxonomy; "behavioral shifts, elemental conversions, utility" is a category, not a design |
@@ -358,7 +358,7 @@ Authored into the GDD **(§6)**. Each class now has a **resource behaviour**, a 
 
 **Parity rule [Proposed]:** each class must have ≥1 viable **melee-range** and ≥1 **ranged** archetype so no class is locked out of a fight pattern.
 
-**Remaining authoring:** the **five remaining class skill lists** (the `S = 15` roster — **Warrior authored, App. Q.2**), resource tuning values, and the per-class **tree node lists** (App. O.7).
+**Remaining authoring:** resource tuning values, and the per-class **tree node lists** (App. O.7). The `S = 15` skill lists are now authored for **all six classes** (**App. Q.2–Q.7**).
 
 ### 6.2 Loot System (`F-10`) — address R2 (double-variance)
 
@@ -1911,7 +1911,7 @@ Fixing `P` without a faucet would repeat the **B-01** class of defect — a budg
 }
 ```
 
-> Skill **names** in `actives[]` are now **provisional** — superseded by the authored rosters in **Appendix Q** (Warrior `Q.2`; five classes pending).
+> Skill **names** in `actives[]` are now **provisional** — superseded by the authored rosters in **Appendix Q** (**Q.2–Q.7: all six classes**).
 
 ### O.6 Definition of Done & Sign-off Gate
 
@@ -2083,7 +2083,7 @@ The three layers form a clean escalation: **modify the family (L2) → replace a
 
 *Authored from author direction (v1.29). Realises the **`S = 15`** actives-per-class ratchet (**O.1**, **B-24**) as an actual skill list. This is the concrete roster the fusion inputs (**J.5**, rule 4), the Layer-2 **skill-behavior families** (**O.7**) and the Layer-4 **mini-trees** (**§5.4**) all bind to.*
 
-> **Status: [Proposed] — partial.** The **schema (Q.1)** and the **Warrior** roster (**Q.2**) are authored; the **Rogue, Sorcerer, Vanguard, Sage and Artificer** rosters remain (template-first review). Names, numbers and family tags are all **sign-off items**.
+> **Status: [Proposed] — complete.** The **schema (Q.1)** and **all six class rosters** (Q.2 Warrior · Q.3 Rogue · Q.4 Sorcerer · Q.5 Vanguard · Q.6 Sage · Q.7 Artificer) are authored, with a **shared family vocabulary** and **damage-type coverage matrix** (**Q.8**). Names, numbers and family tags remain **sign-off items**.
 
 ### Q.1 Roster schema
 
@@ -2126,8 +2126,156 @@ Each of the **6** classes declares exactly **15** actives (**O.1**). Every skill
 
 **Coverage check.** Types **{Physical, Fire, Umbral}** = 3 ✓ (§6 rule) · melee **+** ranged ✓ (parity rule) · **8 families** for the L2 tree · **2 builders** (#1, #9) + Rage-on-hit + spenders + mobility/defence/ultimate → every budget knob (**O.1**) and the fusion-input validator (**J.5**) now have a concrete list to bind to.
 
-### Q.3 Definition of Done
+### Q.3 Rogue roster (`S = 15`) — resource: **Combo Points**
 
-**Warrior authored.** Remaining: (a) author the **five** remaining class rosters (**Rogue, Sorcerer, Vanguard, Sage, Artificer**) on this template; (b) confirm the **skill-family vocabulary** is *shared* where a family recurs across classes (e.g. `Projectile` on Warrior/Rogue/Artificer) so skill-behavior nodes can be **archetype-wide**; (c) wire the authored lists into the **fusion recipes** (**App. J / P**) once all six exist.
+*Types: **Physical / Ice / Umbral**. Families: `Strike`, `Thrown`, `Shadow Step`, `Trap`, `Evasion`, `Finisher`, `Shout`, `Ultimate`.*
 
-**Cross-refs:** **O.1** (`S = 15`); **O.5** (schema `actives[]`, now provisional); **O.7** (family-scope skill-behavior nodes); **App. J** (fusion inputs); **App. P** (overhauls replace a base skill by `skill_id`); GDD **§6**.
+| # | Skill | Family | Type | Range | Role | CP | CD | Effect |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 1 | **Quick Slash** | Strike | Physical | Melee | Builder | +1 | – | Fast strike; +Combo per hit |
+| 2 | **Backstab** | Strike | Physical | Melee | Spender | 3 | – | Bonus vs. **full-HP / flanked** targets |
+| 3 | **Fan of Knives** | Thrown | Physical | Ranged | Spender | 3 | 4s | Cone of thrown blades |
+| 4 | **Frost Shard** | Thrown | Ice | Ranged | Builder | +1 | – | Thrown shard; **chill** |
+| 5 | **Shadow Step** | Shadow Step | Physical | Melee | Mobility | 2 | 6s | Blink behind target; next Strike **auto-crits** |
+| 6 | **Smoke Bomb** | Evasion | – | Self/AoE | Defense | 2 | 12s | **Blind** + evasion buff |
+| 7 | **Caltrops** | Trap | Physical | Ranged | Trap | 2 | 8s | Ground caltrops; bleed + slow |
+| 8 | **Umbral Shiv** | Strike | Umbral | Melee | Builder | +1 | – | Umbral strike; **life-on-hit** |
+| 9 | **Glacial Trap** | Trap | Ice | Ranged | Trap | 3 | 9s | Freeze trap; **shatters** on trigger |
+| 10 | **Rapid Volley** | Thrown | Physical | Ranged | Spender | 4 | 6s | Multi-knife throw |
+| 11 | **Vanishing Strike** | Shadow Step | Umbral | Melee | Spender | 4 | 10s | Teleport strike; leaves a **decoy** |
+| 12 | **Death Mark** | Finisher | Umbral | Ranged | Debuff | 3 | 15s | Marks target; **+damage taken** |
+| 13 | **Adrenaline** | Shout | – | Self | Buff | 1 | 20s | +attack speed, +Combo generation |
+| 14 | **Evasion Stance** | Evasion | – | Self | Defense | 1 | 18s | Raise dodge chance / **dodge cap** |
+| 15 | **Thousand Cuts** | Ultimate | Physical | Melee/AoE | Ultimate | 5 | 90s | Multi-hit flurry hitting all nearby |
+
+**Coverage check.** Types **{Physical, Ice, Umbral}** = 3 ✓ · melee **+** ranged ✓ · **8 families** · **4 builders** (#1, #4, #8) + Combo-on-hit + spenders → the **Combo-Point** loop (**O.1**) is now concrete.
+
+### Q.4 Sorcerer roster (`S = 15`) — resource: **Mana**
+
+*Types: **Fire / Lightning / Ice / Radiant**. Families: `Bolt`, `Beam`, `Nova`, `Chain`, `Ward`, `Mobility`, `Ultimate`.*
+
+| # | Skill | Family | Type | Range | Role | Mana | CD | Effect |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 1 | **Spark Bolt** | Bolt | Lightning | Ranged | Spender | 6 | – | Fast cheap bolt |
+| 2 | **Fireball** | Bolt | Fire | Ranged | Spender | 12 | – | Lobbed ball; **ignite** + small AoE |
+| 3 | **Frost Lance** | Bolt | Ice | Ranged | Spender | 10 | – | **Piercing** lance; chill |
+| 4 | **Arc** | Chain | Lightning | Ranged | Spender | 14 | – | Chains to nearby enemies |
+| 5 | **Luminous Ray** | Beam | Radiant | Ranged | Channel | 4/s | – | Sustained beam; **ramps** with channel |
+| 6 | **Flame Lash** | Beam | Fire | Melee | Spender | 9 | – | Melee flame whip; ignite |
+| 7 | **Frost Nova** | Nova | Ice | Melee (AoE) | Spender | 18 | 8s | Self-centred radial burst; **freeze** |
+| 8 | **Inferno Nova** | Nova | Fire | Melee (AoE) | Spender | 20 | 10s | Fire ring; leaves **burning ground** |
+| 9 | **Chain Lightning** | Chain | Lightning | Ranged | Spender | 16 | 6s | Large multi-jump chain |
+| 10 | **Dawn Spear** | Bolt | Radiant | Ranged | Spender | 15 | 5s | Piercing light spear; **heals allies** |
+| 11 | **Mana Shield** | Ward | – | Self | Defense | 10 | 15s | Absorb shield drawn from mana |
+| 12 | **Arcane Ward** | Ward | – | Self/AoE | Defense | 12 | 20s | Damage-reduction ward |
+| 13 | **Blink** | Mobility | – | Self | Mobility | 8 | 5s | Short teleport |
+| 14 | **Elemental Focus** | Ward | – | Self | Buff | 10 | 25s | +cast speed & +elemental damage |
+| 15 | **Cataclysm** | Ultimate | Fire | Ranged/AoE | Ultimate | 40 | 90s | Massive meteor; burning ground |
+
+**Coverage check.** Types **{Fire, Lightning, Ice, Radiant}** = 4 ✓ (superset, incl. the class's ratified **Radiant** pole) · melee **+** ranged ✓ (#6/#7/#8 give melee-range) · **7 families** · channel/ward/mobility roles all present.
+
+### Q.5 Vanguard roster (`S = 15`) — resource: **Stamina**
+
+*Types: **Physical / Radiant / Lightning**. Families: `Slam`, `Bash`, `Guard`, `Charge`, `Aura`, `Projectile`, `Shout`, `Ultimate`.*
+
+| # | Skill | Family | Type | Range | Role | Stamina | CD | Effect |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 1 | **Ground Slam** | Slam | Physical | Melee | Spender | 15 | – | Slam ground; small AoE |
+| 2 | **Crushing Blow** | Slam | Physical | Melee | Spender | 20 | 5s | Heavy overhead; **stun** |
+| 3 | **Impale** | Bash | Physical | Melee | Spender | 12 | 4s | Thrust; **rend** |
+| 4 | **Shield Bash** | Bash | Physical | Melee | Spender (CC) | 12 | 8s | Interrupt + short **stun** |
+| 5 | **Charge** | Charge | Physical | Melee | Mobility | 12 | 6s | Rush forward; **knockback** |
+| 6 | **Bulwark** | Guard | – | Self | Defense | 10 | 15s | +block chance / damage reduction |
+| 7 | **Aegis Aura** | Aura | Radiant | Self/AoE | Aura | 8/s | – | Warding aura; +holy damage |
+| 8 | **Radiant Lance** | Projectile | Radiant | Ranged | Spender | 14 | 4s | Thrown light spear |
+| 9 | **Shock Javelin** | Projectile | Lightning | Ranged | Spender | 14 | 5s | Electric javelin; **chains** |
+| 10 | **Thunderclap** | Slam | Lightning | Melee (AoE) | Spender | 22 | 9s | Ground burst; **daze** |
+| 11 | **Consecrate** | Aura | Radiant | Self/AoE | Aura | 10/s | – | Holy ground; heals allies, burns Umbral |
+| 12 | **Warcry** | Shout | – | Self/AoE | Buff | 8 | 20s | +armor; **taunt** |
+| 13 | **Ironclad** | Guard | – | Self | Defense | 12 | 18s | Big DR burst / **unstoppable** |
+| 14 | **Zealot's Oath** | Shout | Radiant | Self | Buff | 12 | 25s | +damage & +life regen |
+| 15 | **Avatar of the Bulwark** | Ultimate | Physical | Self/AoE | Ultimate | 40 | 90s | Immovable fortress; **retribution** aura |
+
+**Coverage check.** Types **{Physical, Radiant, Lightning}** = 3 ✓ (incl. the class's ratified **Radiant** pole) · melee **+** ranged ✓ · **8 families** · the **Guard/Aura/Charge** package gives the Vanguard its tank identity distinct from the Warrior's Rage aggression.
+
+### Q.6 Sage roster (`S = 15`) — resource: **Focus**
+
+*Types: **Radiant / Umbral / Ice**. Families: `Bolt`, `DoT`, `Ward`, `Aura`, `Chain`, `Summon`, `Mobility`, `Ultimate`.*
+
+| # | Skill | Family | Type | Range | Role | Focus | CD | Effect |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 1 | **Radiant Bolt** | Bolt | Radiant | Ranged | Spender | 8 | – | Holy bolt |
+| 2 | **Umbral Bolt** | Bolt | Umbral | Ranged | Spender | 8 | – | Shadow bolt; **leech** |
+| 3 | **Frost Sigil** | DoT | Ice | Ranged | Spender | 10 | – | Chilling DoT sigil; slow |
+| 4 | **Warding Sigil** | Ward | – | Self/AoE | Defense | 12 | 18s | Damage-reduction ward |
+| 5 | **Aegis of Light** | Ward | Radiant | Self | Defense | 12 | 20s | Absorb shield; heals |
+| 6 | **Shroud of Dusk** | Ward | Umbral | Self | Defense | 12 | 20s | Evasion/phasing shroud |
+| 7 | **Radiant Aura** | Aura | Radiant | Self/AoE | Aura | 6/s | – | Pulses holy damage; buffs allies |
+| 8 | **Umbral Aura** | Aura | Umbral | Self/AoE | Aura | 6/s | – | Drains nearby; **debuffs** |
+| 9 | **Spirit Lance** | Chain | Umbral | Ranged | Spender | 14 | 6s | Umbral chain; leeches |
+| 10 | **Radiant Chain** | Chain | Radiant | Ranged | Spender | 14 | 6s | Holy chain between enemies |
+| 11 | **Searing Light** | DoT | Radiant | Ranged | Spender | 12 | 7s | Burning-light DoT |
+| 12 | **Wraith Companion** | Summon | Umbral | Ranged | Summon | 20 | 30s | Summons a fighting **wraith** |
+| 13 | **Seraph Companion** | Summon | Radiant | Ranged | Summon | 20 | 30s | Summons a healing **light spirit** |
+| 14 | **Phase Step** | Mobility | Ice | Self | Mobility | 8 | 5s | Cold blink; leaves a **chilling trail** |
+| 15 | **Eclipse** | Ultimate | Radiant+Umbral | Melee (AoE) | Ultimate | 40 | 90s | Merge both poles: radiant burst + umbral drain (melee-range nova) |
+
+**Coverage check.** Types **{Radiant, Umbral, Ice}** = 3 ✓ (the **only class native to both poles** — the mirror class, §6) · melee **+** ranged ✓ · **8 families** · the mirrored **Ward/Aura/Summon** pairs (one per pole) express the Radiant↔Umbral duality structurally.
+
+### Q.7 Artificer roster (`S = 15`) — resource: **Charges**
+
+*Types: **Physical / Fire / Lightning / Ice**. Families: `Turret`, `Mine`, `Bomb`, `Projectile`, `Drone`, `Deploy`, `Ultimate`.*
+
+| # | Skill | Family | Type | Range | Role | Charges | CD | Effect |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 1 | **Gatling Turret** | Turret | Physical | Ranged | Deploy | 2 | 12s | Auto-firing turret |
+| 2 | **Flame Turret** | Turret | Fire | Ranged | Deploy | 2 | 12s | Fire spray; **ignite** |
+| 3 | **Arc Turret** | Turret | Lightning | Ranged | Deploy | 2 | 12s | Chaining arcs |
+| 4 | **Proximity Mine** | Mine | Physical | Ranged | Trap | 1 | 6s | Explodes on proximity |
+| 5 | **Cryo Mine** | Mine | Ice | Ranged | Trap | 1 | 6s | **Freeze** burst |
+| 6 | **Frag Bomb** | Bomb | Physical | Ranged | Spender | 2 | 5s | Thrown fragmentation bomb |
+| 7 | **Napalm Bomb** | Bomb | Fire | Ranged | Spender | 2 | 6s | Fire pool |
+| 8 | **Shock Grenade** | Bomb | Lightning | Ranged | Spender | 2 | 6s | **Daze/stun** burst |
+| 9 | **Bolt Thrower** | Projectile | Physical | Ranged | Spender | 1 | – | Rapid crossbow bolt |
+| 10 | **Cryo Lance** | Projectile | Ice | Ranged | Spender | 1 | 4s | Piercing cryo bolt |
+| 11 | **Scout Drone** | Drone | – | Ranged | Summon | 1 | 20s | Follows & shoots; **reveals** |
+| 12 | **Bulwark Drone** | Drone | – | Self/AoE | Defense | 2 | 25s | Grants shield/DR to allies |
+| 13 | **Servo Strike** | Deploy | Physical | Melee | Spender | 1 | – | Melee mechanical-arm hit |
+| 14 | **Overclock** | Deploy | – | Self | Buff | 1 | 20s | +charge regen & construct power |
+| 15 | **Foundry** | Ultimate | Fire | Self/AoE | Ultimate | 5 | 90s | Summons a heavy combat construct |
+
+**Coverage check.** Types **{Physical, Fire, Lightning, Ice}** = 4 ✓ · melee **+** ranged ✓ (#13) · **7 families** · **Charges** gate the construct/turret loop (**O.1**), and the construct-centric families `Turret`/`Drone`/`Deploy` are unique to the Artificer.
+
+### Q.8 Shared family vocabulary & coverage matrix
+
+**Shared families (archetype-wide nodes).** The following family tags **recur across classes**, so a single Layer-2 skill-behavior node bound to them is **archetype-wide** (**O.7**, **B-25**) — a `Projectile` node reaches Warrior, Vanguard and Artificer; a `Slam` node reaches Warrior and Vanguard; an `Aura` node reaches Vanguard and Sage.
+
+| Family | Classes that carry it |
+| :-- | :-- |
+| `Projectile` | Warrior, Vanguard, Artificer |
+| `Slam` | Warrior, Vanguard |
+| `Aura` | Vanguard, Sage |
+| `Ward` | Sorcerer, Sage |
+| `Chain` | Sorcerer, Sage |
+| `Bolt` | Sorcerer, Sage |
+| `Shout` | Warrior, Vanguard, Rogue |
+| `Ultimate` | **all six** |
+
+**Damage-type coverage matrix (ratified rule: every class ≥3 types · every type on ≥3 classes).**
+
+| Type | Classes | Count |
+| :-- | :-- | :-- |
+| **Physical** | Warrior, Rogue, Vanguard, Artificer | 4 |
+| **Fire** | Warrior, Sorcerer, Artificer | 3 |
+| **Lightning** | Sorcerer, Vanguard, Artificer | 3 |
+| **Ice** | Rogue, Sorcerer, Sage, Artificer | 4 |
+| **Radiant** | Sorcerer, Vanguard, Sage | 3 |
+| **Umbral** | Warrior, Rogue, Sage | 3 |
+
+**Rule check.** Every class carries **≥3** types ✓ · every type appears on **≥3** classes ✓ · the Radiant↔Umbral poles match **§6.1** (Radiant: Sorcerer, Vanguard, Sage; Umbral: Warrior, Rogue, Sage) ✓. Warrior's thin Fire/Umbral presence is acceptable because **skill conversions** (mini-tree / glyph elemental conversion) supply the per-build coverage.
+
+### Q.9 Definition of Done
+
+**All six rosters authored** (`S = 15` × 6 = **90 actives**). Remaining: (a) ratify the **skill names/numbers/families** (this appendix is `[Proposed]`); (b) wire the authored lists into the **fusion recipes** (**App. J / P**) — the fusion-input validator needs the final `skill_id` set; (c) bind each roster's families to the per-class Layer-2 **tree node lists** (**O.7**) and the Layer-4 **mini-trees** (**§5.4**).
+
+**Cross-refs:** **O.1** (`S = 15`); **O.5** (schema `actives[]`, superseded by these rosters); **O.7** (family-scope skill-behavior nodes); **App. J** (fusion inputs); **App. P** (overhauls replace a base skill by `skill_id`); GDD **§6**.

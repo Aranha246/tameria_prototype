@@ -220,7 +220,7 @@ Retains the §7.3 convention of `+0.5 Primary Stat` per Vigil point.
 
 ### 6.2 Class Skill Rosters **[Proposed] (App. Q)**
 
-Each class fields the ratified **`S = 15`** actives (**§5.3**), authored as concrete rosters. **Roster schema:** `Skill · Family · Type · Range · Role · Cost · CD · Effect`, where **Family** is the **Layer-2 skill-behavior scope** (e.g. `Projectile`, `Cleave`) that class-tree behaviour nodes modify (§5.2, App. O.7). Full tables live in the action plan's **Appendix Q**; **only the Warrior is authored so far**.
+Each class fields the ratified **`S = 15`** actives (**§5.3**), authored as concrete rosters. **Roster schema:** `Skill · Family · Type · Range · Role · Cost · CD · Effect`, where **Family** is the **Layer-2 skill-behavior scope** (e.g. `Projectile`, `Cleave`) that class-tree behaviour nodes modify (§5.2, App. O.7). Full tables (with per-skill **Effect** text) live in the action plan's **Appendix Q**; **all six rosters are authored** (90 actives).
 
 **Warrior (`S = 15`) — Rage.** Types {Physical, Fire, Umbral}; families `Cleave · Whirlwind · Rend · Bash · Slam · Projectile · Shout · Ultimate`.
 
@@ -242,7 +242,109 @@ Each class fields the ratified **`S = 15`** actives (**§5.3**), authored as con
 | 14 | Iron Hide | Shout | – | Self | Defense | 15 | 18s |
 | 15 | Avatar of War | Ultimate | – | Self | Ultimate | 50 | 90s |
 
-**Remaining:** the **Rogue, Sorcerer, Vanguard, Sage, Artificer** rosters (template-first review), plus a **shared skill-family vocabulary** across classes.
+**Rogue (`S = 15`) — Combo Points.** Types {Physical, Ice, Umbral}; families `Strike · Thrown · Shadow Step · Trap · Evasion · Finisher · Shout · Ultimate`.
+
+| # | Skill | Family | Type | Range | Role | CP | CD |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 1 | Quick Slash | Strike | Physical | Melee | Builder | +1 | – |
+| 2 | Backstab | Strike | Physical | Melee | Spender | 3 | – |
+| 3 | Fan of Knives | Thrown | Physical | Ranged | Spender | 3 | 4s |
+| 4 | Frost Shard | Thrown | Ice | Ranged | Builder | +1 | – |
+| 5 | Shadow Step | Shadow Step | Physical | Melee | Mobility | 2 | 6s |
+| 6 | Smoke Bomb | Evasion | – | Self/AoE | Defense | 2 | 12s |
+| 7 | Caltrops | Trap | Physical | Ranged | Trap | 2 | 8s |
+| 8 | Umbral Shiv | Strike | Umbral | Melee | Builder | +1 | – |
+| 9 | Glacial Trap | Trap | Ice | Ranged | Trap | 3 | 9s |
+| 10 | Rapid Volley | Thrown | Physical | Ranged | Spender | 4 | 6s |
+| 11 | Vanishing Strike | Shadow Step | Umbral | Melee | Spender | 4 | 10s |
+| 12 | Death Mark | Finisher | Umbral | Ranged | Debuff | 3 | 15s |
+| 13 | Adrenaline | Shout | – | Self | Buff | 1 | 20s |
+| 14 | Evasion Stance | Evasion | – | Self | Defense | 1 | 18s |
+| 15 | Thousand Cuts | Ultimate | Physical | Melee/AoE | Ultimate | 5 | 90s |
+
+**Sorcerer (`S = 15`) — Mana.** Types {Fire, Lightning, Ice, Radiant}; families `Bolt · Beam · Nova · Chain · Ward · Mobility · Ultimate`.
+
+| # | Skill | Family | Type | Range | Role | Mana | CD |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 1 | Spark Bolt | Bolt | Lightning | Ranged | Spender | 6 | – |
+| 2 | Fireball | Bolt | Fire | Ranged | Spender | 12 | – |
+| 3 | Frost Lance | Bolt | Ice | Ranged | Spender | 10 | – |
+| 4 | Arc | Chain | Lightning | Ranged | Spender | 14 | – |
+| 5 | Luminous Ray | Beam | Radiant | Ranged | Channel | 4/s | – |
+| 6 | Flame Lash | Beam | Fire | Melee | Spender | 9 | – |
+| 7 | Frost Nova | Nova | Ice | Melee (AoE) | Spender | 18 | 8s |
+| 8 | Inferno Nova | Nova | Fire | Melee (AoE) | Spender | 20 | 10s |
+| 9 | Chain Lightning | Chain | Lightning | Ranged | Spender | 16 | 6s |
+| 10 | Dawn Spear | Bolt | Radiant | Ranged | Spender | 15 | 5s |
+| 11 | Mana Shield | Ward | – | Self | Defense | 10 | 15s |
+| 12 | Arcane Ward | Ward | – | Self/AoE | Defense | 12 | 20s |
+| 13 | Blink | Mobility | – | Self | Mobility | 8 | 5s |
+| 14 | Elemental Focus | Ward | – | Self | Buff | 10 | 25s |
+| 15 | Cataclysm | Ultimate | Fire | Ranged/AoE | Ultimate | 40 | 90s |
+
+**Vanguard (`S = 15`) — Stamina.** Types {Physical, Radiant, Lightning}; families `Slam · Bash · Guard · Charge · Aura · Projectile · Shout · Ultimate`.
+
+| # | Skill | Family | Type | Range | Role | Stamina | CD |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 1 | Ground Slam | Slam | Physical | Melee | Spender | 15 | – |
+| 2 | Crushing Blow | Slam | Physical | Melee | Spender | 20 | 5s |
+| 3 | Impale | Bash | Physical | Melee | Spender | 12 | 4s |
+| 4 | Shield Bash | Bash | Physical | Melee | Spender (CC) | 12 | 8s |
+| 5 | Charge | Charge | Physical | Melee | Mobility | 12 | 6s |
+| 6 | Bulwark | Guard | – | Self | Defense | 10 | 15s |
+| 7 | Aegis Aura | Aura | Radiant | Self/AoE | Aura | 8/s | – |
+| 8 | Radiant Lance | Projectile | Radiant | Ranged | Spender | 14 | 4s |
+| 9 | Shock Javelin | Projectile | Lightning | Ranged | Spender | 14 | 5s |
+| 10 | Thunderclap | Slam | Lightning | Melee (AoE) | Spender | 22 | 9s |
+| 11 | Consecrate | Aura | Radiant | Self/AoE | Aura | 10/s | – |
+| 12 | Warcry | Shout | – | Self/AoE | Buff | 8 | 20s |
+| 13 | Ironclad | Guard | – | Self | Defense | 12 | 18s |
+| 14 | Zealot's Oath | Shout | Radiant | Self | Buff | 12 | 25s |
+| 15 | Avatar of the Bulwark | Ultimate | Physical | Self/AoE | Ultimate | 40 | 90s |
+
+**Sage (`S = 15`) — Focus.** Types {Radiant, Umbral, Ice}; families `Bolt · DoT · Ward · Aura · Chain · Summon · Mobility · Ultimate`.
+
+| # | Skill | Family | Type | Range | Role | Focus | CD |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 1 | Radiant Bolt | Bolt | Radiant | Ranged | Spender | 8 | – |
+| 2 | Umbral Bolt | Bolt | Umbral | Ranged | Spender | 8 | – |
+| 3 | Frost Sigil | DoT | Ice | Ranged | Spender | 10 | – |
+| 4 | Warding Sigil | Ward | – | Self/AoE | Defense | 12 | 18s |
+| 5 | Aegis of Light | Ward | Radiant | Self | Defense | 12 | 20s |
+| 6 | Shroud of Dusk | Ward | Umbral | Self | Defense | 12 | 20s |
+| 7 | Radiant Aura | Aura | Radiant | Self/AoE | Aura | 6/s | – |
+| 8 | Umbral Aura | Aura | Umbral | Self/AoE | Aura | 6/s | – |
+| 9 | Spirit Lance | Chain | Umbral | Ranged | Spender | 14 | 6s |
+| 10 | Radiant Chain | Chain | Radiant | Ranged | Spender | 14 | 6s |
+| 11 | Searing Light | DoT | Radiant | Ranged | Spender | 12 | 7s |
+| 12 | Wraith Companion | Summon | Umbral | Ranged | Summon | 20 | 30s |
+| 13 | Seraph Companion | Summon | Radiant | Ranged | Summon | 20 | 30s |
+| 14 | Phase Step | Mobility | Ice | Self | Mobility | 8 | 5s |
+| 15 | Eclipse | Ultimate | Radiant+Umbral | Melee (AoE) | Ultimate | 40 | 90s |
+
+**Artificer (`S = 15`) — Charges.** Types {Physical, Fire, Lightning, Ice}; families `Turret · Mine · Bomb · Projectile · Drone · Deploy · Ultimate`.
+
+| # | Skill | Family | Type | Range | Role | Charges | CD |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 1 | Gatling Turret | Turret | Physical | Ranged | Deploy | 2 | 12s |
+| 2 | Flame Turret | Turret | Fire | Ranged | Deploy | 2 | 12s |
+| 3 | Arc Turret | Turret | Lightning | Ranged | Deploy | 2 | 12s |
+| 4 | Proximity Mine | Mine | Physical | Ranged | Trap | 1 | 6s |
+| 5 | Cryo Mine | Mine | Ice | Ranged | Trap | 1 | 6s |
+| 6 | Frag Bomb | Bomb | Physical | Ranged | Spender | 2 | 5s |
+| 7 | Napalm Bomb | Bomb | Fire | Ranged | Spender | 2 | 6s |
+| 8 | Shock Grenade | Bomb | Lightning | Ranged | Spender | 2 | 6s |
+| 9 | Bolt Thrower | Projectile | Physical | Ranged | Spender | 1 | – |
+| 10 | Cryo Lance | Projectile | Ice | Ranged | Spender | 1 | 4s |
+| 11 | Scout Drone | Drone | – | Ranged | Summon | 1 | 20s |
+| 12 | Bulwark Drone | Drone | – | Self/AoE | Defense | 2 | 25s |
+| 13 | Servo Strike | Deploy | Physical | Melee | Spender | 1 | – |
+| 14 | Overclock | Deploy | – | Self | Buff | 1 | 20s |
+| 15 | Foundry | Ultimate | Fire | Self/AoE | Ultimate | 5 | 90s |
+
+**Coverage check.** Every class carries **≥3** damage types and every type appears on **≥3** classes (Physical 4 · Fire 3 · Lightning 3 · Ice 4 · Radiant 3 · Umbral 3), matching the §6.1 discipline. The recurring families (`Projectile`, `Slam`, `Aura`, `Ward`, `Chain`, `Bolt`, `Shout`, `Ultimate`) are **archetype-wide** — a Layer-2 behaviour node bound to them reaches every class that carries that family (§5.2, App. O.7).
+
+**Remaining:** ratify the skill **names/numbers/families** (action plan App. Q is `[Proposed]`), resource tuning values, and the per-class talent-tree node lists.
 
 ---
 
@@ -926,3 +1028,4 @@ The load-bearing walls — no content authoring until these are resolved:
 | 29 | **Layer-3 Mastery Tree authored (App. P; B-26 closed)** — defines **Skill Overhauls** (mastery nodes that *replace* a base class skill with an upgraded, themed version in-slot), the **Mastery-Point faucet** (`M = 36`), fusion equip rules (one equipped, inherited tags, own L4 tree), and the **expansion hook** (2 masteries per combo → **42 total**); names the path-exclusive amplifiers (**Single** = Empowered value-scaling / **Dual** = **Resonance**) (§5.2–§5.3) (B-26 closed; **Q-12** logged) | Author ruling |
 | 30 | **Mastery-Point economics ratified (v1.28)** — Layer-3 budget locked at **`M = 36`** (**+3 MP/Act** ×7 + **+3 MP/Calamity-Rift-tier first-clear** ×5), **Lv-10 unlock**, **refundable** (§5.3) (Q-12 closed) | Author ruling |
 | 31 | **Warrior skill roster authored (v1.29)** — first **`S = 15`** class roster: the roster **schema** + the **Warrior** 15 actives (families `Cleave · Whirlwind · Rend · Bash · Slam · Projectile · Shout · Ultimate`); the **five** other class rosters are pending template-first review (§6.2, App. Q) | Author ruling |
+| 32 | **All six class rosters authored (v1.30)** — the **Rogue, Sorcerer, Vanguard, Sage, Artificer** `S = 15` rosters complete the set (**90 actives**); adds a **shared skill-family vocabulary** (archetype-wide L2 nodes) and a **damage-type coverage matrix** confirming **every class ≥3 types / every type on ≥3 classes** (§6.2, App. Q.1–Q.8) | Author ruling |
