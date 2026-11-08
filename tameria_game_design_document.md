@@ -187,32 +187,32 @@ Retains the §7.3 convention of `+0.5 Primary Stat` per Vigil point.
 
 **[Ratified]** the six archetypes exist. **[Proposed] (F-09)** the identities, resources, signature mechanics, attribute biases, and **damage-type coverage** below.
 
-**Coverage rule [Ratified — B-18].** Every class guarantees **≥ 3 damage types** across its kit.
+**Coverage rule [Ratified — B-18].** Every class guarantees **≥ 3 damage types** across its kit, **and** every damage type is reachable by **≥ 3 classes** — so no class is locked out of a damage type and no type is class-exclusive.
 **Parity rule [Proposed].** Every class fields **≥ 1 melee-range** and **≥ 1 ranged** build, so no class is locked out of a fight pattern.
 
 | Class | Fantasy | Resource | Signature | Attribute bias | Guaranteed damage types |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Warrior** | Duelist / raw physical | **Rage** (built by dealing *and* taking hits; decays out of combat) | **Momentum** — consecutive hits escalate damage; taking a hit resets the chain | Might / Resilience | Physical, Fire, Lightning |
+| **Warrior** | Duelist / raw physical | **Rage** (built by dealing *and* taking hits; decays out of combat) | **Momentum** — consecutive hits escalate damage; taking a hit resets the chain | Might / Resilience | Physical, Fire, Lightning, Umbral |
 | **Rogue** | Assassin / evasion | **Combo Points** (built by basics; spent on finishers; expire) | **Shadow Step** — blink to a target and open a guaranteed-crit window | Agility | Physical, Ice, Umbral |
-| **Sorcerer** | Arcane artillery | **Mana** (large pool, passive regen) | **Overcharge** — channel to amplify the next spell; interruptible | Insight | Fire, Lightning, Ice |
+| **Sorcerer** | Arcane artillery | **Mana** (large pool, passive regen) | **Overcharge** — channel to amplify the next spell; interruptible | Insight | Fire, Lightning, Ice, Radiant |
 | **Vanguard** | Shield bruiser / protector | **Stamina** (regen; spent on guard skills) | **Guard** — directional block that converts blocked damage into a Radiant retaliation | Might / Resilience | Physical, Radiant, Lightning |
 | **Sage** | Support / summoner / DoT | **Focus** (regen; funds channeled ailments & wards) | **Warding** — a ward that mirrors nearby Umbral ↔ Radiant | Insight / Agility | Radiant, Umbral, Ice |
 | **Artificer** | Traps, constructs, elements | **Charges** (gadget charges; regenerate) | **Deployables** — turrets/mines persist; detonate or infuse with an element | Insight / Might | Physical, Fire, Lightning, Ice |
 
-**Damage-coverage matrix [Proposed].** Every type is reachable by **≥ 2 classes**; the Radiant ↔ Umbral axis is deliberately scarce.
+**Damage-coverage matrix [Ratified — author ruling].** **Every type is reachable by ≥ 3 classes** (and every class has ≥ 3 types).
 
-| Damage type | Classes |
-| :--- | :--- |
-| Physical | Warrior, Rogue, Vanguard, Artificer |
-| Fire | Warrior, Sorcerer, Artificer |
-| Lightning | Warrior, Sorcerer, Vanguard, Artificer |
-| Ice | Rogue, Sorcerer, Sage, Artificer |
-| Radiant | Vanguard, Sage |
-| Umbral | Rogue, Sage |
+| Damage type | Classes | # |
+| :--- | :--- | :-- |
+| Physical | Warrior, Rogue, Vanguard, Artificer | 4 |
+| Fire | Warrior, Sorcerer, Artificer | 3 |
+| Lightning | Warrior, Sorcerer, Vanguard, Artificer | 4 |
+| Ice | Rogue, Sorcerer, Sage, Artificer | 4 |
+| Radiant | Sorcerer, Vanguard, Sage | 3 |
+| Umbral | Warrior, Rogue, Sage | 3 |
 
 **Design notes.**
 - **Resource behaviour is standardized.** *Builders* (**Rage**, **Combo Points**) decay out of combat — you must fight to sustain them. *Pools* (**Mana**, **Stamina**, **Focus**) regenerate passively. **Charges** regenerate slowly, and faster while near the Artificer's own constructs.
-- **Radiant / Umbral scarcity.** Only **Vanguard + Sage** reach Radiant and **Rogue + Sage** reach Umbral natively, so the polar axis stays a *specialization* axis rather than a baseline — reinforcing the relic-favor system (§10).
+- **Polar-axis coverage.** The Radiant ↔ Umbral axis is spread across **three classes each** (Radiant: Sorcerer, Vanguard, Sage; Umbral: Warrior, Rogue, Sage), so it is a *specialization* axis without being class-exclusive — no build is locked out of a damage type.
 - **Sage is the mirror class** — the only class native to *both* poles, matching its **Warding** signature.
 
 ---
@@ -889,4 +889,5 @@ The load-bearing walls — no content authoring until these are resolved:
 | 21 | **Skill-layer budget ratified** — actives per class **`S = 8`** (48 total); **6** specialization/equipped slots (unified with the action bar); **`P = 60`**/tree → both paths **120 TP** with depth gates `0/20/50/100`; TP faucet **`+2`/level, cap `120`** (reached Lv 61); fusion floor **21** re-ratified (optional to `~27`) (§5.2–§5.4) (B-09, B-23, B-24 closed; Q-10, Q-11 answered) | Author ruling |
 | 22 | **Talent-point model re-ratified** — TP **unlock at Lv 10** (second-class / double-down gate), **`+2`/level**, **hard cap `180`** (≈120 TP by Lv 70; cap reached **Lv 100**, aligned with the passive tree completing and Vigil starting Lv 101); **`P = 90`**/tree → both paths **180 TP**; class tree **≥ 100 nodes (target ~120) / ~220 nominal TP**; **node taxonomy** (filler / notable / skill-behavior / keystone) with **notables the only multi-rank role (2–3 pts)**; **skill-behavior nodes change *how* a skill behaves — not stats** (§5.2) (B-23/Q-10 re-ratified; **B-25** logged for mini-tree scope split) | Author ruling |
 | 23 | **Layer-2 / Layer-4 behaviour-node boundary resolved** — class-tree **skill-behavior nodes** act at **family/archetype scope**; Layer-4 **mini-trees** act at **single-skill scope**; complementary, not duplicative (§5.2, §5.4) (B-25 closed; register clear) | Author ruling |
-| 24 | **Class foundations authored** — six archetypes expanded with resource behaviour, signature mechanic, attribute bias, and **guaranteed damage-type coverage**; adds the **damage-coverage matrix** (every type on ≥ 2 classes; Radiant ↔ Umbral scarce by design) and standardizes resource behaviour (builders decay / pools regenerate / charges regen) (§6) (F-09 advanced) | Author ruling |
+| 24 | **Class foundations authored** — six archetypes expanded with resource behaviour, signature mechanic, attribute bias, and **guaranteed damage-type coverage**; adds the **damage-coverage matrix** and standardizes resource behaviour (builders decay / pools regenerate / charges regen) (§6) (F-09 advanced) | Author ruling |
+| 25 | **Damage-coverage rule tightened** — every damage type must be reachable by **≥ 3 classes** (was: ≥ 2). Radiant gains **Sorcerer** (channels the Beacon's light); Umbral gains **Warrior** (rage channels the Calamity's taint). Each type now sits on **3–4 classes**; each class on **3–4 types** (§6) | Author ruling |
