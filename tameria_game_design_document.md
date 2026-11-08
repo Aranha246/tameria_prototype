@@ -226,52 +226,52 @@ Each class fields the ratified **`S = 15`** actives (**§5.3**), authored as con
 
 | # | Skill | Family | Type | Range | Role | Rage | CD |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| 1 | Cleave | Cleave | Physical | Melee | Builder | +8 | – |
+| 1 | Reaping Arc | Cleave | Physical | Melee | Builder | +8 | – |
 | 2 | Whirlwind | Whirlwind | Physical | Melee | Spender (channel) | 20 | – |
-| 3 | Rend | Rend | Physical | Melee | Spender | 15 | – |
-| 4 | Sunder | Cleave | Physical | Melee | Spender | 18 | 6s |
+| 3 | Laceration | Rend | Physical | Melee | Spender | 15 | – |
+| 4 | Platecracker | Cleave | Physical | Melee | Spender | 18 | 6s |
 | 5 | Shield Bash | Bash | Physical | Melee | Spender (CC) | 12 | 8s |
-| 6 | Leap Slam | Slam | Physical | Melee | Mobility | 15 | 5s |
-| 7 | Earthquake | Slam | Physical | Melee | Spender | 25 | 10s |
-| 8 | Seismic Wave | Slam | Physical | Ranged | Spender | 20 | 7s |
-| 9 | Hatchet Throw | Projectile | Physical | Ranged | Builder | +6 | – |
-| 10 | Cinder Strike | Cleave | Fire | Melee | Spender | 16 | – |
-| 11 | Ember Volley | Projectile | Fire | Ranged | Spender | 22 | 6s |
-| 12 | Umbral Bite | Rend | Umbral | Melee | Spender | 18 | 9s |
-| 13 | War Cry | Shout | – | Self/AoE | Buff | 10 | 20s |
-| 14 | Iron Hide | Shout | – | Self | Defense | 15 | 18s |
-| 15 | Avatar of War | Ultimate | – | Self | Ultimate | 50 | 90s |
+| 6 | Titan's Leap | Slam | Physical | Melee | Mobility | 15 | 5s |
+| 7 | Worldbreaker | Slam | Physical | Melee | Spender | 25 | 10s |
+| 8 | Ground Surge | Slam | Physical | Ranged | Spender | 20 | 7s |
+| 9 | Bladeflight | Projectile | Physical | Ranged | Builder | +6 | – |
+| 10 | Ashen Strike | Cleave | Fire | Melee | Spender | 16 | – |
+| 11 | Ashen Barrage | Projectile | Fire | Ranged | Spender | 22 | 6s |
+| 12 | Gloomstrike | Rend | Umbral | Melee | Spender | 18 | 9s |
+| 13 | Warcry | Shout | – | Self/AoE | Buff | 10 | 20s |
+| 14 | Ironhide | Shout | – | Self | Defense | 15 | 18s |
+| 15 | Titan Ascendant | Ultimate | – | Self | Ultimate | 50 | 90s |
 
 **Rogue (`S = 15`) — Combo Points.** Types {Physical, Ice, Umbral}; families `Strike · Thrown · Shadow Step · Trap · Evasion · Finisher · Shout · Ultimate`.
 
 | # | Skill | Family | Type | Range | Role | CP | CD |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| 1 | Quick Slash | Strike | Physical | Melee | Builder | +1 | – |
-| 2 | Backstab | Strike | Physical | Melee | Spender | 3 | – |
-| 3 | Fan of Knives | Thrown | Physical | Ranged | Spender | 3 | 4s |
-| 4 | Frost Shard | Thrown | Ice | Ranged | Builder | +1 | – |
-| 5 | Shadow Step | Shadow Step | Physical | Melee | Mobility | 2 | 6s |
-| 6 | Smoke Bomb | Evasion | – | Self/AoE | Defense | 2 | 12s |
-| 7 | Caltrops | Trap | Physical | Ranged | Trap | 2 | 8s |
-| 8 | Umbral Shiv | Strike | Umbral | Melee | Builder | +1 | – |
-| 9 | Glacial Trap | Trap | Ice | Ranged | Trap | 3 | 9s |
-| 10 | Rapid Volley | Thrown | Physical | Ranged | Spender | 4 | 6s |
-| 11 | Vanishing Strike | Shadow Step | Umbral | Melee | Spender | 4 | 10s |
-| 12 | Death Mark | Finisher | Umbral | Ranged | Debuff | 3 | 15s |
+| 1 | Slash | Strike | Physical | Melee | Builder | +1 | – |
+| 2 | Ambuscade | Strike | Physical | Melee | Spender | 3 | – |
+| 3 | Blade Spray | Thrown | Physical | Ranged | Spender | 3 | 4s |
+| 4 | Coldspike | Thrown | Ice | Ranged | Builder | +1 | – |
+| 5 | Umbral Step | Shadow Step | Physical | Melee | Mobility | 2 | 6s |
+| 6 | Smokeveil | Evasion | – | Self/AoE | Defense | 2 | 12s |
+| 7 | Spikeward | Trap | Physical | Ranged | Trap | 2 | 8s |
+| 8 | Siphon Cut | Strike | Umbral | Melee | Builder | +1 | – |
+| 9 | Frostsnare | Trap | Ice | Ranged | Trap | 3 | 9s |
+| 10 | Ironhail | Thrown | Physical | Ranged | Spender | 4 | 6s |
+| 11 | Mirage Strike | Shadow Step | Umbral | Melee | Spender | 4 | 10s |
+| 12 | Doomseal | Finisher | Umbral | Ranged | Debuff | 3 | 15s |
 | 13 | Adrenaline | Shout | – | Self | Buff | 1 | 20s |
-| 14 | Evasion Stance | Evasion | – | Self | Defense | 1 | 18s |
-| 15 | Thousand Cuts | Ultimate | Physical | Melee/AoE | Ultimate | 5 | 90s |
+| 14 | Ghostwalk | Evasion | – | Self | Defense | 1 | 18s |
+| 15 | Razor Tempest | Ultimate | Physical | Melee/AoE | Ultimate | 5 | 90s |
 
-**Sorcerer (`S = 15`) — Mana.** Types {Fire, Lightning, Ice, Radiant}; families `Bolt · Beam · Nova · Chain · Ward · Mobility · Ultimate`.
+**Sorcerer (`S = 15`) — Mana.** Types {Fire, Lightning, Ice, Radiant}; families `Bolt · Spellblade · Beam · Nova · Chain · Ward · Mobility · Ultimate`.
 
 | # | Skill | Family | Type | Range | Role | Mana | CD |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
 | 1 | Spark Bolt | Bolt | Lightning | Ranged | Spender | 6 | – |
 | 2 | Fireball | Bolt | Fire | Ranged | Spender | 12 | – |
 | 3 | Frost Lance | Bolt | Ice | Ranged | Spender | 10 | – |
-| 4 | Arc | Chain | Lightning | Ranged | Spender | 14 | – |
+| 4 | *(name TBD)* | Spellblade | Lightning | Melee | Spender (build) | 10 | – |
 | 5 | Luminous Ray | Beam | Radiant | Ranged | Channel | 4/s | – |
-| 6 | Flame Lash | Beam | Fire | Melee | Spender | 9 | – |
+| 6 | Flame Lash | Spellblade | Fire | Melee | Spender | 9 | – |
 | 7 | Frost Nova | Nova | Ice | Melee (AoE) | Spender | 18 | 8s |
 | 8 | Inferno Nova | Nova | Fire | Melee (AoE) | Spender | 20 | 10s |
 | 9 | Chain Lightning | Chain | Lightning | Ranged | Spender | 16 | 6s |
@@ -302,7 +302,7 @@ Each class fields the ratified **`S = 15`** actives (**§5.3**), authored as con
 | 14 | Zealot's Oath | Shout | Radiant | Self | Buff | 12 | 25s |
 | 15 | Avatar of the Bulwark | Ultimate | Physical | Self/AoE | Ultimate | 40 | 90s |
 
-**Sage (`S = 15`) — Focus.** Types {Radiant, Umbral, Ice}; families `Bolt · DoT · Ward · Aura · Chain · Summon · Mobility · Ultimate`.
+**Sage (`S = 15`) — Focus.** Types {Radiant, Umbral, Ice}; families `Bolt · Spellblade · DoT · Ward · Aura · Chain · Summon · Mobility · Ultimate`.
 
 | # | Skill | Family | Type | Range | Role | Focus | CD |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
@@ -316,7 +316,7 @@ Each class fields the ratified **`S = 15`** actives (**§5.3**), authored as con
 | 8 | Umbral Aura | Aura | Umbral | Self/AoE | Aura | 6/s | – |
 | 9 | Spirit Lance | Chain | Umbral | Ranged | Spender | 14 | 6s |
 | 10 | Radiant Chain | Chain | Radiant | Ranged | Spender | 14 | 6s |
-| 11 | Searing Light | DoT | Radiant | Ranged | Spender | 12 | 7s |
+| 11 | *(name TBD)* | Spellblade | Radiant/Umbral | Melee | Builder | 10 | – |
 | 12 | Wraith Companion | Summon | Umbral | Ranged | Summon | 20 | 30s |
 | 13 | Seraph Companion | Summon | Radiant | Ranged | Summon | 20 | 30s |
 | 14 | Phase Step | Mobility | Ice | Self | Mobility | 8 | 5s |
@@ -342,9 +342,19 @@ Each class fields the ratified **`S = 15`** actives (**§5.3**), authored as con
 | 14 | Overclock | Deploy | – | Self | Buff | 1 | 20s |
 | 15 | Foundry | Ultimate | Fire | Self/AoE | Ultimate | 5 | 90s |
 
-**Coverage check.** Every class carries **≥3** damage types and every type appears on **≥3** classes (Physical 4 · Fire 3 · Lightning 3 · Ice 4 · Radiant 3 · Umbral 3), matching the §6.1 discipline. The recurring families (`Projectile`, `Slam`, `Aura`, `Ward`, `Chain`, `Bolt`, `Shout`, `Ultimate`) are **archetype-wide** — a Layer-2 behaviour node bound to them reaches every class that carries that family (§5.2, App. O.7).
+**Coverage check.** Every class carries **≥3** damage types and every type appears on **≥3** classes (Physical 4 · Fire 3 · Lightning 3 · Ice 4 · Radiant 3 · Umbral 3), matching the §6.1 discipline. The recurring families (`Projectile`, `Slam`, `Aura`, `Ward`, `Chain`, `Bolt`, `Spellblade`, `Shout`, `Ultimate`) are **archetype-wide** — a Layer-2 behaviour node bound to them reaches every class that carries that family (§5.2, App. O.7).
 
 **Remaining:** ratify the skill **names/numbers/families** (action plan App. Q is `[Proposed]`), resource tuning values, and the per-class talent-tree node lists.
+
+### 6.3 Build Archetypes **[Proposed] (App. R)**
+
+A **build archetype** is a **mechanic noun** — the *thing* a build is built around (a weapon, a delivery system, a damage pattern) — **not** a role verb. It gives every **class** and every **mastery** one shared vocabulary, plus the standing rule that **each must be legible in ≥3 archetypes**. Full definitions and family bindings are in the action plan's **Appendix R**.
+
+**The 11 archetypes:** **Blade · Cleave · Bow · Spells · Spellblade · Traps · Mines · Totems · Minions · DoT · Shield.**
+
+**Excluded under the universal rule** — **Single Target · Clear · Buffs · Auras · Chain · Control · Mobility** — because *every* class/mastery already has them, so they cannot define a build. Mobility, control, buffs and auras are therefore **baseline access**, assumed present for every build: a mastery is *defined* by its archetypes (e.g. **Mines × Traps × DoT**).
+
+**Cross-refs:** §6.2 (rosters — a class's **family list is its archetype skeleton**); §7.5 (ailments — the **DoT** archetype's channel); §5.3 (mastery tree); action plan **App. Q / R / P**.
 
 ---
 
@@ -442,17 +452,17 @@ The ordered resolver — the thing every affix rolls into. **Ordering is the des
 
 ### 7.5 Ailments & CC **[Proposed] (G-04 / F-03)**
 
-Cap at **6 ailments, 3 CC types** at launch; expand post-launch.
+**Rule [Proposed v1.32].** **Every damage type owns exactly one DoT ailment**, and **no two share a rider** — each carries a **distinct secondary property**. `Corrupt` is the Corruption-scalar thematic DoT (a non-type 7th). **CC types (Stun / Slow / Freeze)** are the shared control layer — *not* ailments. Cap at **6 type-ailments + Corrupt + 3 CC types** at launch; expand post-launch.
 
-| Ailment | Type | Effect |
-| :--- | :--- | :--- |
-| Ignite | Fire | Damage-over-time |
-| Chill / Freeze | Ice | Slow / hard CC |
-| Shock | Lightning | Increased damage taken |
-| Bleed | Physical | DoT while moving |
-| Corrupt | Calamity | DoT that ignores a % of resistance (thematic) |
-| Radiant | Radiant | Burning + debuff-cleanse interaction |
-| Umbral | Umbral | Corrupting DoT that scales with the target's missing life |
+| Ailment | Type | DoT | Distinct rider |
+| :--- | :--- | :--- | :--- |
+| Bleed | Physical | ✔ | Bonus damage while the target **moves** |
+| Ignite | Fire | ✔ | **Spreads** to nearby enemies |
+| Shock | Lightning | ✔ | Target takes **increased damage from all sources** |
+| Chill → Freeze | Ice | ✔ (frostbite) | **Slows**; at threshold → **Freeze** (immobilise) |
+| Scorch | Radiant | ✔ | **Reduces the target's damage dealt** |
+| Decay | Umbral | ✔ | **Reduces healing received** (scales with missing life) |
+| Corrupt | Calamity | ✔ | Ignores a % of resistance (thematic) |
 
 Directly feeds §5's *"+5% Fire & Radiant Resistance"* and *"-10% Debuff Duration."*
 **Boss rule [Proposed]:** enforce an internal **CC-immunity ramp** (diminishing returns per application), or every boss becomes cheeseable.
@@ -1029,3 +1039,5 @@ The load-bearing walls — no content authoring until these are resolved:
 | 30 | **Mastery-Point economics ratified (v1.28)** — Layer-3 budget locked at **`M = 36`** (**+3 MP/Act** ×7 + **+3 MP/Calamity-Rift-tier first-clear** ×5), **Lv-10 unlock**, **refundable** (§5.3) (Q-12 closed) | Author ruling |
 | 31 | **Warrior skill roster authored (v1.29)** — first **`S = 15`** class roster: the roster **schema** + the **Warrior** 15 actives (families `Cleave · Whirlwind · Rend · Bash · Slam · Projectile · Shout · Ultimate`); the **five** other class rosters are pending template-first review (§6.2, App. Q) | Author ruling |
 | 32 | **All six class rosters authored (v1.30)** — the **Rogue, Sorcerer, Vanguard, Sage, Artificer** `S = 15` rosters complete the set (**90 actives**); adds a **shared skill-family vocabulary** (archetype-wide L2 nodes) and a **damage-type coverage matrix** confirming **every class ≥3 types / every type on ≥3 classes** (§6.2, App. Q.1–Q.8) | Author ruling |
+| 33 | **Melee parity (Sorcerer/Sage) (v1.31)** — the two caster classes gain a genuine **melee option** through a new **shared `Spellblade` family**: the Sorcerer's `Arc` becomes a **Spellblade** melee strike (element-infused, refunds Mana) with `Flame Lash` re-tagged `Beam`→`Spellblade`, and the Sage's `Searing Light` becomes a **Spellblade** melee sweep (builds Focus). The **Warrior roster is author-named** (§6.2, App. Q) | Author ruling |
+| 34 | **DoT ailments + build archetypes + roster naming (v1.32–v1.33)** — **each damage type owns exactly one DoT ailment, each with a distinct rider** (Bleed · Ignite · Shock · Chill→Freeze · Scorch · Decay; `Corrupt` is the thematic 7th; CC split out as a shared layer) (§7.5); **build archetypes locked at 11** with the **universal-rule exclusions** (Single Target · Clear · Buffs · Auras · Chain · Control · Mobility) and the rule that **every class & mastery is legible in ≥3 archetypes** (§6.3, App. R); the **Rogue roster is author-named** and the **6 apex masteries are named** (Titanborn · Nightprowler · Archmage · Bastion · Equinox · Machinist) (§6.2, App. J.4 / P.7) | Author ruling |
