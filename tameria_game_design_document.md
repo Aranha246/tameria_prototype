@@ -250,7 +250,7 @@ Each class fields the ratified **`S = 15`** actives (**§5.3**), authored as con
 | 2 | Ambuscade | Strike | Physical | Melee | Spender | 3 | – |
 | 3 | Blade Spray | Thrown | Physical | Ranged | Spender | 3 | 4s |
 | 4 | Coldspike | Thrown | Ice | Ranged | Builder | +1 | – |
-| 5 | Umbral Step | Shadow Step | Physical | Melee | Mobility | 2 | 6s |
+| 5 | Nightdash | Shadow Step | Physical | Melee | Mobility | 2 | 6s |
 | 6 | Smokeveil | Evasion | – | Self/AoE | Defense | 2 | 12s |
 | 7 | Spikeward | Trap | Physical | Ranged | Trap | 2 | 8s |
 | 8 | Siphon Cut | Strike | Umbral | Melee | Builder | +1 | – |
@@ -452,17 +452,16 @@ The ordered resolver — the thing every affix rolls into. **Ordering is the des
 
 ### 7.5 Ailments & CC **[Proposed] (G-04 / F-03)**
 
-**Rule [Proposed v1.32].** **Every damage type owns exactly one DoT ailment**, and **no two share a rider** — each carries a **distinct secondary property**. `Corrupt` is the Corruption-scalar thematic DoT (a non-type 7th). **CC types (Stun / Slow / Freeze)** are the shared control layer — *not* ailments. Cap at **6 type-ailments + Corrupt + 3 CC types** at launch; expand post-launch.
+**Rule [Proposed v1.34].** **Every damage type owns two ailments** — one **damage** ailment (a DoT, or a burst where it fits) and one **utility** ailment (control / debuff) — and **no two share a rider**. `Corrupt` is **dropped**: it owned no damage type, so its "ignores a % of resist" flavour folds into a **boss/rift modifier**. **CC (Stun)** is the shared control layer — *not* an ailment. Launch cap: **6 damage + 6 utility = 12 type-ailments** + shared CC; expand post-launch.
 
-| Ailment | Type | DoT | Distinct rider |
-| :--- | :--- | :--- | :--- |
-| Bleed | Physical | ✔ | Bonus damage while the target **moves** |
-| Ignite | Fire | ✔ | **Spreads** to nearby enemies |
-| Shock | Lightning | ✔ | Target takes **increased damage from all sources** |
-| Chill → Freeze | Ice | ✔ (frostbite) | **Slows**; at threshold → **Freeze** (immobilise) |
-| Scorch | Radiant | ✔ | **Reduces the target's damage dealt** |
-| Decay | Umbral | ✔ | **Reduces healing received** (scales with missing life) |
-| Corrupt | Calamity | ✔ | Ignores a % of resistance (thematic) |
+| Type | Damage ailment | Rider | Utility ailment | Rider (control / debuff) |
+| :--- | :--- | :--- | :--- | :--- |
+| Physical | **Bleed** | DoT; +damage while the target **moves** | **Sunder** | **−Armor** (DR shred) |
+| Fire | **Ignite** | DoT; **spreads** to nearby enemies | **Smolder** | **−Fire Resistance** |
+| Lightning | **Shock** | DoT; **ramps** the longer it holds | **Conduction** | target takes **+damage from all sources** |
+| Ice | **Frostbite** | DoT; can **crit** | **Chill → Freeze** | **slow → immobilise** |
+| Radiant | **Scorch** | DoT; **purges** the target's buffs | **Dazzle** | **blind** (−accuracy) |
+| Umbral | **Decay** | DoT; scales with the target's **missing life** | **Hex** | **−healing / regen** |
 
 Directly feeds §5's *"+5% Fire & Radiant Resistance"* and *"-10% Debuff Duration."*
 **Boss rule [Proposed]:** enforce an internal **CC-immunity ramp** (diminishing returns per application), or every boss becomes cheeseable.
@@ -1041,3 +1040,4 @@ The load-bearing walls — no content authoring until these are resolved:
 | 32 | **All six class rosters authored (v1.30)** — the **Rogue, Sorcerer, Vanguard, Sage, Artificer** `S = 15` rosters complete the set (**90 actives**); adds a **shared skill-family vocabulary** (archetype-wide L2 nodes) and a **damage-type coverage matrix** confirming **every class ≥3 types / every type on ≥3 classes** (§6.2, App. Q.1–Q.8) | Author ruling |
 | 33 | **Melee parity (Sorcerer/Sage) (v1.31)** — the two caster classes gain a genuine **melee option** through a new **shared `Spellblade` family**: the Sorcerer's `Arc` becomes a **Spellblade** melee strike (element-infused, refunds Mana) with `Flame Lash` re-tagged `Beam`→`Spellblade`, and the Sage's `Searing Light` becomes a **Spellblade** melee sweep (builds Focus). The **Warrior roster is author-named** (§6.2, App. Q) | Author ruling |
 | 34 | **DoT ailments + build archetypes + roster naming (v1.32–v1.33)** — **each damage type owns exactly one DoT ailment, each with a distinct rider** (Bleed · Ignite · Shock · Chill→Freeze · Scorch · Decay; `Corrupt` is the thematic 7th; CC split out as a shared layer) (§7.5); **build archetypes locked at 11** with the **universal-rule exclusions** (Single Target · Clear · Buffs · Auras · Chain · Control · Mobility) and the rule that **every class & mastery is legible in ≥3 archetypes** (§6.3, App. R); the **Rogue roster is author-named** and the **6 apex masteries are named** (Titanborn · Nightprowler · Archmage · Bastion · Equinox · Machinist) (§6.2, App. J.4 / P.7) | Author ruling |
+| 35 | **All 21 masteries named + 2-per-type ailments (v1.34)** — the **15 dual-pair masteries are author-named** (Skirmisher · Spellknight · Rampart · Oathsworn · Forgewarden · Shadowbinder · Sentry · Whisperblade · Tinkerer · Sigilwarden · Spellsinger · Runewright · Aegisborn · Cogwarden · Reliquary), completing the **21-name launch set**; names must be **damage-type-neutral** (§6.2, App. J.4 / P.7); the **ailment model splits to two per damage type** — one **damage** + one **utility** (control/debuff) ailment, **12 total** — and `Corrupt` is **dropped** to a boss/rift modifier (§7.5); the Rogue's #5 blink is renamed **Umbral Step → Nightdash** (§6.2) | Author ruling |
